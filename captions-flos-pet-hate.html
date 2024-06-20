@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>19 Sub-Figures | Academic Writing with LaTeX</title>
-  <meta name="description" content="19 Sub-Figures | Academic Writing with LaTeX" />
+  <title>20 Captions (Flo’s Pet Hate) | Academic Writing with LaTeX</title>
+  <meta name="description" content="20 Captions (Flo’s Pet Hate) | Academic Writing with LaTeX" />
   <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="19 Sub-Figures | Academic Writing with LaTeX" />
+  <meta property="og:title" content="20 Captions (Flo’s Pet Hate) | Academic Writing with LaTeX" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="19 Sub-Figures | Academic Writing with LaTeX" />
+  <meta name="twitter:title" content="20 Captions (Flo’s Pet Hate) | Academic Writing with LaTeX" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="float-barriers.html"/>
-<link rel="next" href="captions-flos-pet-hate.html"/>
+<link rel="prev" href="sub-figures.html"/>
+<link rel="next" href="setting-tables.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -267,84 +267,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="sub-figures" class="section level1 hasAnchor" number="19">
-<h1><span class="header-section-number">19</span> Sub-Figures<a href="sub-figures.html#sub-figures" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>If you need a more advanced figure layout, LaTeX allows you to join multiple sub-figures into one figure – each of them can have their own caption as well as a label for further referencing. Moreover, it’s easy to ensure that they are perfectly aligned with regard to one another, as well as to the overall text layout. To use subfigures, the first thing you will need to do is include \usepackage{subcaption} in the preamble of your document. As you can see in the example, to divide a figure into several subfigures, we simply add a subfigure environment for each subfigure we want to include into one figure environment. Each subfigure environment is associated with its own positioning option specified in the square brackets. It usually makes sense to set them all to the same option (for example t in the example), as it leads to good alignment of the subfigures. Note that we also specify the width of each subfigure using the curly braces – in this case, each of the two koala photos has the width of 0.6 of the text width. When using \includegraphics within the subfigure environment, we can set the width to \textwidth, as the \textwidth attribute is defined separately for the subfigure float (in this case as 0.6 of the document text width). </p>
-<p>The distance and layout of the subfigures can be determined by using the spacing markup tags covered in Part 1 of the course. So for example by using \ between the subfigure environments, we lay the subfigures out vertically, separated by a 5 mm space.</p>
-<p><img src="files2/part2_04_subfigures_01.png" width="50%" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb29-1"><a href="sub-figures.html#cb29-1" tabindex="-1"></a>\begin{figure}[ht!]</span>
-<span id="cb29-2"><a href="sub-figures.html#cb29-2" tabindex="-1"></a>    \centering</span>
-<span id="cb29-3"><a href="sub-figures.html#cb29-3" tabindex="-1"></a>    \begin{subfigure}[t]{0.6\textwidth}</span>
-<span id="cb29-4"><a href="sub-figures.html#cb29-4" tabindex="-1"></a>        \centering</span>
-<span id="cb29-5"><a href="sub-figures.html#cb29-5" tabindex="-1"></a>        \includegraphics[width=\textwidth]{koala.jpg}</span>
-<span id="cb29-6"><a href="sub-figures.html#cb29-6" tabindex="-1"></a>        \caption{A koala}</span>
-<span id="cb29-7"><a href="sub-figures.html#cb29-7" tabindex="-1"></a>        \label{fig:koala1}</span>
-<span id="cb29-8"><a href="sub-figures.html#cb29-8" tabindex="-1"></a>    \end{subfigure}</span>
-<span id="cb29-9"><a href="sub-figures.html#cb29-9" tabindex="-1"></a>    \\ \vspace{5mm}</span>
-<span id="cb29-10"><a href="sub-figures.html#cb29-10" tabindex="-1"></a>    \begin{subfigure}[t]{0.6\textwidth}</span>
-<span id="cb29-11"><a href="sub-figures.html#cb29-11" tabindex="-1"></a>        \centering</span>
-<span id="cb29-12"><a href="sub-figures.html#cb29-12" tabindex="-1"></a>        \includegraphics[width=\textwidth]{koala.jpg}</span>
-<span id="cb29-13"><a href="sub-figures.html#cb29-13" tabindex="-1"></a>        \caption{Another koala}</span>
-<span id="cb29-14"><a href="sub-figures.html#cb29-14" tabindex="-1"></a>        \label{fig:koala2}</span>
-<span id="cb29-15"><a href="sub-figures.html#cb29-15" tabindex="-1"></a>    \end{subfigure}</span>
-<span id="cb29-16"><a href="sub-figures.html#cb29-16" tabindex="-1"></a>    \caption{Two koalas}</span>
-<span id="cb29-17"><a href="sub-figures.html#cb29-17" tabindex="-1"></a>    \label{fig:koalas1}</span>
-<span id="cb29-18"><a href="sub-figures.html#cb29-18" tabindex="-1"></a>\end{figure}</span></code></pre></div>
-<p>In this example, on the other hand, the subfigures are placed in a horizontal 2 by 1 layout. That’s because the subfigure environments are separated by the \hfill tag, which fills the space between them horizontally. Using \hfill maximizes the possible distance between the two subfigures, however, \hspace{} would also work if you want to specify the distance manually. Note that if you want to place several subfigures next to each other as in this example, their total width cannot exceed \textwidth. So we can place two figures with width = 0.45\textwidth or three figures with width = 0.3\textwidth in this manner, but not two figures with width = 0.6\width, as 0.6x2 = 1.2. </p>
-<p><img src="files2/part2_04_subfigures_02.png" width="50%" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb30-1"><a href="sub-figures.html#cb30-1" tabindex="-1"></a>\begin{figure}[ht!]</span>
-<span id="cb30-2"><a href="sub-figures.html#cb30-2" tabindex="-1"></a>\centering</span>
-<span id="cb30-3"><a href="sub-figures.html#cb30-3" tabindex="-1"></a>\begin{subfigure}[h]{0.4\textwidth}</span>
-<span id="cb30-4"><a href="sub-figures.html#cb30-4" tabindex="-1"></a>\centering</span>
-<span id="cb30-5"><a href="sub-figures.html#cb30-5" tabindex="-1"></a>\includegraphics[width=\textwidth]{koala.jpg}</span>
-<span id="cb30-6"><a href="sub-figures.html#cb30-6" tabindex="-1"></a>\caption{A koala}</span>
-<span id="cb30-7"><a href="sub-figures.html#cb30-7" tabindex="-1"></a>\label{fig:koala3}</span>
-<span id="cb30-8"><a href="sub-figures.html#cb30-8" tabindex="-1"></a>\end{subfigure}</span>
-<span id="cb30-9"><a href="sub-figures.html#cb30-9" tabindex="-1"></a>\hfill</span>
-<span id="cb30-10"><a href="sub-figures.html#cb30-10" tabindex="-1"></a>\begin{subfigure}[h]{0.4\textwidth}</span>
-<span id="cb30-11"><a href="sub-figures.html#cb30-11" tabindex="-1"></a>\centering</span>
-<span id="cb30-12"><a href="sub-figures.html#cb30-12" tabindex="-1"></a>\includegraphics[width=\textwidth]{koala.jpg}</span>
-<span id="cb30-13"><a href="sub-figures.html#cb30-13" tabindex="-1"></a>\caption{Another koala}</span>
-<span id="cb30-14"><a href="sub-figures.html#cb30-14" tabindex="-1"></a>\label{fig:koala4}</span>
-<span id="cb30-15"><a href="sub-figures.html#cb30-15" tabindex="-1"></a>\end{subfigure}</span>
-<span id="cb30-16"><a href="sub-figures.html#cb30-16" tabindex="-1"></a>\caption{Two koalas}</span>
-<span id="cb30-17"><a href="sub-figures.html#cb30-17" tabindex="-1"></a>\label{fig:koalas2}</span>
-<span id="cb30-18"><a href="sub-figures.html#cb30-18" tabindex="-1"></a>\end{figure}</span></code></pre></div>
-<p>This last example shows a 3 by 1 horizontal layout of subfigures.</p>
-<p><img src="files2/part2_04_subfigures_03.png" width="50%" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb31-1"><a href="sub-figures.html#cb31-1" tabindex="-1"></a>\begin{figure}[ht!]</span>
-<span id="cb31-2"><a href="sub-figures.html#cb31-2" tabindex="-1"></a>    \centering</span>
-<span id="cb31-3"><a href="sub-figures.html#cb31-3" tabindex="-1"></a>    \begin{subfigure}[b]{0.3\textwidth}</span>
-<span id="cb31-4"><a href="sub-figures.html#cb31-4" tabindex="-1"></a>        \centering</span>
-<span id="cb31-5"><a href="sub-figures.html#cb31-5" tabindex="-1"></a>        \includegraphics[width=\textwidth]{koala.jpg}</span>
-<span id="cb31-6"><a href="sub-figures.html#cb31-6" tabindex="-1"></a>        \caption{Koala}</span>
-<span id="cb31-7"><a href="sub-figures.html#cb31-7" tabindex="-1"></a>        \label{fig:koala}</span>
-<span id="cb31-8"><a href="sub-figures.html#cb31-8" tabindex="-1"></a>    \end{subfigure}</span>
-<span id="cb31-9"><a href="sub-figures.html#cb31-9" tabindex="-1"></a>    \hfill</span>
-<span id="cb31-10"><a href="sub-figures.html#cb31-10" tabindex="-1"></a>    \begin{subfigure}[b]{0.3\textwidth}</span>
-<span id="cb31-11"><a href="sub-figures.html#cb31-11" tabindex="-1"></a>        \centering</span>
-<span id="cb31-12"><a href="sub-figures.html#cb31-12" tabindex="-1"></a>        \includegraphics[width=\textwidth]{lemur.jpg}</span>
-<span id="cb31-13"><a href="sub-figures.html#cb31-13" tabindex="-1"></a>        \caption{Lemur}</span>
-<span id="cb31-14"><a href="sub-figures.html#cb31-14" tabindex="-1"></a>        \label{fig:lemur}</span>
-<span id="cb31-15"><a href="sub-figures.html#cb31-15" tabindex="-1"></a>    \end{subfigure}</span>
-<span id="cb31-16"><a href="sub-figures.html#cb31-16" tabindex="-1"></a>    \hfill</span>
-<span id="cb31-17"><a href="sub-figures.html#cb31-17" tabindex="-1"></a>    \begin{subfigure}[b]{0.3\textwidth}</span>
-<span id="cb31-18"><a href="sub-figures.html#cb31-18" tabindex="-1"></a>        \centering</span>
-<span id="cb31-19"><a href="sub-figures.html#cb31-19" tabindex="-1"></a>        \includegraphics[width=\textwidth]{sloth.jpg}</span>
-<span id="cb31-20"><a href="sub-figures.html#cb31-20" tabindex="-1"></a>        \caption{Sloth}</span>
-<span id="cb31-21"><a href="sub-figures.html#cb31-21" tabindex="-1"></a>        \label{fig:sloth}</span>
-<span id="cb31-22"><a href="sub-figures.html#cb31-22" tabindex="-1"></a>    \end{subfigure}</span>
-<span id="cb31-23"><a href="sub-figures.html#cb31-23" tabindex="-1"></a>    \caption{Three different animals}</span>
-<span id="cb31-24"><a href="sub-figures.html#cb31-24" tabindex="-1"></a>    \label{fig:animals}</span>
-<span id="cb31-25"><a href="sub-figures.html#cb31-25" tabindex="-1"></a>\end{figure}</span></code></pre></div>
+<div id="captions-flos-pet-hate" class="section level1 hasAnchor" number="20">
+<h1><span class="header-section-number">20</span> Captions (Flo’s Pet Hate)<a href="captions-flos-pet-hate.html#captions-flos-pet-hate" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Finally, every figure (and table, see next Section) <strong>must</strong><a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> include a caption to describe its content and a label, which can be referenced in the text (similarly to sections and footnotes, as discussed in previous sections). This caption must sit <strong>underneath</strong><a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> the figure (or table).</p>
+<p><img src="files2/part2_03_figures_11.png" width="50%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb32-1"><a href="captions-flos-pet-hate.html#cb32-1" tabindex="-1"></a>Some sample text. </span>
+<span id="cb32-2"><a href="captions-flos-pet-hate.html#cb32-2" tabindex="-1"></a></span>
+<span id="cb32-3"><a href="captions-flos-pet-hate.html#cb32-3" tabindex="-1"></a>\begin{figure}[h!]</span>
+<span id="cb32-4"><a href="captions-flos-pet-hate.html#cb32-4" tabindex="-1"></a>    \includegraphics[width=\textwidth]{koala.jpg}</span>
+<span id="cb32-5"><a href="captions-flos-pet-hate.html#cb32-5" tabindex="-1"></a>    \caption{This is a picture of a coala.}</span>
+<span id="cb32-6"><a href="captions-flos-pet-hate.html#cb32-6" tabindex="-1"></a>    \label{coala}</span>
+<span id="cb32-7"><a href="captions-flos-pet-hate.html#cb32-7" tabindex="-1"></a>\end{figure}    </span>
+<span id="cb32-8"><a href="captions-flos-pet-hate.html#cb32-8" tabindex="-1"></a></span>
+<span id="cb32-9"><a href="captions-flos-pet-hate.html#cb32-9" tabindex="-1"></a>Other sample text referring to Figure \ref{coala}</span></code></pre></div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Yes, I put this in bold, this is how much I care about this.<a href="captions-flos-pet-hate.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>Ditto.<a href="captions-flos-pet-hate.html#fnref2" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="float-barriers.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="captions-flos-pet-hate.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="sub-figures.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="setting-tables.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

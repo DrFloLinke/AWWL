@@ -11,6 +11,7 @@ download-and-installation
 intro-to-texstudio
 the-toolbar
 minimum-structure-for-an-article-your-first-document-in-latex
+formatting-your-document
 sections-and-subsections
 paragraphs-line-breaks-and-spaces
 line-breaks-and-page-breaks
@@ -27,14 +28,15 @@ introduction-1
 labels
 footnotes
 packages
+including-figures-pictures
 including-figures
 including-a-picture
 picture-dimensions
 floats
 float-location
-figure-captions-flos-pet-hate
 float-barriers
 sub-figures
+captions-flos-pet-hate
 setting-tables
 separation-lines
 fixed-width-of-columns
@@ -45,6 +47,7 @@ defining-new-column-types
 specifying-row-height
 the-table-floating-environment
 lists-of-figures-and-tables
+referencing-and-the-bibliography
 the-bibliography
 bib-files
 citing-bibliography-resources
