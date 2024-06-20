@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>5 Minimum Structure for an article – your first document in LaTeX | Academic Writing with LaTeX</title>
-  <meta name="description" content="5 Minimum Structure for an article – your first document in LaTeX | Academic Writing with LaTeX" />
+  <title>24 Floats | Academic Writing with LaTeX</title>
+  <meta name="description" content="24 Floats | Academic Writing with LaTeX" />
   <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="5 Minimum Structure for an article – your first document in LaTeX | Academic Writing with LaTeX" />
+  <meta property="og:title" content="24 Floats | Academic Writing with LaTeX" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="5 Minimum Structure for an article – your first document in LaTeX | Academic Writing with LaTeX" />
+  <meta name="twitter:title" content="24 Floats | Academic Writing with LaTeX" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="intro-to-texstudio.html"/>
-<link rel="next" href="sections-and-subsections.html"/>
+<link rel="prev" href="including-a-picture.html"/>
+<link rel="next" href="figure-captions-flos-pet-hate.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -260,25 +260,76 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="minimum-structure-for-an-article-your-first-document-in-latex" class="section level1 hasAnchor" number="5">
-<h1><span class="header-section-number">5</span> Minimum Structure for an article – your first document in LaTeX<a href="minimum-structure-for-an-article-your-first-document-in-latex.html#minimum-structure-for-an-article-your-first-document-in-latex" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>To create a new document you need to open the .tex editor and type three simple markup tags, as shown below.</p>
-<p><img src="files/minimum-structure-screenshot.PNG" width="70%" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb1-1"><a href="minimum-structure-for-an-article-your-first-document-in-latex.html#cb1-1" tabindex="-1"></a>\documentclass{article}</span>
-<span id="cb1-2"><a href="minimum-structure-for-an-article-your-first-document-in-latex.html#cb1-2" tabindex="-1"></a>\begin{document}</span>
-<span id="cb1-3"><a href="minimum-structure-for-an-article-your-first-document-in-latex.html#cb1-3" tabindex="-1"></a>Hello world! This is my first document written in LaTeX!</span>
-<span id="cb1-4"><a href="minimum-structure-for-an-article-your-first-document-in-latex.html#cb1-4" tabindex="-1"></a>\end{document}</span></code></pre></div>
-<p>The first one, \documentclass{article} tells the LaTeX compiler that the document you are about to start is of the class ‘article’ – one of the many built-in document classes LaTeX has. For the purpose of introduction, we will focus on the article class. Other classes that can be used will be discussed towards the end of the course. Defining the class is necessary to create a LaTeX document, so always remember to do so in the first line of your .tex file! Typing anything before that will result in LaTeX producing an error when compiling and your document won’t be created. The class entails some default document parameters such as font, margins, paragraph spacings or page size. However, these can be changed for each document if desired – you’ll learn about that later.</p>
-<p>The second one \begin{document} tells LaTeX that everything from this point is the content of the document. Everything entered before that tag – including the \documentclass{article} tag – is known as the preamble of the document – it is there where all the properties of the document are declared – these include parameters such as margins or page size, or special packages used for different purposes. You will learn about some of them very soon. The preamble can contain only LaTeX markup tags and commands. Typing plain text in the preamble will result in LaTeX compiler error and your document will not be created.</p>
-<p>Finally, \end{document} indicates the ending of the content of the document – anything typed after that tag won’t be included in the document. Anything after that tag won’t appear in the document. Remember to always put \begin{document} before you start typing anything and \end{document} at the end. Otherwise your content won’t be compiled and won’t appear in the final .pdf file. Later you will see, that such \begin … \end structure is common for LaTeX and used to declare the boundaries of other text structures (or environment, as they are called in the LaTeX jargon), such as tables, bullet-point lists or figures.</p>
+<div id="floats" class="section level1 hasAnchor" number="24">
+<h1><span class="header-section-number">24</span> Floats<a href="floats.html#floats" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>As discussed before, whenever the text you are setting in the .tex file runs beyond the limit of the current page, it’s simply continued in the next page, similarly to what would happen in Word or Pages. Such rule cannot be applied to figures and tables, which need to appear entirely on one page – this is the rationale for using float objects in LaTeX. Floats is the name for a special category of objects in LaTeX, namely those that, unlike text, cannot be split between two pages. Those objects are figures and tables. Whenever you enter a floating environment in LaTeX, you follow it by square brackets, in which you specify the default position it should appear on a new page. You will see the example of this in the next section, applied to figure positioning.</p>
+<p>The idea of floats results in a minor, yet very important distinction in LaTeX when it comes to starting a new page. As mentioned earlier in this course, both \newpage and \clearpage can be used to create a new page. However, in the situation when there’s some float pending to be printed on the next page, \clearpage will result in a separate page(s) in which all the queued floats will be inserted, and a new separate page for text will be inserted. When \newpage is used, on the other hand, it will simply create a new page, even if there’s a float on it. The difference can be seen when typesetting the two variants below:</p>
+<p><img src="files2/part2_03_figures_07_floats_newpage-combined.png" width="50%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb22-1"><a href="floats.html#cb22-1" tabindex="-1"></a>Some text \vspace{10cm}</span>
+<span id="cb22-2"><a href="floats.html#cb22-2" tabindex="-1"></a></span>
+<span id="cb22-3"><a href="floats.html#cb22-3" tabindex="-1"></a>Some other text \vspace{5cm}</span>
+<span id="cb22-4"><a href="floats.html#cb22-4" tabindex="-1"></a></span>
+<span id="cb22-5"><a href="floats.html#cb22-5" tabindex="-1"></a>\begin{figure}</span>
+<span id="cb22-6"><a href="floats.html#cb22-6" tabindex="-1"></a>    \centering</span>
+<span id="cb22-7"><a href="floats.html#cb22-7" tabindex="-1"></a>    \includegraphics[width = 0.8\textwidth]{koala.jpg}</span>
+<span id="cb22-8"><a href="floats.html#cb22-8" tabindex="-1"></a>    \caption{This is a picture of coala.}</span>
+<span id="cb22-9"><a href="floats.html#cb22-9" tabindex="-1"></a>    \label{coala}</span>
+<span id="cb22-10"><a href="floats.html#cb22-10" tabindex="-1"></a>\end{figure}</span>
+<span id="cb22-11"><a href="floats.html#cb22-11" tabindex="-1"></a></span>
+<span id="cb22-12"><a href="floats.html#cb22-12" tabindex="-1"></a>\newpage</span>
+<span id="cb22-13"><a href="floats.html#cb22-13" tabindex="-1"></a></span>
+<span id="cb22-14"><a href="floats.html#cb22-14" tabindex="-1"></a>This is some more text.</span></code></pre></div>
+<p><img src="files2/part2_03_figures_07_floats_clearpage-combined.png" width="50%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb23-1"><a href="floats.html#cb23-1" tabindex="-1"></a>Some text \vspace{10cm}</span>
+<span id="cb23-2"><a href="floats.html#cb23-2" tabindex="-1"></a></span>
+<span id="cb23-3"><a href="floats.html#cb23-3" tabindex="-1"></a>Some other text \vspace{5cm}</span>
+<span id="cb23-4"><a href="floats.html#cb23-4" tabindex="-1"></a></span>
+<span id="cb23-5"><a href="floats.html#cb23-5" tabindex="-1"></a>\begin{figure}</span>
+<span id="cb23-6"><a href="floats.html#cb23-6" tabindex="-1"></a>    \centering</span>
+<span id="cb23-7"><a href="floats.html#cb23-7" tabindex="-1"></a>    \includegraphics[width = 0.8\textwidth]{koala.jpg}</span>
+<span id="cb23-8"><a href="floats.html#cb23-8" tabindex="-1"></a>    \caption{This is a picture of coala.}</span>
+<span id="cb23-9"><a href="floats.html#cb23-9" tabindex="-1"></a>    \label{coala}</span>
+<span id="cb23-10"><a href="floats.html#cb23-10" tabindex="-1"></a>\end{figure}</span>
+<span id="cb23-11"><a href="floats.html#cb23-11" tabindex="-1"></a></span>
+<span id="cb23-12"><a href="floats.html#cb23-12" tabindex="-1"></a>\clearpage</span>
+<span id="cb23-13"><a href="floats.html#cb23-13" tabindex="-1"></a></span>
+<span id="cb23-14"><a href="floats.html#cb23-14" tabindex="-1"></a>This is some more text.</span></code></pre></div>
+<div id="float-location" class="section level2 hasAnchor" number="24.1">
+<h2><span class="header-section-number">24.1</span> Float Location<a href="floats.html#float-location" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Figure is an example of one of the two float objects in LaTeX. You can use square brackets to choose the figure’s location on the page. Depending on the letter – h, t, b we can select the figure to be placed here, at the top of the page or at its bottom. However, note that LaTeX has some built-in parameters to determine what a ‘good’ positioning of a float object is. You may use the ‘!’ with your placement specification to force LaTeX to override its default parameters and rely on your suggestion instead.</p>
+<p><img src="files2/part2_03_figures_08.png" width="50%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb24-1"><a href="floats.html#cb24-1" tabindex="-1"></a>Some sample text. </span>
+<span id="cb24-2"><a href="floats.html#cb24-2" tabindex="-1"></a></span>
+<span id="cb24-3"><a href="floats.html#cb24-3" tabindex="-1"></a>\begin{figure}[h!]</span>
+<span id="cb24-4"><a href="floats.html#cb24-4" tabindex="-1"></a>    \includegraphics[width=\textwidth]{koala.jpg}</span>
+<span id="cb24-5"><a href="floats.html#cb24-5" tabindex="-1"></a>\end{figure}    </span>
+<span id="cb24-6"><a href="floats.html#cb24-6" tabindex="-1"></a></span>
+<span id="cb24-7"><a href="floats.html#cb24-7" tabindex="-1"></a>Other sample text.</span></code></pre></div>
+<p><img src="files2/part2_03_figures_09.png" width="50%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb25-1"><a href="floats.html#cb25-1" tabindex="-1"></a>Some sample text. </span>
+<span id="cb25-2"><a href="floats.html#cb25-2" tabindex="-1"></a></span>
+<span id="cb25-3"><a href="floats.html#cb25-3" tabindex="-1"></a>\begin{figure}[t!]</span>
+<span id="cb25-4"><a href="floats.html#cb25-4" tabindex="-1"></a>    \includegraphics[width=\textwidth]{koala.jpg}</span>
+<span id="cb25-5"><a href="floats.html#cb25-5" tabindex="-1"></a>\end{figure}    </span>
+<span id="cb25-6"><a href="floats.html#cb25-6" tabindex="-1"></a></span>
+<span id="cb25-7"><a href="floats.html#cb25-7" tabindex="-1"></a>Other sample text.</span></code></pre></div>
+<p><img src="files2/part2_03_figures_10.png" width="50%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb26-1"><a href="floats.html#cb26-1" tabindex="-1"></a>Some sample text. </span>
+<span id="cb26-2"><a href="floats.html#cb26-2" tabindex="-1"></a></span>
+<span id="cb26-3"><a href="floats.html#cb26-3" tabindex="-1"></a>\begin{figure}[b!]</span>
+<span id="cb26-4"><a href="floats.html#cb26-4" tabindex="-1"></a>    \includegraphics[width=\textwidth]{koala.jpg}</span>
+<span id="cb26-5"><a href="floats.html#cb26-5" tabindex="-1"></a>\end{figure}    </span>
+<span id="cb26-6"><a href="floats.html#cb26-6" tabindex="-1"></a></span>
+<span id="cb26-7"><a href="floats.html#cb26-7" tabindex="-1"></a>Other sample text.</span></code></pre></div>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="intro-to-texstudio.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="sections-and-subsections.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="including-a-picture.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="figure-captions-flos-pet-hate.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

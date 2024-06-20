@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>5 Minimum Structure for an article – your first document in LaTeX | Academic Writing with LaTeX</title>
-  <meta name="description" content="5 Minimum Structure for an article – your first document in LaTeX | Academic Writing with LaTeX" />
+  <title>19 Labels | Academic Writing with LaTeX</title>
+  <meta name="description" content="19 Labels | Academic Writing with LaTeX" />
   <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="5 Minimum Structure for an article – your first document in LaTeX | Academic Writing with LaTeX" />
+  <meta property="og:title" content="19 Labels | Academic Writing with LaTeX" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="5 Minimum Structure for an article – your first document in LaTeX | Academic Writing with LaTeX" />
+  <meta name="twitter:title" content="19 Labels | Academic Writing with LaTeX" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="intro-to-texstudio.html"/>
-<link rel="next" href="sections-and-subsections.html"/>
+<link rel="prev" href="introduction-1.html"/>
+<link rel="next" href="footnotes.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -260,25 +260,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="minimum-structure-for-an-article-your-first-document-in-latex" class="section level1 hasAnchor" number="5">
-<h1><span class="header-section-number">5</span> Minimum Structure for an article – your first document in LaTeX<a href="minimum-structure-for-an-article-your-first-document-in-latex.html#minimum-structure-for-an-article-your-first-document-in-latex" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>To create a new document you need to open the .tex editor and type three simple markup tags, as shown below.</p>
-<p><img src="files/minimum-structure-screenshot.PNG" width="70%" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb1-1"><a href="minimum-structure-for-an-article-your-first-document-in-latex.html#cb1-1" tabindex="-1"></a>\documentclass{article}</span>
-<span id="cb1-2"><a href="minimum-structure-for-an-article-your-first-document-in-latex.html#cb1-2" tabindex="-1"></a>\begin{document}</span>
-<span id="cb1-3"><a href="minimum-structure-for-an-article-your-first-document-in-latex.html#cb1-3" tabindex="-1"></a>Hello world! This is my first document written in LaTeX!</span>
-<span id="cb1-4"><a href="minimum-structure-for-an-article-your-first-document-in-latex.html#cb1-4" tabindex="-1"></a>\end{document}</span></code></pre></div>
-<p>The first one, \documentclass{article} tells the LaTeX compiler that the document you are about to start is of the class ‘article’ – one of the many built-in document classes LaTeX has. For the purpose of introduction, we will focus on the article class. Other classes that can be used will be discussed towards the end of the course. Defining the class is necessary to create a LaTeX document, so always remember to do so in the first line of your .tex file! Typing anything before that will result in LaTeX producing an error when compiling and your document won’t be created. The class entails some default document parameters such as font, margins, paragraph spacings or page size. However, these can be changed for each document if desired – you’ll learn about that later.</p>
-<p>The second one \begin{document} tells LaTeX that everything from this point is the content of the document. Everything entered before that tag – including the \documentclass{article} tag – is known as the preamble of the document – it is there where all the properties of the document are declared – these include parameters such as margins or page size, or special packages used for different purposes. You will learn about some of them very soon. The preamble can contain only LaTeX markup tags and commands. Typing plain text in the preamble will result in LaTeX compiler error and your document will not be created.</p>
-<p>Finally, \end{document} indicates the ending of the content of the document – anything typed after that tag won’t be included in the document. Anything after that tag won’t appear in the document. Remember to always put \begin{document} before you start typing anything and \end{document} at the end. Otherwise your content won’t be compiled and won’t appear in the final .pdf file. Later you will see, that such \begin … \end structure is common for LaTeX and used to declare the boundaries of other text structures (or environment, as they are called in the LaTeX jargon), such as tables, bullet-point lists or figures.</p>
+<div id="labels" class="section level1 hasAnchor" number="19">
+<h1><span class="header-section-number">19</span> Labels<a href="labels.html#labels" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>LaTeX allows you to label different environments using the \label{} tag and then later reference them in any part of your document using \ref{}. In the example, you can see how to label and reference sections and subsections. Objects that can be labelled include paragraphs, figures, footnotes, tables and many others. You can use any word you want for each label, as long as every time you use a unique label. It’s a good practice, to keep your labels short and related to the object you are labelling – that way, you can remember them more easily once you need to reference them later in your document. The example presents a good practice of labelling objects first with the abbreviation for their type (e.g. sec for section, tab for table or fig for figure), followed by a colon and then by a short label of the particular object. It’s a common practice to do it like this, however, feel free to come up with a labelling scheme of your own. The numbering for each object is automatic, so you don’t have to worry about remembering which paragraph or figure number you want to reference – LaTeX will update the number for you if you swap their order.</p>
+<p><img src="files2/labels-screenshot.png" width="50%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb13-1"><a href="labels.html#cb13-1" tabindex="-1"></a>\begin{document}</span>
+<span id="cb13-2"><a href="labels.html#cb13-2" tabindex="-1"></a>\section{First}{\label{sec:sec1}}</span>
+<span id="cb13-3"><a href="labels.html#cb13-3" tabindex="-1"></a>\subsection{Sub-first}{\label{sec:subsec1}}</span>
+<span id="cb13-4"><a href="labels.html#cb13-4" tabindex="-1"></a>\section{Second}</span>
+<span id="cb13-5"><a href="labels.html#cb13-5" tabindex="-1"></a>In here I want to reference section \ref{sec:sec1} and then subsection \ref{sec:subsec1}.</span>
+<span id="cb13-6"><a href="labels.html#cb13-6" tabindex="-1"></a>\end{document}</span></code></pre></div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="intro-to-texstudio.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="sections-and-subsections.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="introduction-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="footnotes.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>5 Minimum Structure for an article – your first document in LaTeX | Academic Writing with LaTeX</title>
-  <meta name="description" content="5 Minimum Structure for an article – your first document in LaTeX | Academic Writing with LaTeX" />
+  <title>31 The Bibliography | Academic Writing with LaTeX</title>
+  <meta name="description" content="31 The Bibliography | Academic Writing with LaTeX" />
   <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="5 Minimum Structure for an article – your first document in LaTeX | Academic Writing with LaTeX" />
+  <meta property="og:title" content="31 The Bibliography | Academic Writing with LaTeX" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="5 Minimum Structure for an article – your first document in LaTeX | Academic Writing with LaTeX" />
+  <meta name="twitter:title" content="31 The Bibliography | Academic Writing with LaTeX" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="intro-to-texstudio.html"/>
-<link rel="next" href="sections-and-subsections.html"/>
+<link rel="prev" href="lists-of-figures-and-tables.html"/>
+<link rel="next" href="citing-bibliography-resources.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -260,25 +260,54 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="minimum-structure-for-an-article-your-first-document-in-latex" class="section level1 hasAnchor" number="5">
-<h1><span class="header-section-number">5</span> Minimum Structure for an article – your first document in LaTeX<a href="minimum-structure-for-an-article-your-first-document-in-latex.html#minimum-structure-for-an-article-your-first-document-in-latex" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>To create a new document you need to open the .tex editor and type three simple markup tags, as shown below.</p>
-<p><img src="files/minimum-structure-screenshot.PNG" width="70%" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb1-1"><a href="minimum-structure-for-an-article-your-first-document-in-latex.html#cb1-1" tabindex="-1"></a>\documentclass{article}</span>
-<span id="cb1-2"><a href="minimum-structure-for-an-article-your-first-document-in-latex.html#cb1-2" tabindex="-1"></a>\begin{document}</span>
-<span id="cb1-3"><a href="minimum-structure-for-an-article-your-first-document-in-latex.html#cb1-3" tabindex="-1"></a>Hello world! This is my first document written in LaTeX!</span>
-<span id="cb1-4"><a href="minimum-structure-for-an-article-your-first-document-in-latex.html#cb1-4" tabindex="-1"></a>\end{document}</span></code></pre></div>
-<p>The first one, \documentclass{article} tells the LaTeX compiler that the document you are about to start is of the class ‘article’ – one of the many built-in document classes LaTeX has. For the purpose of introduction, we will focus on the article class. Other classes that can be used will be discussed towards the end of the course. Defining the class is necessary to create a LaTeX document, so always remember to do so in the first line of your .tex file! Typing anything before that will result in LaTeX producing an error when compiling and your document won’t be created. The class entails some default document parameters such as font, margins, paragraph spacings or page size. However, these can be changed for each document if desired – you’ll learn about that later.</p>
-<p>The second one \begin{document} tells LaTeX that everything from this point is the content of the document. Everything entered before that tag – including the \documentclass{article} tag – is known as the preamble of the document – it is there where all the properties of the document are declared – these include parameters such as margins or page size, or special packages used for different purposes. You will learn about some of them very soon. The preamble can contain only LaTeX markup tags and commands. Typing plain text in the preamble will result in LaTeX compiler error and your document will not be created.</p>
-<p>Finally, \end{document} indicates the ending of the content of the document – anything typed after that tag won’t be included in the document. Anything after that tag won’t appear in the document. Remember to always put \begin{document} before you start typing anything and \end{document} at the end. Otherwise your content won’t be compiled and won’t appear in the final .pdf file. Later you will see, that such \begin … \end structure is common for LaTeX and used to declare the boundaries of other text structures (or environment, as they are called in the LaTeX jargon), such as tables, bullet-point lists or figures.</p>
+<div id="the-bibliography" class="section level1 hasAnchor" number="31">
+<h1><span class="header-section-number">31</span> The Bibliography<a href="the-bibliography.html#the-bibliography" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="bib-files" class="section level2 hasAnchor" number="31.1">
+<h2><span class="header-section-number">31.1</span> .bib files<a href="the-bibliography.html#bib-files" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Similarly to other text editors, LaTeX allows you to create a bibliography list, which can later be referenced. To store the bibliography, LaTeX uses a separate file with extension ‘.bib’. You can create them and edit them using TexStudio, just as you would for a normal .tex file. Note that it is best to save your bibliography file in the same folder as the .tex file in which you want to include the bibliography. After a file is created, you simply use one line of LaTeX code and a reference section will appear at the end with all resources you have cited. Note that if a resource is cited</p>
+<p>Within the .bib file, each bibliography entry has a specified structure, which allows you to specify the type of the bibliography resource, the label you assign to it, its author, year of publication and many others. The first example shows a BiBTeX bibliography entry for a journal article. Each entry begins with ‘@’, followed by the predefined BibTeX resource types (in this case, ‘article’). After that, a set of curly braces is opened – between them, you define the property of your bibliography resource. First a tag (in this case bartels2002) – this is a keyword you will use to cite the resource in your text, much like figure and table labels discussed earlier. You can tag each bibliography entry however you want, however it is good to stick to a coherent and clear naming convention, especially if you are planning to include many bibliography entries in your work. Following that are different attributes of your resource separated by commas. The value for each attribute is provided in curly braces after an “=” character.</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb48-1"><a href="the-bibliography.html#cb48-1" tabindex="-1"></a>@article{bartels2002,</span>
+<span id="cb48-2"><a href="the-bibliography.html#cb48-2" tabindex="-1"></a>    author = {Larry M. Bartels},</span>
+<span id="cb48-3"><a href="the-bibliography.html#cb48-3" tabindex="-1"></a>    title       = {Beyond Running Tally: Partisan Bias in Political Perceptions},</span>
+<span id="cb48-4"><a href="the-bibliography.html#cb48-4" tabindex="-1"></a>    journal     = {Political Behavior},</span>
+<span id="cb48-5"><a href="the-bibliography.html#cb48-5" tabindex="-1"></a>    volume      = {24},</span>
+<span id="cb48-6"><a href="the-bibliography.html#cb48-6" tabindex="-1"></a>    number      = {10},</span>
+<span id="cb48-7"><a href="the-bibliography.html#cb48-7" tabindex="-1"></a>    pages       = {117-150},</span>
+<span id="cb48-8"><a href="the-bibliography.html#cb48-8" tabindex="-1"></a>    year        = {2002},</span>
+<span id="cb48-9"><a href="the-bibliography.html#cb48-9" tabindex="-1"></a>    month       = {6},</span>
+<span id="cb48-10"><a href="the-bibliography.html#cb48-10" tabindex="-1"></a>    DOI         = {https://doi.org/10.1023/A:1021226224601}}</span></code></pre></div>
+<p>The examples below show the structure of other different resources – a book, a section in a collection (such as Oxford or Routledge Handbooks) and a miscellaneous object (such as a data set). In the examples, each entry is tagged by the author’s name followed by the year of publication. Note that many attributes are optional in most resource types and it’s up to you how detailed do you want to make the specification of each resource. More importantly, some of these are specific to a particular resource type (for example (‘booktitle’ will be meaningful for the <span class="citation">@incollection</span> resource type, but not for <span class="citation">@article</span>). </p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb49-1"><a href="the-bibliography.html#cb49-1" tabindex="-1"></a>@book{popper1934,</span>
+<span id="cb49-2"><a href="the-bibliography.html#cb49-2" tabindex="-1"></a>    author      = {Karl R. Popper},</span>
+<span id="cb49-3"><a href="the-bibliography.html#cb49-3" tabindex="-1"></a>    title       = {The Logic of Scientific Discovery},</span>
+<span id="cb49-4"><a href="the-bibliography.html#cb49-4" tabindex="-1"></a>    year        =  {1934},</span>
+<span id="cb49-5"><a href="the-bibliography.html#cb49-5" tabindex="-1"></a>    publisher   = {Routledge}}</span>
+<span id="cb49-6"><a href="the-bibliography.html#cb49-6" tabindex="-1"></a></span>
+<span id="cb49-7"><a href="the-bibliography.html#cb49-7" tabindex="-1"></a>@incollection{bollen2008,</span>
+<span id="cb49-8"><a href="the-bibliography.html#cb49-8" tabindex="-1"></a>    author      = {Kenneth A. Bollen and Sophia Rabe‐Hesketh and Anders Skrondal},</span>
+<span id="cb49-9"><a href="the-bibliography.html#cb49-9" tabindex="-1"></a>    title       = {Structural Equation Models},</span>
+<span id="cb49-10"><a href="the-bibliography.html#cb49-10" tabindex="-1"></a>    booktitle   = {The Oxford Handbook of Political Methodology},</span>
+<span id="cb49-11"><a href="the-bibliography.html#cb49-11" tabindex="-1"></a>    year        =  {2008},</span>
+<span id="cb49-12"><a href="the-bibliography.html#cb49-12" tabindex="-1"></a>    editor      = {Janet M. Box-Steffensmeier and Henry E. Brady and David Collier},</span>
+<span id="cb49-13"><a href="the-bibliography.html#cb49-13" tabindex="-1"></a>    publisher   = {Oxford University Press}}</span>
+<span id="cb49-14"><a href="the-bibliography.html#cb49-14" tabindex="-1"></a></span>
+<span id="cb49-15"><a href="the-bibliography.html#cb49-15" tabindex="-1"></a>@misc{worldbank2019,</span>
+<span id="cb49-16"><a href="the-bibliography.html#cb49-16" tabindex="-1"></a>    author       = {{The World Bank Group}}, </span>
+<span id="cb49-17"><a href="the-bibliography.html#cb49-17" tabindex="-1"></a>    title        = {{World Development Indicators}},</span>
+<span id="cb49-18"><a href="the-bibliography.html#cb49-18" tabindex="-1"></a>    url          = {https://datacatalog.worldbank.org/dataset/world-development-indicators},</span>
+<span id="cb49-19"><a href="the-bibliography.html#cb49-19" tabindex="-1"></a>    month        = {10},</span>
+<span id="cb49-20"><a href="the-bibliography.html#cb49-20" tabindex="-1"></a>    year         = {2019}}</span></code></pre></div>
+<p>In the last example, {{The World Bank Group}} is placed in double curly braces. That is to specify that it is an organization (aka corporate author) rather than an individual that authored the resource, and that the order of the world in the name should be maintained when citing (the in-text citation should take the form of The World Bank Group, 2019 as opposed to Group, 2019 which would happen without the second set curly braces, as LaTeX would treat “World Bank Group” as a name of an individual same as “Larry M Bartels”, and therefore would use only the last word in the name, assuming it’s the surname).</p>
+<p>The title of the dataset is also placed in double curly braces – that is because, by default, LaTeX makes only the first word in the resource title capitalized and the following words begin with a small letter. If you want to preserve the capitalization of any word in your title, put it in an additional set of curly braces. So title = {World Development Indicators} would yield World development indicators in the bibliography section, while title = {{World Development Indicators}} would result in World Development Indicators.</p>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="intro-to-texstudio.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="sections-and-subsections.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="lists-of-figures-and-tables.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="citing-bibliography-resources.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

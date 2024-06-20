@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>5 Minimum Structure for an article – your first document in LaTeX | Academic Writing with LaTeX</title>
-  <meta name="description" content="5 Minimum Structure for an article – your first document in LaTeX | Academic Writing with LaTeX" />
+  <title>25 Figure Captions (Flo’s Pet Hate) | Academic Writing with LaTeX</title>
+  <meta name="description" content="25 Figure Captions (Flo’s Pet Hate) | Academic Writing with LaTeX" />
   <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="5 Minimum Structure for an article – your first document in LaTeX | Academic Writing with LaTeX" />
+  <meta property="og:title" content="25 Figure Captions (Flo’s Pet Hate) | Academic Writing with LaTeX" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="5 Minimum Structure for an article – your first document in LaTeX | Academic Writing with LaTeX" />
+  <meta name="twitter:title" content="25 Figure Captions (Flo’s Pet Hate) | Academic Writing with LaTeX" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="intro-to-texstudio.html"/>
-<link rel="next" href="sections-and-subsections.html"/>
+<link rel="prev" href="floats.html"/>
+<link rel="next" href="float-barriers.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -260,25 +260,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="minimum-structure-for-an-article-your-first-document-in-latex" class="section level1 hasAnchor" number="5">
-<h1><span class="header-section-number">5</span> Minimum Structure for an article – your first document in LaTeX<a href="minimum-structure-for-an-article-your-first-document-in-latex.html#minimum-structure-for-an-article-your-first-document-in-latex" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>To create a new document you need to open the .tex editor and type three simple markup tags, as shown below.</p>
-<p><img src="files/minimum-structure-screenshot.PNG" width="70%" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb1-1"><a href="minimum-structure-for-an-article-your-first-document-in-latex.html#cb1-1" tabindex="-1"></a>\documentclass{article}</span>
-<span id="cb1-2"><a href="minimum-structure-for-an-article-your-first-document-in-latex.html#cb1-2" tabindex="-1"></a>\begin{document}</span>
-<span id="cb1-3"><a href="minimum-structure-for-an-article-your-first-document-in-latex.html#cb1-3" tabindex="-1"></a>Hello world! This is my first document written in LaTeX!</span>
-<span id="cb1-4"><a href="minimum-structure-for-an-article-your-first-document-in-latex.html#cb1-4" tabindex="-1"></a>\end{document}</span></code></pre></div>
-<p>The first one, \documentclass{article} tells the LaTeX compiler that the document you are about to start is of the class ‘article’ – one of the many built-in document classes LaTeX has. For the purpose of introduction, we will focus on the article class. Other classes that can be used will be discussed towards the end of the course. Defining the class is necessary to create a LaTeX document, so always remember to do so in the first line of your .tex file! Typing anything before that will result in LaTeX producing an error when compiling and your document won’t be created. The class entails some default document parameters such as font, margins, paragraph spacings or page size. However, these can be changed for each document if desired – you’ll learn about that later.</p>
-<p>The second one \begin{document} tells LaTeX that everything from this point is the content of the document. Everything entered before that tag – including the \documentclass{article} tag – is known as the preamble of the document – it is there where all the properties of the document are declared – these include parameters such as margins or page size, or special packages used for different purposes. You will learn about some of them very soon. The preamble can contain only LaTeX markup tags and commands. Typing plain text in the preamble will result in LaTeX compiler error and your document will not be created.</p>
-<p>Finally, \end{document} indicates the ending of the content of the document – anything typed after that tag won’t be included in the document. Anything after that tag won’t appear in the document. Remember to always put \begin{document} before you start typing anything and \end{document} at the end. Otherwise your content won’t be compiled and won’t appear in the final .pdf file. Later you will see, that such \begin … \end structure is common for LaTeX and used to declare the boundaries of other text structures (or environment, as they are called in the LaTeX jargon), such as tables, bullet-point lists or figures.</p>
+<div id="figure-captions-flos-pet-hate" class="section level1 hasAnchor" number="25">
+<h1><span class="header-section-number">25</span> Figure Captions (Flo’s Pet Hate)<a href="figure-captions-flos-pet-hate.html#figure-captions-flos-pet-hate" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Finally, every figure <strong>must</strong><a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> include a caption to describe its content and a label, which can be referenced in the text (similarly to sections and footnotes, as discussed in previous sections). This caption must sit <strong>underneath</strong><a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> the figure (or table).</p>
+<p><img src="files2/part2_03_figures_11.png" width="50%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb27-1"><a href="figure-captions-flos-pet-hate.html#cb27-1" tabindex="-1"></a>Some sample text. </span>
+<span id="cb27-2"><a href="figure-captions-flos-pet-hate.html#cb27-2" tabindex="-1"></a></span>
+<span id="cb27-3"><a href="figure-captions-flos-pet-hate.html#cb27-3" tabindex="-1"></a>\begin{figure}[h!]</span>
+<span id="cb27-4"><a href="figure-captions-flos-pet-hate.html#cb27-4" tabindex="-1"></a>    \includegraphics[width=\textwidth]{koala.jpg}</span>
+<span id="cb27-5"><a href="figure-captions-flos-pet-hate.html#cb27-5" tabindex="-1"></a>    \caption{This is a picture of a coala.}</span>
+<span id="cb27-6"><a href="figure-captions-flos-pet-hate.html#cb27-6" tabindex="-1"></a>    \label{coala}</span>
+<span id="cb27-7"><a href="figure-captions-flos-pet-hate.html#cb27-7" tabindex="-1"></a>\end{figure}    </span>
+<span id="cb27-8"><a href="figure-captions-flos-pet-hate.html#cb27-8" tabindex="-1"></a></span>
+<span id="cb27-9"><a href="figure-captions-flos-pet-hate.html#cb27-9" tabindex="-1"></a>Other sample text referring to Figure \ref{coala}</span></code></pre></div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Yes, I put this in bold, this is how much I care about this.<a href="figure-captions-flos-pet-hate.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>Ditto.<a href="figure-captions-flos-pet-hate.html#fnref2" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="intro-to-texstudio.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="sections-and-subsections.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="floats.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="float-barriers.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
