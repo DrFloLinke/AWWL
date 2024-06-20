@@ -280,7 +280,50 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb79-6"><a href="tips-tricks.html#cb79-6" tabindex="-1"></a>\lipsum[10-15]</span>
 <span id="cb79-7"><a href="tips-tricks.html#cb79-7" tabindex="-1"></a>\end{document}</span></code></pre></div>
 <p>These two are equivalent.</p>
-<p>The list of some basic parameters is shown in Table <span class="math inline">\(\ref{tbl:geometry}\)</span>. Each of them can be set using <a href="en.wikibooks.org/wiki/LaTeX/Lengths">different LaTeX length units</a> such as cm or in. The total size of the page is divided into the text body and margins, which have separate parameters – this is shown in Figure adopted from the <a href="ftp.cvut.cz/tex-archive/macros/latex/coantrib/geometry/geometry.pdf">geometry package documentation</a>, which discusses the intricacies of different parameters at length.</p>
+<p>The list of some basic parameters is shown in Table <a href="tips-tricks.html#tab:foo4">37.1</a>. Each of them can be set using <a href="en.wikibooks.org/wiki/LaTeX/Lengths">different LaTeX length units</a> such as cm or in. The total size of the page is divided into the text body and margins, which have separate parameters – this is shown in Figure adopted from the <a href="ftp.cvut.cz/tex-archive/macros/latex/coantrib/geometry/geometry.pdf">geometry package documentation</a>, which discusses the intricacies of different parameters at length.</p>
+<table>
+<caption><span id="tab:foo4">Table 37.1: </span> Geometry Options</caption>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>textwidth and textheight</td>
+<td>Width/height of the body</td>
+</tr>
+<tr class="even">
+<td>width and height</td>
+<td>By default, the same as textwidth and textheight. If includehead = true, includefoot = true or includemp = true, they include header, footer and margin sizes respectively.</td>
+</tr>
+<tr class="odd">
+<td>top, bottom, left, right</td>
+<td>Size of specific margins</td>
+</tr>
+<tr class="even">
+<td>margin</td>
+<td>Size of all margins</td>
+</tr>
+<tr class="odd">
+<td>headheight</td>
+<td>Height of the header</td>
+</tr>
+<tr class="even">
+<td>footsep</td>
+<td>Spacing between the top of the footnote and the bottom of the text</td>
+</tr>
+<tr class="odd">
+<td>footskip</td>
+<td>Distance between the bottom of the text and the bottom of the footnote \</td>
+</tr>
+</tbody>
+</table>
 <p><img src="files3/page-dimensions.png" width="100%" style="display: block; margin: auto;" /></p>
 <p>You can also change page dimensions mid-document, using the \newgeometry{options} command in your document with the options listed above. Then, using \restoregeometry will restore the parameters of all pages set after \newpage or \clearpage to those set in the preamble. This is demonstrated in the example.</p>
 <div class="sourceCode" id="cb80"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb80-1"><a href="tips-tricks.html#cb80-1" tabindex="-1"></a>\documentclass{article}</span>
@@ -350,7 +393,42 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">37.3</span> Shortcuts and Special Escapes<a href="tips-tricks.html#shortcuts-and-special-escapes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="shortcuts" class="section level3 hasAnchor" number="37.3.1">
 <h3><span class="header-section-number">37.3.1</span> Shortcuts<a href="tips-tricks.html#shortcuts" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Texstudio also comes with multiple keyboard shortcuts which make preparing documents in LaTeX slightly faster. Some of the most useful shortcuts are listed in Table <span class="math inline">\(\ref{tbl:texstudio}\)</span>. </p>
+<p>Texstudio also comes with multiple keyboard shortcuts which make preparing documents in LaTeX slightly faster. Some of the most useful shortcuts are listed in Table <a href="tips-tricks.html#tab:foo5">37.2</a>. </p>
+<table>
+<caption><span id="tab:foo5">Table 37.2: </span> TexStudio Shortcuts</caption>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Shortcut</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Ctrl/cmd + I</td>
+<td>Italics, i.e. <span class="math inline">\(\backslash\)</span>textit</td>
+</tr>
+<tr class="even">
+<td>Ctrl/cmd + B</td>
+<td>Bold, i.e. <span class="math inline">\(\backslash\)</span>textbf</td>
+</tr>
+<tr class="odd">
+<td>Ctrl/cmd + Return</td>
+<td>Newline <span class="math inline">\(\backslash\)</span><span class="math inline">\(\backslash\)</span></td>
+</tr>
+<tr class="even">
+<td>Ctrl/cmd + Shift + I</td>
+<td>New <span class="math inline">\(\backslash\)</span>item in itemize environment</td>
+</tr>
+<tr class="odd">
+<td>Ctrl/cmd + E</td>
+<td>New empty environmnent</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="special-escapes" class="section level3 hasAnchor" number="37.3.2">
 <h3><span class="header-section-number">37.3.2</span> Special Escapes<a href="tips-tricks.html#special-escapes" class="anchor-section" aria-label="Anchor link to header"></a></h3>

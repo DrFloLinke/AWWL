@@ -1,3 +1,9 @@
+tab:foo
+tab:foo1
+tab:foo2
+tab:foo3
+tab:foo4
+tab:foo5
 introduction
 what-is-latex
 why-should-i-choose-latex-over-my-current-document-system
