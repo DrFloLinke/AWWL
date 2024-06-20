@@ -154,7 +154,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="6.1" data-path="formatting-your-document.html"><a href="formatting-your-document.html#sections-and-subsections"><i class="fa fa-check"></i><b>6.1</b> Sections and Subsections</a></li>
 <li class="chapter" data-level="6.2" data-path="formatting-your-document.html"><a href="formatting-your-document.html#paragraphs-line-breaks-and-spaces"><i class="fa fa-check"></i><b>6.2</b> Paragraphs, line breaks and spaces</a></li>
-<li class="chapter" data-level="6.3" data-path="formatting-your-document.html"><a href="formatting-your-document.html#line-breaks-and-page-breaks"><i class="fa fa-check"></i><b>6.3</b> Line breaks and page breaks</a></li>
+<li class="chapter" data-level="6.3" data-path="formatting-your-document.html"><a href="formatting-your-document.html#line-breaks-and-page-breaks"><i class="fa fa-check"></i><b>6.3</b> Line breaks and page breaks</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="formatting-your-document.html"><a href="formatting-your-document.html#line-breaks"><i class="fa fa-check"></i><b>6.3.1</b> Line breaks</a></li>
+<li class="chapter" data-level="6.3.2" data-path="formatting-your-document.html"><a href="formatting-your-document.html#page-breaks"><i class="fa fa-check"></i><b>6.3.2</b> Page breaks</a></li>
+</ul></li>
 <li class="chapter" data-level="6.4" data-path="formatting-your-document.html"><a href="formatting-your-document.html#paragraphs"><i class="fa fa-check"></i><b>6.4</b> Paragraphs</a></li>
 <li class="chapter" data-level="6.5" data-path="formatting-your-document.html"><a href="formatting-your-document.html#spaces"><i class="fa fa-check"></i><b>6.5</b> Spaces</a></li>
 <li class="chapter" data-level="6.6" data-path="formatting-your-document.html"><a href="formatting-your-document.html#skips"><i class="fa fa-check"></i><b>6.6</b> Skips</a></li>
@@ -297,10 +301,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb3-7"><a href="formatting-your-document.html#cb3-7" tabindex="-1"></a>\subsection{Page breaks}</span>
 <span id="cb3-8"><a href="formatting-your-document.html#cb3-8" tabindex="-1"></a>\clearpage </span>
 <span id="cb3-9"><a href="formatting-your-document.html#cb3-9" tabindex="-1"></a>\subsection{Paragraphs}</span></code></pre></div>
-<p><strong>Line breaks</strong></p>
+<div id="line-breaks" class="section level3 hasAnchor" number="6.3.1">
+<h3><span class="header-section-number">6.3.1</span> Line breaks<a href="formatting-your-document.html#line-breaks" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>When writing a TeX document, pressing ‘enter’ on your keyboard will not simply begin a new line in the complied document, even though it might look like it in your TeX editor window. You always need to press “enter” twice to produce a new line in the output document. Alternatively, you can use ‘\\’ as the notation for starting a new line – you can enter it wherever you want in your tex file, and everything written after that will be put in a new line (even if you don’t actually use “enter” at all – however, this usually means making your ‘raw’ Tex document less understandable for yourself).</p>
-<p><strong>Page breaks</strong></p>
+</div>
+<div id="page-breaks" class="section level3 hasAnchor" number="6.3.2">
+<h3><span class="header-section-number">6.3.2</span> Page breaks<a href="formatting-your-document.html#page-breaks" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The tex file differs fundamentally from the document structure as its content is not divided into pages – instead, the file gets longer the more pages you add. In the compiled (i.e. final pdf) document, as soon as the volume of the content you set is larger than the space available within the current page, LaTeX starts a new page. However, often you might find yourself in a situation in which you want to start a new page before the text exceeds the capacity of the current one – a situation in which you would normally use the ‘page break’ button. In LaTeX that’s simply done by using a markup tag - \newpage or \clearpage. For the purpose of the introduction, you can consider them as equivalent, although they differ subtly in their treatment of objects such as tables or figures, which will be discussed later.</p>
+</div>
 </div>
 <div id="paragraphs" class="section level2 hasAnchor" number="6.4">
 <h2><span class="header-section-number">6.4</span> Paragraphs<a href="formatting-your-document.html#paragraphs" class="anchor-section" aria-label="Anchor link to header"></a></h2>

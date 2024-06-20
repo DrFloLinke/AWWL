@@ -154,7 +154,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="6.1" data-path="formatting-your-document.html"><a href="formatting-your-document.html#sections-and-subsections"><i class="fa fa-check"></i><b>6.1</b> Sections and Subsections</a></li>
 <li class="chapter" data-level="6.2" data-path="formatting-your-document.html"><a href="formatting-your-document.html#paragraphs-line-breaks-and-spaces"><i class="fa fa-check"></i><b>6.2</b> Paragraphs, line breaks and spaces</a></li>
-<li class="chapter" data-level="6.3" data-path="formatting-your-document.html"><a href="formatting-your-document.html#line-breaks-and-page-breaks"><i class="fa fa-check"></i><b>6.3</b> Line breaks and page breaks</a></li>
+<li class="chapter" data-level="6.3" data-path="formatting-your-document.html"><a href="formatting-your-document.html#line-breaks-and-page-breaks"><i class="fa fa-check"></i><b>6.3</b> Line breaks and page breaks</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="formatting-your-document.html"><a href="formatting-your-document.html#line-breaks"><i class="fa fa-check"></i><b>6.3.1</b> Line breaks</a></li>
+<li class="chapter" data-level="6.3.2" data-path="formatting-your-document.html"><a href="formatting-your-document.html#page-breaks"><i class="fa fa-check"></i><b>6.3.2</b> Page breaks</a></li>
+</ul></li>
 <li class="chapter" data-level="6.4" data-path="formatting-your-document.html"><a href="formatting-your-document.html#paragraphs"><i class="fa fa-check"></i><b>6.4</b> Paragraphs</a></li>
 <li class="chapter" data-level="6.5" data-path="formatting-your-document.html"><a href="formatting-your-document.html#spaces"><i class="fa fa-check"></i><b>6.5</b> Spaces</a></li>
 <li class="chapter" data-level="6.6" data-path="formatting-your-document.html"><a href="formatting-your-document.html#skips"><i class="fa fa-check"></i><b>6.6</b> Skips</a></li>
@@ -365,7 +369,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="formatting-listings" class="section level2 hasAnchor" number="26.4">
 <h2><span class="header-section-number">26.4</span> Formatting Listings<a href="books.html#formatting-listings" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>To make the code you include in your document more readable, you can add additional formatting to the lstlisting environment by setting different parameters through lstset. The example below shows some most important things that can be changed – you can check out the <a href="texdoc.net/texmf-dist/doc/latex/listings/listings.pdf">Listings package documentation</a> for an exhaustive list.</p>
+<p>To make the code you include in your document more readable, you can add additional formatting to the lstlisting environment by setting different parameters through lstset. The example below shows some most important things that can be changed – you can check out the <a href="https://users.ece.utexas.edu/~garg/dist/listings.pdf">Listings package documentation</a> for an exhaustive list.</p>
 <div class="sourceCode" id="cb73"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb73-1"><a href="books.html#cb73-1" tabindex="-1"></a>\lstset{language=R,</span>
 <span id="cb73-2"><a href="books.html#cb73-2" tabindex="-1"></a>basicstyle=\ttfamily, %style used for listings</span>
 <span id="cb73-3"><a href="books.html#cb73-3" tabindex="-1"></a>numbers=left, %code line numbers</span>
@@ -472,7 +476,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="inline-code" class="section level2 hasAnchor" number="26.6">
 <h2><span class="header-section-number">26.6</span> Inline code<a href="books.html#inline-code" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Finally, you can use your code in the middle of your regular text, by using , for example:</p>
+<p>Finally, you can use your code in the middle of your regular text, by using \lstinline|yourcode|, for example:</p>
 <div class="sourceCode" id="cb75"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb75-1"><a href="books.html#cb75-1" tabindex="-1"></a>I used \lstinline|apply(mydf, 1, function(x) sum(x))| to get a row-wise sum of the \texttt{mydf}.</span></code></pre></div>
 <p>This makes it easy to reference specific parts of your syntax. It can also be used with a source file, like \lstinputlisting.</p>
 </div>
