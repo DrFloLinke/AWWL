@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>4 Intro to “TeXstudio” | Academic Writing with LaTeX</title>
+  <meta name="description" content="4 Intro to “TeXstudio” | Academic Writing with LaTeX" />
+  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="4 Intro to “TeXstudio” | Academic Writing with LaTeX" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="4 Intro to “TeXstudio” | Academic Writing with LaTeX" />
+  
+  
+  
+
+<meta name="author" content="Florian Reiche" />
+<meta name="author" content="Department of Politics and International Studies, University of Warwick" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="download-and-installation.html"/>
+<link rel="next" href="minimum-structure-for-an-article-your-first-document-in-latex.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="part"><span><b>I The First LaTeX Document</b></span></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="what-is-latex.html"><a href="what-is-latex.html"><i class="fa fa-check"></i><b>2</b> What is LaTeX?</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="what-is-latex.html"><a href="what-is-latex.html#why-should-i-choose-latex-over-my-current-document-system"><i class="fa fa-check"></i><b>2.1</b> Why should I choose LaTeX over my current document system?</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="download-and-installation.html"><a href="download-and-installation.html"><i class="fa fa-check"></i><b>3</b> Download and Installation</a></li>
+<li class="chapter" data-level="4" data-path="intro-to-texstudio.html"><a href="intro-to-texstudio.html"><i class="fa fa-check"></i><b>4</b> Intro to “TeXstudio”</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="intro-to-texstudio.html"><a href="intro-to-texstudio.html#the-toolbar"><i class="fa fa-check"></i><b>4.1</b> The Toolbar</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="minimum-structure-for-an-article-your-first-document-in-latex.html"><a href="minimum-structure-for-an-article-your-first-document-in-latex.html"><i class="fa fa-check"></i><b>5</b> Minimum Structure for an article – your first document in LaTeX</a></li>
+<li class="chapter" data-level="6" data-path="sections-and-subsections.html"><a href="sections-and-subsections.html"><i class="fa fa-check"></i><b>6</b> Sections and Subsections</a></li>
+<li class="chapter" data-level="7" data-path="paragraphs-line-breaks-and-spaces.html"><a href="paragraphs-line-breaks-and-spaces.html"><i class="fa fa-check"></i><b>7</b> Paragraphs, line breaks and spaces</a></li>
+<li class="chapter" data-level="8" data-path="line-breaks-and-page-breaks.html"><a href="line-breaks-and-page-breaks.html"><i class="fa fa-check"></i><b>8</b> Line breaks and page breaks</a></li>
+<li class="chapter" data-level="9" data-path="paragraphs.html"><a href="paragraphs.html"><i class="fa fa-check"></i><b>9</b> Paragraphs</a></li>
+<li class="chapter" data-level="10" data-path="spaces.html"><a href="spaces.html"><i class="fa fa-check"></i><b>10</b> Spaces</a></li>
+<li class="chapter" data-level="11" data-path="skips.html"><a href="skips.html"><i class="fa fa-check"></i><b>11</b> Skips</a></li>
+<li class="chapter" data-level="12" data-path="text-alignment.html"><a href="text-alignment.html"><i class="fa fa-check"></i><b>12</b> Text Alignment</a></li>
+<li class="chapter" data-level="13" data-path="lists.html"><a href="lists.html"><i class="fa fa-check"></i><b>13</b> Lists</a></li>
+<li class="chapter" data-level="14" data-path="font-styles.html"><a href="font-styles.html"><i class="fa fa-check"></i><b>14</b> Font Styles</a></li>
+<li class="chapter" data-level="15" data-path="table-of-contents.html"><a href="table-of-contents.html"><i class="fa fa-check"></i><b>15</b> Table of Contents</a></li>
+<li class="chapter" data-level="16" data-path="title-page.html"><a href="title-page.html"><i class="fa fa-check"></i><b>16</b> Title Page</a></li>
+<li class="chapter" data-level="17" data-path="commenting-your-code.html"><a href="commenting-your-code.html"><i class="fa fa-check"></i><b>17</b> Commenting your code</a></li>
+<li class="part"><span><b>II Tables, Figures, and References</b></span></li>
+<li class="chapter" data-level="18" data-path="introduction-1.html"><a href="introduction-1.html"><i class="fa fa-check"></i><b>18</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="introduction-1.html"><a href="introduction-1.html#labels"><i class="fa fa-check"></i><b>18.1</b> Labels</a></li>
+<li class="chapter" data-level="18.2" data-path="introduction-1.html"><a href="introduction-1.html#footnotes"><i class="fa fa-check"></i><b>18.2</b> Footnotes</a></li>
+<li class="chapter" data-level="18.3" data-path="introduction-1.html"><a href="introduction-1.html#packages"><i class="fa fa-check"></i><b>18.3</b> Packages</a></li>
+<li class="chapter" data-level="18.4" data-path="introduction-1.html"><a href="introduction-1.html#including-figures"><i class="fa fa-check"></i><b>18.4</b> Including Figures</a></li>
+<li class="chapter" data-level="18.5" data-path="introduction-1.html"><a href="introduction-1.html#including-a-picture"><i class="fa fa-check"></i><b>18.5</b> Including a Picture</a></li>
+<li class="chapter" data-level="18.6" data-path="introduction-1.html"><a href="introduction-1.html#picture-dimensions"><i class="fa fa-check"></i><b>18.6</b> Picture Dimensions</a></li>
+<li class="chapter" data-level="18.7" data-path="introduction-1.html"><a href="introduction-1.html#floats"><i class="fa fa-check"></i><b>18.7</b> Floats</a>
+<ul>
+<li class="chapter" data-level="18.7.1" data-path="introduction-1.html"><a href="introduction-1.html#float-location"><i class="fa fa-check"></i><b>18.7.1</b> Float Location</a></li>
+</ul></li>
+<li class="chapter" data-level="18.8" data-path="introduction-1.html"><a href="introduction-1.html#figure-captions-flos-pet-hate"><i class="fa fa-check"></i><b>18.8</b> Figure Captions (Flo’s Pet Hate)</a></li>
+<li class="chapter" data-level="18.9" data-path="introduction-1.html"><a href="introduction-1.html#float-barriers"><i class="fa fa-check"></i><b>18.9</b> Float Barriers</a></li>
+<li class="chapter" data-level="18.10" data-path="introduction-1.html"><a href="introduction-1.html#sub-figures"><i class="fa fa-check"></i><b>18.10</b> Sub-Figures</a></li>
+<li class="chapter" data-level="18.11" data-path="introduction-1.html"><a href="introduction-1.html#setting-tables"><i class="fa fa-check"></i><b>18.11</b> Setting Tables</a>
+<ul>
+<li class="chapter" data-level="18.11.1" data-path="introduction-1.html"><a href="introduction-1.html#separation-lines"><i class="fa fa-check"></i><b>18.11.1</b> Separation Lines</a></li>
+<li class="chapter" data-level="18.11.2" data-path="introduction-1.html"><a href="introduction-1.html#fixed-width-of-columns"><i class="fa fa-check"></i><b>18.11.2</b> Fixed Width of Columns</a></li>
+<li class="chapter" data-level="18.11.3" data-path="introduction-1.html"><a href="introduction-1.html#controlling-vertical-adjustment"><i class="fa fa-check"></i><b>18.11.3</b> Controlling Vertical Adjustment</a></li>
+<li class="chapter" data-level="18.11.4" data-path="introduction-1.html"><a href="introduction-1.html#combining-rows-and-columns"><i class="fa fa-check"></i><b>18.11.4</b> Combining Rows and Columns</a></li>
+<li class="chapter" data-level="18.11.5" data-path="introduction-1.html"><a href="introduction-1.html#tabularx"><i class="fa fa-check"></i><b>18.11.5</b> Tabularx</a></li>
+<li class="chapter" data-level="18.11.6" data-path="introduction-1.html"><a href="introduction-1.html#defining-new-column-types"><i class="fa fa-check"></i><b>18.11.6</b> Defining New Column Types</a></li>
+<li class="chapter" data-level="18.11.7" data-path="introduction-1.html"><a href="introduction-1.html#specifying-row-height"><i class="fa fa-check"></i><b>18.11.7</b> Specifying Row Height</a></li>
+</ul></li>
+<li class="chapter" data-level="18.12" data-path="introduction-1.html"><a href="introduction-1.html#the-table-floating-environment"><i class="fa fa-check"></i><b>18.12</b> The ‘Table’ Floating Environment</a></li>
+<li class="chapter" data-level="18.13" data-path="introduction-1.html"><a href="introduction-1.html#lists-of-figures-and-tables"><i class="fa fa-check"></i><b>18.13</b> Lists of Figures and Tables</a></li>
+<li class="chapter" data-level="18.14" data-path="introduction-1.html"><a href="introduction-1.html#the-bibliography"><i class="fa fa-check"></i><b>18.14</b> The Bibliography</a>
+<ul>
+<li class="chapter" data-level="18.14.1" data-path="introduction-1.html"><a href="introduction-1.html#bib-files"><i class="fa fa-check"></i><b>18.14.1</b> .bib files</a></li>
+</ul></li>
+<li class="chapter" data-level="18.15" data-path="introduction-1.html"><a href="introduction-1.html#citing-bibliography-resources"><i class="fa fa-check"></i><b>18.15</b> Citing Bibliography Resources</a></li>
+<li class="chapter" data-level="18.16" data-path="introduction-1.html"><a href="introduction-1.html#endnotes"><i class="fa fa-check"></i><b>18.16</b> Endnotes</a></li>
+</ul></li>
+<li class="part"><span><b>III Advanced Documents</b></span></li>
+<li class="chapter" data-level="19" data-path="introduction-2.html"><a href="introduction-2.html"><i class="fa fa-check"></i><b>19</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="19.1" data-path="introduction-2.html"><a href="introduction-2.html#beamer-presentation"><i class="fa fa-check"></i><b>19.1</b> Beamer Presentation</a>
+<ul>
+<li class="chapter" data-level="19.1.1" data-path="introduction-2.html"><a href="introduction-2.html#first-beamer-presentation"><i class="fa fa-check"></i><b>19.1.1</b> First Beamer Presentation</a></li>
+<li class="chapter" data-level="19.1.2" data-path="introduction-2.html"><a href="introduction-2.html#title-frame"><i class="fa fa-check"></i><b>19.1.2</b> Title Frame</a></li>
+<li class="chapter" data-level="19.1.3" data-path="introduction-2.html"><a href="introduction-2.html#themes"><i class="fa fa-check"></i><b>19.1.3</b> Themes</a></li>
+<li class="chapter" data-level="19.1.4" data-path="introduction-2.html"><a href="introduction-2.html#frame-title"><i class="fa fa-check"></i><b>19.1.4</b> Frame Title</a></li>
+<li class="chapter" data-level="19.1.5" data-path="introduction-2.html"><a href="introduction-2.html#sections"><i class="fa fa-check"></i><b>19.1.5</b> Sections</a></li>
+<li class="chapter" data-level="19.1.6" data-path="introduction-2.html"><a href="introduction-2.html#atbeginsection"><i class="fa fa-check"></i><b>19.1.6</b> AtBeginSection</a></li>
+<li class="chapter" data-level="19.1.7" data-path="introduction-2.html"><a href="introduction-2.html#colour-boxes"><i class="fa fa-check"></i><b>19.1.7</b> Colour Boxes</a></li>
+<li class="chapter" data-level="19.1.8" data-path="introduction-2.html"><a href="introduction-2.html#table-of-contents-1"><i class="fa fa-check"></i><b>19.1.8</b> Table of Contents</a></li>
+<li class="chapter" data-level="19.1.9" data-path="introduction-2.html"><a href="introduction-2.html#overlays-and-pauses"><i class="fa fa-check"></i><b>19.1.9</b> Overlays and Pauses</a></li>
+<li class="chapter" data-level="19.1.10" data-path="introduction-2.html"><a href="introduction-2.html#columns"><i class="fa fa-check"></i><b>19.1.10</b> Columns</a></li>
+<li class="chapter" data-level="19.1.11" data-path="introduction-2.html"><a href="introduction-2.html#blocks"><i class="fa fa-check"></i><b>19.1.11</b> Blocks</a></li>
+<li class="chapter" data-level="19.1.12" data-path="introduction-2.html"><a href="introduction-2.html#figures-and-tables"><i class="fa fa-check"></i><b>19.1.12</b> Figures and Tables</a></li>
+<li class="chapter" data-level="19.1.13" data-path="introduction-2.html"><a href="introduction-2.html#summary"><i class="fa fa-check"></i><b>19.1.13</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="19.2" data-path="introduction-2.html"><a href="introduction-2.html#books"><i class="fa fa-check"></i><b>19.2</b> Books</a>
+<ul>
+<li class="chapter" data-level="19.2.1" data-path="introduction-2.html"><a href="introduction-2.html#main-file"><i class="fa fa-check"></i><b>19.2.1</b> Main File</a></li>
+<li class="chapter" data-level="19.2.2" data-path="introduction-2.html"><a href="introduction-2.html#the-preamble-file"><i class="fa fa-check"></i><b>19.2.2</b> The Preamble File</a></li>
+<li class="chapter" data-level="19.2.3" data-path="introduction-2.html"><a href="introduction-2.html#chapter-file"><i class="fa fa-check"></i><b>19.2.3</b> Chapter File</a></li>
+<li class="chapter" data-level="19.2.4" data-path="introduction-2.html"><a href="introduction-2.html#listings"><i class="fa fa-check"></i><b>19.2.4</b> Listings</a></li>
+<li class="chapter" data-level="19.2.5" data-path="introduction-2.html"><a href="introduction-2.html#formatting-listings"><i class="fa fa-check"></i><b>19.2.5</b> Formatting Listings</a></li>
+<li class="chapter" data-level="19.2.6" data-path="introduction-2.html"><a href="introduction-2.html#using-source-files"><i class="fa fa-check"></i><b>19.2.6</b> Using Source Files</a></li>
+<li class="chapter" data-level="19.2.7" data-path="introduction-2.html"><a href="introduction-2.html#inline-code"><i class="fa fa-check"></i><b>19.2.7</b> Inline code</a></li>
+<li class="chapter" data-level="19.2.8" data-path="introduction-2.html"><a href="introduction-2.html#natbib-advanced-citations"><i class="fa fa-check"></i><b>19.2.8</b> Natbib – advanced citations</a></li>
+</ul></li>
+<li class="chapter" data-level="19.3" data-path="introduction-2.html"><a href="introduction-2.html#tips-tricks"><i class="fa fa-check"></i><b>19.3</b> Tips &amp; Tricks</a>
+<ul>
+<li class="chapter" data-level="19.3.1" data-path="introduction-2.html"><a href="introduction-2.html#page-dimensions"><i class="fa fa-check"></i><b>19.3.1</b> Page Dimensions</a></li>
+<li class="chapter" data-level="19.3.2" data-path="introduction-2.html"><a href="introduction-2.html#styling"><i class="fa fa-check"></i><b>19.3.2</b> Styling</a></li>
+<li class="chapter" data-level="19.3.3" data-path="introduction-2.html"><a href="introduction-2.html#shortcuts-and-special-escapes"><i class="fa fa-check"></i><b>19.3.3</b> Shortcuts and Special Escapes</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Academic Writing with LaTeX</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="intro-to-texstudio" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">4</span> Intro to “TeXstudio”<a href="intro-to-texstudio.html#intro-to-texstudio" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Via Texstudio…</p>
+<p>The interface of the app is fairly simple and you don’t need to know much to get started. As opposed to traditional text editors, in you first create and save a .tex file containing all your content with some so-called markup tags – you can think about the .tex file as a ‘cooking recipe’ for your final file. Your text, figures and bibliography are the ingredients and the markup tags act as cooking instructions (more on these in due course). The resulting document - which is always a pdf - can be viewed in the separate window by compiling the .tex file (click the double green arrow on the toolbar). “Compiling” is a fancy term to describe LaTeX simply following your commands and preparing the document as you requested in the tex file. By default, TeXstudio compiles the .pdf file in the same folder in which you have saved your .tex file. The entire procedure is reflected in TeXstudio’s interface – the screen consists of 3 main parts:</p>
+<p>the .tex file editor on the left – here you create your document.
+the file viewer on the right – here you can view how your document looks after compilation – you can update the viewer by clicking the double green arrow (‘build &amp; view’)
+the log and messages window at the bottom left – here you can see if any errors come up during the compilation of your file and if they do – in which line did they occur
+Both the viewer and the log window can be closed if you need more space for the tex editor.</p>
+<p><img src="files/intro-to-texstudio.jpg" width="50%" style="display: block; margin: auto;" /></p>
+<div id="the-toolbar" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> The Toolbar<a href="intro-to-texstudio.html#the-toolbar" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The toolbar allows you to:</p>
+<ul>
+<li>create a new file</li>
+<li>build it and view it – see any changes you have made in your document without compiling a new pdf</li>
+<li>compile the tex file into a pdf file, so you can read, print, or send the formatted version of your document</li>
+</ul>
+<p><img src="files/texstudio-toolbar.png" width="50%" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="download-and-installation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="minimum-structure-for-an-article-your-first-document-in-latex.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+},
+"toc_depth": 2
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

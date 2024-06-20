@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>19 Introduction | Academic Writing with LaTeX</title>
+  <meta name="description" content="19 Introduction | Academic Writing with LaTeX" />
+  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="19 Introduction | Academic Writing with LaTeX" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="19 Introduction | Academic Writing with LaTeX" />
+  
+  
+  
+
+<meta name="author" content="Florian Reiche" />
+<meta name="author" content="Department of Politics and International Studies, University of Warwick" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="introduction-1.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="part"><span><b>I The First LaTeX Document</b></span></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="what-is-latex.html"><a href="what-is-latex.html"><i class="fa fa-check"></i><b>2</b> What is LaTeX?</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="what-is-latex.html"><a href="what-is-latex.html#why-should-i-choose-latex-over-my-current-document-system"><i class="fa fa-check"></i><b>2.1</b> Why should I choose LaTeX over my current document system?</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="download-and-installation.html"><a href="download-and-installation.html"><i class="fa fa-check"></i><b>3</b> Download and Installation</a></li>
+<li class="chapter" data-level="4" data-path="intro-to-texstudio.html"><a href="intro-to-texstudio.html"><i class="fa fa-check"></i><b>4</b> Intro to “TeXstudio”</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="intro-to-texstudio.html"><a href="intro-to-texstudio.html#the-toolbar"><i class="fa fa-check"></i><b>4.1</b> The Toolbar</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="minimum-structure-for-an-article-your-first-document-in-latex.html"><a href="minimum-structure-for-an-article-your-first-document-in-latex.html"><i class="fa fa-check"></i><b>5</b> Minimum Structure for an article – your first document in LaTeX</a></li>
+<li class="chapter" data-level="6" data-path="sections-and-subsections.html"><a href="sections-and-subsections.html"><i class="fa fa-check"></i><b>6</b> Sections and Subsections</a></li>
+<li class="chapter" data-level="7" data-path="paragraphs-line-breaks-and-spaces.html"><a href="paragraphs-line-breaks-and-spaces.html"><i class="fa fa-check"></i><b>7</b> Paragraphs, line breaks and spaces</a></li>
+<li class="chapter" data-level="8" data-path="line-breaks-and-page-breaks.html"><a href="line-breaks-and-page-breaks.html"><i class="fa fa-check"></i><b>8</b> Line breaks and page breaks</a></li>
+<li class="chapter" data-level="9" data-path="paragraphs.html"><a href="paragraphs.html"><i class="fa fa-check"></i><b>9</b> Paragraphs</a></li>
+<li class="chapter" data-level="10" data-path="spaces.html"><a href="spaces.html"><i class="fa fa-check"></i><b>10</b> Spaces</a></li>
+<li class="chapter" data-level="11" data-path="skips.html"><a href="skips.html"><i class="fa fa-check"></i><b>11</b> Skips</a></li>
+<li class="chapter" data-level="12" data-path="text-alignment.html"><a href="text-alignment.html"><i class="fa fa-check"></i><b>12</b> Text Alignment</a></li>
+<li class="chapter" data-level="13" data-path="lists.html"><a href="lists.html"><i class="fa fa-check"></i><b>13</b> Lists</a></li>
+<li class="chapter" data-level="14" data-path="font-styles.html"><a href="font-styles.html"><i class="fa fa-check"></i><b>14</b> Font Styles</a></li>
+<li class="chapter" data-level="15" data-path="table-of-contents.html"><a href="table-of-contents.html"><i class="fa fa-check"></i><b>15</b> Table of Contents</a></li>
+<li class="chapter" data-level="16" data-path="title-page.html"><a href="title-page.html"><i class="fa fa-check"></i><b>16</b> Title Page</a></li>
+<li class="chapter" data-level="17" data-path="commenting-your-code.html"><a href="commenting-your-code.html"><i class="fa fa-check"></i><b>17</b> Commenting your code</a></li>
+<li class="part"><span><b>II Tables, Figures, and References</b></span></li>
+<li class="chapter" data-level="18" data-path="introduction-1.html"><a href="introduction-1.html"><i class="fa fa-check"></i><b>18</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="introduction-1.html"><a href="introduction-1.html#labels"><i class="fa fa-check"></i><b>18.1</b> Labels</a></li>
+<li class="chapter" data-level="18.2" data-path="introduction-1.html"><a href="introduction-1.html#footnotes"><i class="fa fa-check"></i><b>18.2</b> Footnotes</a></li>
+<li class="chapter" data-level="18.3" data-path="introduction-1.html"><a href="introduction-1.html#packages"><i class="fa fa-check"></i><b>18.3</b> Packages</a></li>
+<li class="chapter" data-level="18.4" data-path="introduction-1.html"><a href="introduction-1.html#including-figures"><i class="fa fa-check"></i><b>18.4</b> Including Figures</a></li>
+<li class="chapter" data-level="18.5" data-path="introduction-1.html"><a href="introduction-1.html#including-a-picture"><i class="fa fa-check"></i><b>18.5</b> Including a Picture</a></li>
+<li class="chapter" data-level="18.6" data-path="introduction-1.html"><a href="introduction-1.html#picture-dimensions"><i class="fa fa-check"></i><b>18.6</b> Picture Dimensions</a></li>
+<li class="chapter" data-level="18.7" data-path="introduction-1.html"><a href="introduction-1.html#floats"><i class="fa fa-check"></i><b>18.7</b> Floats</a>
+<ul>
+<li class="chapter" data-level="18.7.1" data-path="introduction-1.html"><a href="introduction-1.html#float-location"><i class="fa fa-check"></i><b>18.7.1</b> Float Location</a></li>
+</ul></li>
+<li class="chapter" data-level="18.8" data-path="introduction-1.html"><a href="introduction-1.html#figure-captions-flos-pet-hate"><i class="fa fa-check"></i><b>18.8</b> Figure Captions (Flo’s Pet Hate)</a></li>
+<li class="chapter" data-level="18.9" data-path="introduction-1.html"><a href="introduction-1.html#float-barriers"><i class="fa fa-check"></i><b>18.9</b> Float Barriers</a></li>
+<li class="chapter" data-level="18.10" data-path="introduction-1.html"><a href="introduction-1.html#sub-figures"><i class="fa fa-check"></i><b>18.10</b> Sub-Figures</a></li>
+<li class="chapter" data-level="18.11" data-path="introduction-1.html"><a href="introduction-1.html#setting-tables"><i class="fa fa-check"></i><b>18.11</b> Setting Tables</a>
+<ul>
+<li class="chapter" data-level="18.11.1" data-path="introduction-1.html"><a href="introduction-1.html#separation-lines"><i class="fa fa-check"></i><b>18.11.1</b> Separation Lines</a></li>
+<li class="chapter" data-level="18.11.2" data-path="introduction-1.html"><a href="introduction-1.html#fixed-width-of-columns"><i class="fa fa-check"></i><b>18.11.2</b> Fixed Width of Columns</a></li>
+<li class="chapter" data-level="18.11.3" data-path="introduction-1.html"><a href="introduction-1.html#controlling-vertical-adjustment"><i class="fa fa-check"></i><b>18.11.3</b> Controlling Vertical Adjustment</a></li>
+<li class="chapter" data-level="18.11.4" data-path="introduction-1.html"><a href="introduction-1.html#combining-rows-and-columns"><i class="fa fa-check"></i><b>18.11.4</b> Combining Rows and Columns</a></li>
+<li class="chapter" data-level="18.11.5" data-path="introduction-1.html"><a href="introduction-1.html#tabularx"><i class="fa fa-check"></i><b>18.11.5</b> Tabularx</a></li>
+<li class="chapter" data-level="18.11.6" data-path="introduction-1.html"><a href="introduction-1.html#defining-new-column-types"><i class="fa fa-check"></i><b>18.11.6</b> Defining New Column Types</a></li>
+<li class="chapter" data-level="18.11.7" data-path="introduction-1.html"><a href="introduction-1.html#specifying-row-height"><i class="fa fa-check"></i><b>18.11.7</b> Specifying Row Height</a></li>
+</ul></li>
+<li class="chapter" data-level="18.12" data-path="introduction-1.html"><a href="introduction-1.html#the-table-floating-environment"><i class="fa fa-check"></i><b>18.12</b> The ‘Table’ Floating Environment</a></li>
+<li class="chapter" data-level="18.13" data-path="introduction-1.html"><a href="introduction-1.html#lists-of-figures-and-tables"><i class="fa fa-check"></i><b>18.13</b> Lists of Figures and Tables</a></li>
+<li class="chapter" data-level="18.14" data-path="introduction-1.html"><a href="introduction-1.html#the-bibliography"><i class="fa fa-check"></i><b>18.14</b> The Bibliography</a>
+<ul>
+<li class="chapter" data-level="18.14.1" data-path="introduction-1.html"><a href="introduction-1.html#bib-files"><i class="fa fa-check"></i><b>18.14.1</b> .bib files</a></li>
+</ul></li>
+<li class="chapter" data-level="18.15" data-path="introduction-1.html"><a href="introduction-1.html#citing-bibliography-resources"><i class="fa fa-check"></i><b>18.15</b> Citing Bibliography Resources</a></li>
+<li class="chapter" data-level="18.16" data-path="introduction-1.html"><a href="introduction-1.html#endnotes"><i class="fa fa-check"></i><b>18.16</b> Endnotes</a></li>
+</ul></li>
+<li class="part"><span><b>III Advanced Documents</b></span></li>
+<li class="chapter" data-level="19" data-path="introduction-2.html"><a href="introduction-2.html"><i class="fa fa-check"></i><b>19</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="19.1" data-path="introduction-2.html"><a href="introduction-2.html#beamer-presentation"><i class="fa fa-check"></i><b>19.1</b> Beamer Presentation</a>
+<ul>
+<li class="chapter" data-level="19.1.1" data-path="introduction-2.html"><a href="introduction-2.html#first-beamer-presentation"><i class="fa fa-check"></i><b>19.1.1</b> First Beamer Presentation</a></li>
+<li class="chapter" data-level="19.1.2" data-path="introduction-2.html"><a href="introduction-2.html#title-frame"><i class="fa fa-check"></i><b>19.1.2</b> Title Frame</a></li>
+<li class="chapter" data-level="19.1.3" data-path="introduction-2.html"><a href="introduction-2.html#themes"><i class="fa fa-check"></i><b>19.1.3</b> Themes</a></li>
+<li class="chapter" data-level="19.1.4" data-path="introduction-2.html"><a href="introduction-2.html#frame-title"><i class="fa fa-check"></i><b>19.1.4</b> Frame Title</a></li>
+<li class="chapter" data-level="19.1.5" data-path="introduction-2.html"><a href="introduction-2.html#sections"><i class="fa fa-check"></i><b>19.1.5</b> Sections</a></li>
+<li class="chapter" data-level="19.1.6" data-path="introduction-2.html"><a href="introduction-2.html#atbeginsection"><i class="fa fa-check"></i><b>19.1.6</b> AtBeginSection</a></li>
+<li class="chapter" data-level="19.1.7" data-path="introduction-2.html"><a href="introduction-2.html#colour-boxes"><i class="fa fa-check"></i><b>19.1.7</b> Colour Boxes</a></li>
+<li class="chapter" data-level="19.1.8" data-path="introduction-2.html"><a href="introduction-2.html#table-of-contents-1"><i class="fa fa-check"></i><b>19.1.8</b> Table of Contents</a></li>
+<li class="chapter" data-level="19.1.9" data-path="introduction-2.html"><a href="introduction-2.html#overlays-and-pauses"><i class="fa fa-check"></i><b>19.1.9</b> Overlays and Pauses</a></li>
+<li class="chapter" data-level="19.1.10" data-path="introduction-2.html"><a href="introduction-2.html#columns"><i class="fa fa-check"></i><b>19.1.10</b> Columns</a></li>
+<li class="chapter" data-level="19.1.11" data-path="introduction-2.html"><a href="introduction-2.html#blocks"><i class="fa fa-check"></i><b>19.1.11</b> Blocks</a></li>
+<li class="chapter" data-level="19.1.12" data-path="introduction-2.html"><a href="introduction-2.html#figures-and-tables"><i class="fa fa-check"></i><b>19.1.12</b> Figures and Tables</a></li>
+<li class="chapter" data-level="19.1.13" data-path="introduction-2.html"><a href="introduction-2.html#summary"><i class="fa fa-check"></i><b>19.1.13</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="19.2" data-path="introduction-2.html"><a href="introduction-2.html#books"><i class="fa fa-check"></i><b>19.2</b> Books</a>
+<ul>
+<li class="chapter" data-level="19.2.1" data-path="introduction-2.html"><a href="introduction-2.html#main-file"><i class="fa fa-check"></i><b>19.2.1</b> Main File</a></li>
+<li class="chapter" data-level="19.2.2" data-path="introduction-2.html"><a href="introduction-2.html#the-preamble-file"><i class="fa fa-check"></i><b>19.2.2</b> The Preamble File</a></li>
+<li class="chapter" data-level="19.2.3" data-path="introduction-2.html"><a href="introduction-2.html#chapter-file"><i class="fa fa-check"></i><b>19.2.3</b> Chapter File</a></li>
+<li class="chapter" data-level="19.2.4" data-path="introduction-2.html"><a href="introduction-2.html#listings"><i class="fa fa-check"></i><b>19.2.4</b> Listings</a></li>
+<li class="chapter" data-level="19.2.5" data-path="introduction-2.html"><a href="introduction-2.html#formatting-listings"><i class="fa fa-check"></i><b>19.2.5</b> Formatting Listings</a></li>
+<li class="chapter" data-level="19.2.6" data-path="introduction-2.html"><a href="introduction-2.html#using-source-files"><i class="fa fa-check"></i><b>19.2.6</b> Using Source Files</a></li>
+<li class="chapter" data-level="19.2.7" data-path="introduction-2.html"><a href="introduction-2.html#inline-code"><i class="fa fa-check"></i><b>19.2.7</b> Inline code</a></li>
+<li class="chapter" data-level="19.2.8" data-path="introduction-2.html"><a href="introduction-2.html#natbib-advanced-citations"><i class="fa fa-check"></i><b>19.2.8</b> Natbib – advanced citations</a></li>
+</ul></li>
+<li class="chapter" data-level="19.3" data-path="introduction-2.html"><a href="introduction-2.html#tips-tricks"><i class="fa fa-check"></i><b>19.3</b> Tips &amp; Tricks</a>
+<ul>
+<li class="chapter" data-level="19.3.1" data-path="introduction-2.html"><a href="introduction-2.html#page-dimensions"><i class="fa fa-check"></i><b>19.3.1</b> Page Dimensions</a></li>
+<li class="chapter" data-level="19.3.2" data-path="introduction-2.html"><a href="introduction-2.html#styling"><i class="fa fa-check"></i><b>19.3.2</b> Styling</a></li>
+<li class="chapter" data-level="19.3.3" data-path="introduction-2.html"><a href="introduction-2.html#shortcuts-and-special-escapes"><i class="fa fa-check"></i><b>19.3.3</b> Shortcuts and Special Escapes</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Academic Writing with LaTeX</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="introduction-2" class="section level1 hasAnchor" number="19">
+<h1><span class="header-section-number">19</span> Introduction<a href="introduction-2.html#introduction-2" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>This Section will cover:</p>
+<ul>
+<li>Beamer Presentations</li>
+<li>Writing long documents, such as dissertations or books</li>
+<li>Tips and Tricks</li>
+</ul>
+<div id="beamer-presentation" class="section level2 hasAnchor" number="19.1">
+<h2><span class="header-section-number">19.1</span> Beamer Presentation<a href="introduction-2.html#beamer-presentation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In the previous parts of the course, you have learned how to create documents. Note that until now you have used the article document format as specified by the \documentclass{article} tag. includes many other document classes that you can use. As already mentioned at the beginning of the course, the class is essentially several pre-set document parameters, such as the size of pages, default font sizes and families for different environments, as well as specific commands. In this section, you will learn about another very popular class of documents called beamer, which allows you to create presentations, like those you could prepare using Microsoft PowerPoint or similar software.</p>
+<div id="first-beamer-presentation" class="section level3 hasAnchor" number="19.1.1">
+<h3><span class="header-section-number">19.1.1</span> First Beamer Presentation<a href="introduction-2.html#first-beamer-presentation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The first example shows how to create a simple Beamer presentation consisting of two slides. Every beamer presentation begins with \documentclass{beamer}. Beamer slides are called frames and every slide is simply a separate frame environment, opened by \begin{frame} and closed by \end{frame}. As you can see, many familiar structures used in the article class, such as itemize, enumerate or vspace also work in the beamer format.</p>
+</div>
+<div id="title-frame" class="section level3 hasAnchor" number="19.1.2">
+<h3><span class="header-section-number">19.1.2</span> Title Frame<a href="introduction-2.html#title-frame" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Most presentations begin with a slide containing its title and author’s credentials. Setting up a title frame in Beamer presentations is like preparing a title page in articles. First, you need to specify the title and other details, such as the author’s name, date or institution you work for in the preamble of your document. Then, you simply use the \titlepage tag within the frame environment. Note that in the example it is not necessary to explicitly open and close the frame environment using \begin and \end, as we are using only one tag inside it, and thus we can use a more concise formulation \frame{\titlepage}.</p>
+</div>
+<div id="themes" class="section level3 hasAnchor" number="19.1.3">
+<h3><span class="header-section-number">19.1.3</span> Themes<a href="introduction-2.html#themes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Like other presentation software, comes with several pre-defined themes, as well as allows you to define themes of your own. You can select a pre-defined theme using \usetheme{} in the preamble of your presentation. Each of the pre-defined themes can also be customized in terms of its colour scheme, using the \usecolortheme{}. Note that you need to provide it with an existing colour scheme name rather than an arbitrary one. You can find an example list of beamer themes and their colour variants here. One of the important properties of the themes is that they often include a footer or a header which appears on every slide, summarising the information about the presentation, such as author, title, date or current slide number. The presentation information you provide in the preamble can often be too long to fit into the footer/header, so you can provide an optional short or abbreviated version of these. To do that, you can use the form \author[short title]{Full title}, where  short title will appear in the document footer and full title is only displayed on the title page. This can be seen in the example.  </p>
+</div>
+<div id="frame-title" class="section level3 hasAnchor" number="19.1.4">
+<h3><span class="header-section-number">19.1.4</span> Frame Title<a href="introduction-2.html#frame-title" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Each frame can also have its heading. This is simply added using the \frametitle{title} tag within the frame environment, where title is the heading you want to give to a certain frame.</p>
+</div>
+<div id="sections" class="section level3 hasAnchor" number="19.1.5">
+<h3><span class="header-section-number">19.1.5</span> Sections<a href="introduction-2.html#sections" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>You can divide a beamer presentation into sections and subsections just as you would do in a article. Note that these sections should be defined between frame environments, as shown in the example.</p>
+</div>
+<div id="atbeginsection" class="section level3 hasAnchor" number="19.1.6">
+<h3><span class="header-section-number">19.1.6</span> AtBeginSection<a href="introduction-2.html#atbeginsection" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Note that adding the section did not make any changes to our slide content or titles. This is because, by default, beamer uses section titles only to structure your document (for example, they can be seen when you add a table of contents, which will be discussed later). If you want each section to begin with a section title slide, you need to define that explicitly in the preamble of the file, using AtBeginSection{}. You fill the curly braces with a frame, which will appear at the beginning of each section and you can use \insertsectionhead parameter to reference the title of a section. Essentially, you are providing with a template of a frame that will be used whenever a new section is started. So, adding this code in the preamble will cause to add a slide with vertically centred section title in large bold font at the beginning of each new section. Note that this applies also to subsections – in that case, you would simply use AtBeginSubsection and \insertsubsectionhead.</p>
+</div>
+<div id="colour-boxes" class="section level3 hasAnchor" number="19.1.7">
+<h3><span class="header-section-number">19.1.7</span> Colour Boxes<a href="introduction-2.html#colour-boxes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>To improve presentation formatting, it is often good to put your text within a box that matches the presentation theme. This can be particularly useful for section title slides discussed before. Such boxes can be added to a beamer slide using the beamercolorbox environment. It is opened by \begin{beamercolorbox}[options]{color}. There are a number of options that can be used in the brackets to customize the box properties. The most useful ones include:</p>
+<ul>
+<li>sep=dimension - specifies the separation between the text in the box and the box boundaries (dimension is a length value, for example, 5cm or 12pt)</li>
+<li>center, right and left – specifies the text alignment within the box</li>
+<li>round = true or false - determines whether the box corners are rounded or not</li>
+<li>shadow = true or false – specifies whether a shadow appears behind the box</li>
+</ul>
+<p>The curly braces determine to colour of the box. Note that you cannot use colour names or even colour themes as a keyword in the curly braces – instead, you can only refer to colours explicitly defined for the theme you are using or an object within the beamer presentation – it usually makes sense to set it to ‘title’ or ‘frametitle’, which sets the colour of the box to the same one as the background behind the title of the frame.</p>
+</div>
+<div id="table-of-contents-1" class="section level3 hasAnchor" number="19.1.8">
+<h3><span class="header-section-number">19.1.8</span> Table of Contents<a href="introduction-2.html#table-of-contents-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Adding a table of contents is as easy as it was in the article class – it is done by simply entering the \tableofcontents tag in a separate frame. So the basic table of contents is set by:</p>
+<p>The \tableofcontents tag also comes with some options. A particularly useful one allows to only highlight the number of the current section in the table of contents. This can be done by using:</p>
+<p>If you start your presentation with a table of contents acting as a presentation outline and want to gradually reveal the titles of subsequent sections while discussing the structure, then the pausesections option might be useful. When it’s used, each new element of the table of contents will be introduced on a new slide. </p>
+</div>
+<div id="overlays-and-pauses" class="section level3 hasAnchor" number="19.1.9">
+<h3><span class="header-section-number">19.1.9</span> Overlays and Pauses<a href="introduction-2.html#overlays-and-pauses" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>When delivering a presentation, revealing the entire content of a frame can often be overwhelming for the audience, who may get distracted trying to read everything, instead of listening to the person presenting. To keep everyone focused, it often helps to reveal the information one step at a time. Beamer makes this very easy (arguably easier than other presentation software such as PowerPoint), with the \pause tag. Everything following the tag will appear on the next slide.</p>
+<p>Order of appearance of frame elements can be further customized using overlay specification. The angle brackets (“&lt;” and “&gt;”) used after a markup tag determine on which slides will a certain element or formatting appear. For example, &lt;1&gt; stands for slide number one (of the current frame), &lt;2-4&gt; for the slide range between 2 and 4, and &lt;3,5&gt; for slide 3 and slide 5. The first example shows how it can be applied to a bullet-point list elements appearance:</p>
+<p>In the second example, you can see that the overlay specification also works with formattings, such as bold font, italics or font colour. </p>
+<p>Note that the \alert tag is often used to highlight the text in a colour, which is determined by the presentation theme and colour theme.</p>
+</div>
+<div id="columns" class="section level3 hasAnchor" number="19.1.10">
+<h3><span class="header-section-number">19.1.10</span> Columns<a href="introduction-2.html#columns" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The beamer class also allows you to control the placement of objects within a frame. The columns environment is used to specify a multi-column frame layout, which offers similar functionality to the ‘two content’ and ‘comparison’ layouts in Microsoft PowerPoint. The environment is opened by \begin{columns}[options] and closed by \end{columns}. The options that can be specified are shown in the table below – you can use two of them, by separating them by commas, for example, \begin{columns}[t,onlytextwidth]. To specify a column, simply use \column{width} within the columns environment, where the width parameter controls the width of the column.</p>
+<p>Table <span class="math inline">\(\ref{tbl:colformat}\)</span> lists some useful options for the column environment:</p>
+</div>
+<div id="blocks" class="section level3 hasAnchor" number="19.1.11">
+<h3><span class="header-section-number">19.1.11</span> Blocks<a href="introduction-2.html#blocks" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Blocks are useful when you want to highlight the importance of some text, for example, a quote. They are used to create a separated part of a Beamer frame with its own heading and distinct background color.</p>
+</div>
+<div id="figures-and-tables" class="section level3 hasAnchor" number="19.1.12">
+<h3><span class="header-section-number">19.1.12</span> Figures and Tables<a href="introduction-2.html#figures-and-tables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>You can use figures and tables in Beamer presentations just as you would in articles. For example, you can present the relationship between two variables in two columns, one showing a regression table and the other the scatter plot of the data.</p>
+</div>
+<div id="summary" class="section level3 hasAnchor" number="19.1.13">
+<h3><span class="header-section-number">19.1.13</span> Summary<a href="introduction-2.html#summary" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The functionalities listed in the previous slides are only a very basic list – Beamer offers many more options and graphic structures than you can use – a comprehensive overview is offered by this rather length <a href="mirrors.nic.cz/tex-archive/macros/latex/contrib/beamer/doc/beameruserguide.pdf">Beamer documentation</a>.</p>
+<p>Important hint: when working with Beamer in practice, sometimes errors may persist when you re-compile the PDF file (by pressing the “play “ button in TeXStudio) even though your code is correct. In that case, this might be due to the auxiliary files created by TeX when you compile the document –a solution that is always worth trying is deleting these files – either by hand or using the “Clean auxiliary files” option in the “Tools” tab of TeXStudio.</p>
+<p>To delete all of them, enter the following list into the “file extensions” field: log,aux,dvi,lof,lot,bit,idx,glo,bbl,bcf,ilg,toc,ind,out,blg,fdb_latexmk,fls,snm,nav,synctex.gz</p>
+</div>
+</div>
+<div id="books" class="section level2 hasAnchor" number="19.2">
+<h2><span class="header-section-number">19.2</span> Books<a href="introduction-2.html#books" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The last document class covered in the course is book. Books can be thought of as a more complex version of the article class – they are likely to consist of multiple chapter files with one “master” file binding them all together. This class is particularly useful when preparing a longer piece of academic work, such as a PhD thesis. This section will briefly go through an example book structure which you can download here. The book folder should always follow a tree-like structure, summarized below. Each chapter is a separate tex file and all the chapters are stored in the same folder. Similarly, all the image files used in the book are stored in a separate folder, with sub-folders corresponding to each chapter number.</p>
+<div id="main-file" class="section level3 hasAnchor" number="19.2.1">
+<h3><span class="header-section-number">19.2.1</span> Main File<a href="introduction-2.html#main-file" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The main file, mybook.tex binds everything together using the main document environment. The \include command inserts the book chapters in a specified order. The \input command is used to “copy and paste” the content of a tex file. In this case, it inserts the content of the header.tex file, which contains the book’s preamble. Finally, the \addcontentsline command is used to add the “Bibliography” entry to the table of contents.</p>
+</div>
+<div id="the-preamble-file" class="section level3 hasAnchor" number="19.2.2">
+<h3><span class="header-section-number">19.2.2</span> The Preamble File<a href="introduction-2.html#the-preamble-file" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The header.tex file contains everything that would normally be put in the document’s preamble, i.e. before the \begin{document} statement. Note that this is done for clarity and is not necessary when using a simple book structure like the one in the example – the preamble could simply be placed at the beginning of the mybook.tex file, like in other document classes. However, with the growing complexity of the book, your preamble is likely to get filled with multiple package references and other code customizing the final output. Because of that, storing the preamble in a separate file is likely to make your life easier and keep the length of the main file to a minimum, so that it gives you a good overview of your book’s structure.</p>
+<p>When working with large documents, compiling the entire document while working on a specific chapter only may waste a lot of time. To avoid it, you can use the \includeonly tag in the preamble of the book. It explicitly tells the compiler which chapter files to use when you hit the “play” button in TeXStudio. For example, using \includeonly{chapters/01_introduction} will mean that the \include tags in the main file referencing other chapters than 01_introduction.tex will be ignored and their content will not be compiled in the final output.</p>
+</div>
+<div id="chapter-file" class="section level3 hasAnchor" number="19.2.3">
+<h3><span class="header-section-number">19.2.3</span> Chapter File<a href="introduction-2.html#chapter-file" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The chapter file resembles a normal document, except for the fact that it has neither a preamble nor a \begin{document} statement. Instead, it just begins with \chapter{chaptertitle}. All the packages used in the chapters are defined globally in the book’s preamble.</p>
+</div>
+<div id="listings" class="section level3 hasAnchor" number="19.2.4">
+<h3><span class="header-section-number">19.2.4</span> Listings<a href="introduction-2.html#listings" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Reproducibility of results a key prerequisite of methodological transparency and one of the most important facets of quantitative research in social sciences. Every respectable scholar or analyst should allow his audience to go through his research cycle step-by-step, which involves providing them with the original data and the source-code used for the statistical analysis. Reading someone else’s code might often be a difficult task and providing some comments is likely to make it easier. The listings package allows you to include chunks of code in your documents, which makes it possible to prepare technical reports and appendices explaining your quantitative research.</p>
+<div id="a-basic-example" class="section level4 unnumbered hasAnchor">
+<h4>A Basic Example<a href="introduction-2.html#a-basic-example" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Like every other package, listings needs to be loaded in the preamble of the document. The first example shows the minimal structure of a document using listings. \lstset{language=R} is used to determine which language will you use as the input (in this case we use R). Then, the lstlisting environment is used to include code in the text. Note, that in the output, a different text style is used for function names, such as function, sqrt, sum, comments and variables to make the code more readable. </p>
+</div>
+</div>
+<div id="formatting-listings" class="section level3 hasAnchor" number="19.2.5">
+<h3><span class="header-section-number">19.2.5</span> Formatting Listings<a href="introduction-2.html#formatting-listings" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>To make the code you include in your document more readable, you can add additional formatting to the lstlisting environment by setting different parameters through lstset. The example below shows some most important things that can be changed – you can check out the <a href="texdoc.net/texmf-dist/doc/latex/listings/listings.pdf">Listings package documentation</a> for an exhaustive list.</p>
+<p>See Table <span class="math inline">\(\ref{tbl:listformat}\)</span> for a list of common parameters:</p>
+</div>
+<div id="using-source-files" class="section level3 hasAnchor" number="19.2.6">
+<h3><span class="header-section-number">19.2.6</span> Using Source Files<a href="introduction-2.html#using-source-files" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Copying and pasting your code might be effortful, especially if you make any changes to it after you put it in your document. Instead, you can use \lstinputlisting[lines]{filename} tag, which allows you to input code directly from the source file you used in the analysis (for example an R script). Additionally, you can use the option brackets [] to specify the lines you want to insert. For example \lstinputlisting[firstline = 2, lastline = 10]{script.R} will input lines 2 to 10 from file script.R (provided that the file is in the same location as the .tex file).</p>
+</div>
+<div id="inline-code" class="section level3 hasAnchor" number="19.2.7">
+<h3><span class="header-section-number">19.2.7</span> Inline code<a href="introduction-2.html#inline-code" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Finally, you can use your code in the middle of your regular text, by using , for example:</p>
+<p>This makes it easy to reference specific parts of your syntax. It can also be used with a source file, like \lstinputlisting.</p>
+</div>
+<div id="natbib-advanced-citations" class="section level3 hasAnchor" number="19.2.8">
+<h3><span class="header-section-number">19.2.8</span> Natbib – advanced citations<a href="introduction-2.html#natbib-advanced-citations" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>While citations and references were already covered in part 2 of the course, the natbib package extends BiBTeX’s capabilities and offers more flexibility in customizing bibliographies by including new bibliography styles and extending the \cite command. The structure of the bibliography file (.bib) used by natbib remains the same as in BibTeX.</p>
+<p>Same as in BiBTeX, the bibliography style is set using the \bibliographystyle command. Useful styles include agsm which sets Harvard-like references (the citation style officially used by the PAIS department), as well as plainnat and abbrvnat (which are similar, but the latter uses first name initials instead of full names). By default, some styles (such as apalike or agsm) use round parentheses, while others (like plainnant) use round brackets. This can be changed by loading the natbib with the round option (\usepackage[round]{natbib}) which overrides the default style parentheses to be round or the square option, which does the opposite. Note that when changing the bibliography style in a file once rendered, you need to delete the .bbl auxiliary file which appears in the same folder as your rendered document.</p>
+<p>Natbib also implements multiple versions of the citation command. Rather than using \cite as in BiBTeX, the simplest form of bibliography citation is \citep. \citet is a second alternative, which inserts the author’s surname without parentheses, followed by the publication year enclosed in parentheses. This allows you to cite a resource when using the author’s surname in the sentence, as demonstrated in the example.</p>
+<p>Both \citep and \citet have their alternative versions - \citealp and \citealt, which remove the parentheses entirely. The difference between \citealp and \citealt is that the latter separates the author’s name and publication year with a comma. This does not apply to the agsm bibliography style, which uses no comma between author’s surname and year – in this case, \citealp and \citealt are equivalent.</p>
+<p>Adding an asterisk * at the end of each natbib’s citation command overrides the default et al. abbreviation commonly used in citations of resources with multiple authors and uses the names of all authors instead (this is not supported in some styles, such as apalike). Using the square brackets allows you to add prefixes and suffixes in the citation. So, when using \citep[option1][option2]{resource}, the option1 will be inserted before and option2 after the citation content (see example). Finally, using the \citetext command you can join multiple natbib citations and add your comments in between them, as shown in the example.</p>
+<p>Table <span class="math inline">\(\ref{tbl:listnatbib}\)</span> summarizes the functionality of different citation commands in Natbib. Check out the .tex file used to produce the table – it uses the listings package to cite code inside of a document.</p>
+</div>
+</div>
+<div id="tips-tricks" class="section level2 hasAnchor" number="19.3">
+<h2><span class="header-section-number">19.3</span> Tips &amp; Tricks<a href="introduction-2.html#tips-tricks" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This section covers some useful tips &amp; tricks and extensions of the previously discussed functionalities of .</p>
+<div id="page-dimensions" class="section level3 hasAnchor" number="19.3.1">
+<h3><span class="header-section-number">19.3.1</span> Page Dimensions<a href="introduction-2.html#page-dimensions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The package geometry provides an interface to change global parameters of the document and adjust various page dimensions. This can be done by either loading the package using \usepackage{geometry} and then by using the command \geometry{options} in the preamble of the document, or more concisely by specifying the options when loading the package, by \usepackage[options]{geometry} – these are equivalent and can be used interchangeably, although the majority of users seem to prefer the latter since it’s shorter. The options are comma-separated parameters that you may want to adjust, such as the paper size (a4paper, a3paper, legalpaper, etc.), textwidth and textheight (which are self-explanatory) or margin (which sets all the margins to a certain length).</p>
+<p>These two are equivalent.</p>
+<p>The list of some basic parameters is shown in Table <span class="math inline">\(\ref{tbl:geometry}\)</span>. Each of them can be set using <a href="en.wikibooks.org/wiki/LaTeX/Lengths">different length units</a> such as cm or in. The total size of the page is divided into the text body and margins, which have separate parameters – this is shown in Figure adopted from the <a href="ftp.cvut.cz/tex-archive/macros/latex/coantrib/geometry/geometry.pdf">geometry package documentation</a>, which discusses the intricacies of different parameters at length.</p>
+<p><img src="files3/page-dimensions.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>You can also change page dimensions mid-document, using the \newgeometry{options} command in your document with the options listed above. Then, using \restoregeometry will restore the parameters of all pages set after \newpage or \clearpage to those set in the preamble. This is demonstrated in the example.</p>
+<div style="page-break-after: always;"></div>
+</div>
+<div id="styling" class="section level3 hasAnchor" number="19.3.2">
+<h3><span class="header-section-number">19.3.2</span> Styling<a href="introduction-2.html#styling" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="page-number" class="section level4 hasAnchor" number="19.3.2.1">
+<h4><span class="header-section-number">19.3.2.1</span> Page number<a href="introduction-2.html#page-number" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>\pagenumbering{style} – determines numbering style from the page it’s used on. Note that whenever you use this command, the page numbering starts from the beginning. Styles that can be used include arabic, alph (lowercase letters), Alph (uppercase), roman (lowercase roman numerals), Roman (uppercase roman numerals).</p>
+</div>
+<div id="header-and-footer-style" class="section level4 hasAnchor" number="19.3.2.2">
+<h4><span class="header-section-number">19.3.2.2</span> Header and footer style<a href="introduction-2.html#header-and-footer-style" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>\pagestyle{style} sets the automatic styling of the header and the footer from the page it’s used on. The footer and header’s behaviour is also determined by the documentclass of the document. The default value of style is plain, which puts a plain page number in the footer of each page. Other possibilities include:</p>
+<ul>
+<li>empty – nothing in either the header or the footer</li>
+<li>headings – running headings of the current section and page number</li>
+</ul>
+<p>A more useful alternative is offered by the fancyhdr package. It implements new pagestyle, fancy and allows you to control the left, right and central elements of the footer and header with simple commands in the document preamble. For example, \rhead{text} sets the right footer and \cfoot{text} sets the central footer. Their usage, along with some other useful styling tools, is shown in the example.</p>
+</div>
+</div>
+<div id="shortcuts-and-special-escapes" class="section level3 hasAnchor" number="19.3.3">
+<h3><span class="header-section-number">19.3.3</span> Shortcuts and Special Escapes<a href="introduction-2.html#shortcuts-and-special-escapes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="shortcuts" class="section level4 hasAnchor" number="19.3.3.1">
+<h4><span class="header-section-number">19.3.3.1</span> Shortcuts<a href="introduction-2.html#shortcuts" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Texstudio also comes with multiple keyboard shortcuts which make preparing documents in slightly faster. Some of the most useful shortcuts are listed in Table <span class="math inline">\(\ref{tbl:texstudio}\)</span>. </p>
+</div>
+<div id="special-escapes" class="section level4 hasAnchor" number="19.3.3.2">
+<h4><span class="header-section-number">19.3.3.2</span> Special Escapes<a href="introduction-2.html#special-escapes" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Some of the characters such as “$”, “%”, “#” or “_” have a special meaning in and by default are interpreted as elements of the syntax, rather than the text. You can override it by using the “escape” signs, which is the backslash “\”. So, for example, if you want to compile “15%”, you need to typeset “15\%” to escape the percentage character. To escape the backslash itself, use the tag \textbackslash. </p>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="introduction-1.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+},
+"toc_depth": 2
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
