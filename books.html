@@ -391,63 +391,63 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb73-19"><a href="books.html#cb73-19" tabindex="-1"></a>print(&quot;Task completed&quot;)</span>
 <span id="cb73-20"><a href="books.html#cb73-20" tabindex="-1"></a>}</span>
 <span id="cb73-21"><a href="books.html#cb73-21" tabindex="-1"></a>\end{lstlisting}</span></code></pre></div>
-<p>See Table <a href="books.html#tab:foo2">26.1</a> for a list of common parameters:</p>
+<p>See Table <a href="books.html#tab:listings">26.1</a> for a list of common parameters:</p>
 <table>
-<caption><span id="tab:foo2">Table 26.1: </span> Formatting of Listings</caption>
+<caption><span id="tab:listings">Table 26.1: </span>Formatting of Listings</caption>
 <colgroup>
-<col width="50%" />
-<col width="50%" />
+<col width="7%" />
+<col width="92%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th>Parameter</th>
-<th>Description</th>
+<th align="left">Parameter</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>language</td>
-<td>Which language you are using. This determines the default keywords to be highlighted.</td>
+<td align="left">language</td>
+<td align="left">Which language you are using. This determines the default keywords to be highlighted.</td>
 </tr>
 <tr class="even">
-<td>basicstyle</td>
-<td>The basic style used for listing. The teletype (<span class="math inline">\(\backslash\)</span>ttfamily) font is a good choice. You can also alter the font size used for the listing.</td>
+<td align="left">basicstyle</td>
+<td align="left">The basic style used for listing. The teletype (\ttfamily) font is a good choice. You can also alter the font size used for the listing.</td>
 </tr>
 <tr class="odd">
-<td>numbers</td>
-<td>Location of line numbers</td>
+<td align="left">numbers</td>
+<td align="left">Location of line numbers</td>
 </tr>
 <tr class="even">
-<td>keywordstyle</td>
-<td>Formatting of language keywords. You can use <span class="math inline">\(\backslash\)</span>color{color} (this requires using color or xcolor packages). Other examples include <span class="math inline">\(\backslash\)</span>itshape for italics, <span class="math inline">\(\backslash\)</span>underbar for underscore and <span class="math inline">\(\backslash\)</span>bfseries for the bold font.</td>
+<td align="left">keywordstyle</td>
+<td align="left">Formatting of language keywords. You can use \color{color} (this requires using color or xcolor packages). Other examples include \itshape for italics, \underbar for underscore and \bfseries for the bold font.</td>
 </tr>
 <tr class="odd">
-<td>commentstyle</td>
-<td>Style of the comments.</td>
+<td align="left">commentstyle</td>
+<td align="left">Style of the comments.</td>
 </tr>
 <tr class="even">
-<td>strinstyle</td>
-<td>Style of the strings</td>
+<td align="left">strinstyle</td>
+<td align="left">Style of the strings</td>
 </tr>
 <tr class="odd">
-<td>tabsize</td>
-<td>Tabulation size</td>
+<td align="left">tabsize</td>
+<td align="left">Tabulation size</td>
 </tr>
 <tr class="even">
-<td>emph, emphstyle</td>
-<td>This allows you to select a separate style for some words that you want to emphasize in the code</td>
+<td align="left">emph, emphstyle</td>
+<td align="left">This allows you to select a separate style for some words that you want to emphasize in the code</td>
 </tr>
 <tr class="odd">
-<td>showstringspaces</td>
-<td>Determines how spaces are shown in strings in the code</td>
+<td align="left">showstringspaces</td>
+<td align="left">Determines how spaces are shown in strings in the code</td>
 </tr>
 <tr class="even">
-<td>morekeywords</td>
-<td>Allows you to specify additional keywords you want to highlight using the keywordstyle</td>
+<td align="left">morekeywords</td>
+<td align="left">Allows you to specify additional keywords you want to highlight using the keywordstyle</td>
 </tr>
 <tr class="odd">
-<td>deletekeywords</td>
-<td>Allows you to specify keywords you don’t want to be highlighted \</td>
+<td align="left">deletekeywords</td>
+<td align="left">Allows you to specify keywords you don’t want to be highlighted</td>
 </tr>
 </tbody>
 </table>
@@ -502,43 +502,39 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb77-5"><a href="books.html#cb77-5" tabindex="-1"></a>Experiments have shown that prolonged deliberation about politics amongst like-minded voters results in amplified ideological polarization \citep*[see][pp.~920]{schadkeetal2007}. This undermines the applicability of theoretical models proposed by proponents of deliberative democracy \citetext{see \citealp{ackermanfishkin2004},  see also \citealp{cohen1989}}.</span>
 <span id="cb77-6"><a href="books.html#cb77-6" tabindex="-1"></a>\bibliography{my_bibliography}</span>
 <span id="cb77-7"><a href="books.html#cb77-7" tabindex="-1"></a>\end{document}</span></code></pre></div>
-<p>Table <a href="books.html#tab:foo3">26.2</a> summarizes the functionality of different citation commands in Natbib. Check out the .tex file used to produce the table – it uses the listings package to cite LaTeX code inside of a LaTeX document.</p>
+<p>Table <a href="books.html#tab:natbib">26.2</a> summarizes the functionality of different citation commands in Natbib. Check out the .tex file used to produce the table – it uses the listings package to cite LaTeX code inside of a LaTeX document.</p>
 <table>
-<caption><span id="tab:foo3">Table 26.2: </span> NatBib Commands</caption>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
+<caption><span id="tab:natbib">Table 26.2: </span>NatBib Commands</caption>
 <thead>
 <tr class="header">
-<th>Command</th>
-<th>Result</th>
+<th align="left">Command</th>
+<th align="left">Result</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><span class="math inline">\(\backslash\)</span>citep{cohen1989}</td>
-<td>(Cohen, 1989)</td>
+<td align="left">\citep{cohen1989}</td>
+<td align="left">(Cohen, 1989)</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(\backslash\)</span>citet{cohen1989}</td>
-<td>Cohen (1989)</td>
+<td align="left">\citet{cohen1989}</td>
+<td align="left">Cohen (1989)</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(\backslash\)</span>citep[see][p. 920]{cohen1989}</td>
-<td>(see Cohen 1989, p. 920)</td>
+<td align="left">\citep[see][p. 920]{cohen1989}</td>
+<td align="left">(see Cohen 1989, p. 920)</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(\backslash\)</span>citealp{cohen1989}</td>
-<td>Cohen, 1989</td>
+<td align="left">\citealp{cohen1989}</td>
+<td align="left">Cohen, 1989</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(\backslash\)</span>citealt{cohen1989}</td>
-<td>Cohen 1989</td>
+<td align="left">\citealt{cohen1989}</td>
+<td align="left">Cohen 1989</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(\backslash\)</span>citet*{schadkeetal2007}</td>
-<td>Schadke, Sunstein &amp; Hastie (2007)[1]</td>
+<td align="left">\citet*{schadkeetal2007}</td>
+<td align="left">Schadke, Sunstein &amp; Hastie (2007)[1]</td>
 </tr>
 </tbody>
 </table>
@@ -600,25 +596,12 @@ gitbook.start({
 "toc": {
 "collapse": "section"
 },
-"toc_depth": 2
+"toc_depth": 2,
+"keep_tex": true
 });
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>

@@ -288,83 +288,83 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb10-11"><a href="font-styles.html#cb10-11" tabindex="-1"></a>\end{large} \\</span>
 <span id="cb10-12"><a href="font-styles.html#cb10-12" tabindex="-1"></a>And this is the default size again!</span></code></pre></div>
 <p>To change the font size from the default (which is 10pt. for the document class ‘article’), you can use markup tags describing the size you want. This can be done either mid-sentence or for entire area, as seen in the figure above.</p>
-<p>Table <a href="font-styles.html#tab:foo">8.1</a> demonstrates the effect that different LaTeX commands have on the font in relation to the standard font size that has been set for the document. To make things a little bit easier for you, TeXstudio has dedicated buttons for font styles, similar to those you may be familiar with from text editors you have used, such as Microsoft Word – you can find them located left of the TeX file editor.</p>
+<p>Table <a href="font-styles.html#tab:fontsizes">8.1</a> demonstrates the effect that different LaTeX commands have on the font in relation to the standard font size that has been set for the document. To make things a little bit easier for you, TeXstudio has dedicated buttons for font styles, similar to those you may be familiar with from text editors you have used, such as Microsoft Word – you can find them located left of the TeX file editor.</p>
 <table>
-<caption><span id="tab:foo">Table 8.1: </span> Font Sizes</caption>
+<caption><span id="tab:fontsizes">Table 8.1: </span>Font Sizes</caption>
 <thead>
 <tr class="header">
-<th>If standard font size is:</th>
-<th>10pt</th>
-<th>11pt</th>
-<th>12pt</th>
+<th align="left">If standard font size is</th>
+<th align="left">10pt</th>
+<th align="left">11pt</th>
+<th align="left">12pt</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>These commands change it to …</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
+<td align="left">These commands change it to …</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(\backslash\)</span>tiny</td>
-<td>5pt</td>
-<td>6pt</td>
-<td>6pt</td>
+<td align="left">\tiny</td>
+<td align="left">5pt</td>
+<td align="left">6pt</td>
+<td align="left">6pt</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(\backslash\)</span>scriptsize</td>
-<td>7pt</td>
-<td>8pt</td>
-<td>8pt</td>
+<td align="left">\scriptsize</td>
+<td align="left">7pt</td>
+<td align="left">8pt</td>
+<td align="left">8pt</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(\backslash\)</span>footnotesize</td>
-<td>8pt</td>
-<td>9pt</td>
-<td>10pt</td>
+<td align="left">\footnotesize</td>
+<td align="left">8pt</td>
+<td align="left">9pt</td>
+<td align="left">10pt</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(\backslash\)</span>small</td>
-<td>9pt</td>
-<td>10pt</td>
-<td>11pt</td>
+<td align="left">\small</td>
+<td align="left">9pt</td>
+<td align="left">10pt</td>
+<td align="left">11pt</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(\backslash\)</span>normalsize</td>
-<td>10pt</td>
-<td>11pt</td>
-<td>12pt</td>
+<td align="left">\normalsize</td>
+<td align="left">10pt</td>
+<td align="left">11pt</td>
+<td align="left">12pt</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(\backslash\)</span>large</td>
-<td>12pt</td>
-<td>12pt</td>
-<td>14pt</td>
+<td align="left">\large</td>
+<td align="left">12pt</td>
+<td align="left">12pt</td>
+<td align="left">14pt</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(\backslash\)</span>Large</td>
-<td>14pt</td>
-<td>14pt</td>
-<td>17pt</td>
+<td align="left">\Large</td>
+<td align="left">14pt</td>
+<td align="left">14pt</td>
+<td align="left">17pt</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(\backslash\)</span>LARGE</td>
-<td>17pt</td>
-<td>17pt</td>
-<td>20pt</td>
+<td align="left">\LARGE</td>
+<td align="left">17pt</td>
+<td align="left">17pt</td>
+<td align="left">20pt</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(\backslash\)</span>huge</td>
-<td>20pt</td>
-<td>20pt</td>
-<td>25pt</td>
+<td align="left">\huge</td>
+<td align="left">20pt</td>
+<td align="left">20pt</td>
+<td align="left">25pt</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(\backslash\)</span>Huge</td>
-<td>25pt</td>
-<td>25pt</td>
-<td>25pt</td>
+<td align="left">\Huge</td>
+<td align="left">25pt</td>
+<td align="left">25pt</td>
+<td align="left">25pt</td>
 </tr>
 </tbody>
 </table>
@@ -425,25 +425,12 @@ gitbook.start({
 "toc": {
 "collapse": "section"
 },
-"toc_depth": 2
+"toc_depth": 2,
+"keep_tex": true
 });
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>

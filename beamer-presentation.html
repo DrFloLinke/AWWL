@@ -507,43 +507,43 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb65-12"><a href="beamer-presentation.html#cb65-12" tabindex="-1"></a>\end{itemize}</span>
 <span id="cb65-13"><a href="beamer-presentation.html#cb65-13" tabindex="-1"></a>\end{columns}</span>
 <span id="cb65-14"><a href="beamer-presentation.html#cb65-14" tabindex="-1"></a>\end{frame}</span></code></pre></div>
-<p>Table <a href="beamer-presentation.html#tab:foo1">25.1</a> lists some useful options for the column environment:</p>
+<p>Table <a href="beamer-presentation.html#tab:columnoptions">25.1</a> lists some useful options for the column environment:</p>
 <table>
-<caption><span id="tab:foo1">Table 25.1: </span> Column Formatting</caption>
+<caption><span id="tab:columnoptions">Table 25.1: </span>Column Formatting</caption>
 <colgroup>
-<col width="50%" />
-<col width="50%" />
+<col width="11%" />
+<col width="88%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th>Option</th>
-<th>Description</th>
+<th align="left">Option</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>c</td>
-<td>Central align columns</td>
+<td align="left">c</td>
+<td align="left">Central align columns</td>
 </tr>
 <tr class="even">
-<td>b</td>
-<td>Align column bottoms</td>
+<td align="left">b</td>
+<td align="left">Align column bottoms</td>
 </tr>
 <tr class="odd">
-<td>t</td>
-<td>Align column tops</td>
+<td align="left">t</td>
+<td align="left">Align column tops</td>
 </tr>
 <tr class="even">
-<td>totalWidth =</td>
-<td>Determines total joint width of the two columns</td>
+<td align="left">totalWidth =</td>
+<td align="left">Determines total joint width of the two columns</td>
 </tr>
 <tr class="odd">
-<td>onlytextwidth</td>
-<td>Equivalent to totalwidth = <span class="math inline">\(\backslash\)</span>textwidth</td>
+<td align="left">onlytextwidth</td>
+<td align="left">Equivalent to totalwidth = ∖∖textwidth</td>
 </tr>
 <tr class="even">
-<td>T</td>
-<td>Also top alignment, however using a different method (if formatting problems occur with t, try using T instead)</td>
+<td align="left">T</td>
+<td align="left">Also top alignment, however using a different method (if formatting problems occur with t, try using T instead)</td>
 </tr>
 </tbody>
 </table>
@@ -664,25 +664,12 @@ gitbook.start({
 "toc": {
 "collapse": "section"
 },
-"toc_depth": 2
+"toc_depth": 2,
+"keep_tex": true
 });
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>

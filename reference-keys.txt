@@ -1,9 +1,9 @@
-tab:foo
-tab:foo1
-tab:foo2
-tab:foo3
-tab:foo4
-tab:foo5
+tab:fontsizes
+tab:columnoptions
+tab:listings
+tab:natbib
+tab:geometry
+tab:shortcuts
 introduction
 what-is-latex
 why-should-i-choose-latex-over-my-current-document-system
