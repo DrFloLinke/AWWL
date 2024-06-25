@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>21 Setting Tables | Academic Writing with LaTeX</title>
+  <meta name="description" content="21 Setting Tables | Academic Writing with LaTeX" />
+  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="21 Setting Tables | Academic Writing with LaTeX" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="21 Setting Tables | Academic Writing with LaTeX" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="captions-flos-pet-hate.html"/>
+<link rel="next" href="lists-of-figures-and-tables.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="part"><span><b>I The First LaTeX Document</b></span></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="what-is-latex.html"><a href="what-is-latex.html"><i class="fa fa-check"></i><b>2</b> What is LaTeX?</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="what-is-latex.html"><a href="what-is-latex.html#why-should-i-choose-latex-over-my-current-document-system"><i class="fa fa-check"></i><b>2.1</b> Why should I choose LaTeX over my current document system?</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="download-and-installation.html"><a href="download-and-installation.html"><i class="fa fa-check"></i><b>3</b> Download and Installation</a></li>
+<li class="chapter" data-level="4" data-path="intro-to-texstudio.html"><a href="intro-to-texstudio.html"><i class="fa fa-check"></i><b>4</b> Intro to “TeXstudio”</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="intro-to-texstudio.html"><a href="intro-to-texstudio.html#the-toolbar"><i class="fa fa-check"></i><b>4.1</b> The Toolbar</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="minimum-structure-for-an-article-your-first-document-in-latex.html"><a href="minimum-structure-for-an-article-your-first-document-in-latex.html"><i class="fa fa-check"></i><b>5</b> Minimum Structure for an article – your first document in LaTeX</a></li>
+<li class="chapter" data-level="6" data-path="formatting-your-document.html"><a href="formatting-your-document.html"><i class="fa fa-check"></i><b>6</b> Formatting Your Document</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="formatting-your-document.html"><a href="formatting-your-document.html#sections-and-subsections"><i class="fa fa-check"></i><b>6.1</b> Sections and Subsections</a></li>
+<li class="chapter" data-level="6.2" data-path="formatting-your-document.html"><a href="formatting-your-document.html#paragraphs-line-breaks-and-spaces"><i class="fa fa-check"></i><b>6.2</b> Paragraphs, line breaks and spaces</a></li>
+<li class="chapter" data-level="6.3" data-path="formatting-your-document.html"><a href="formatting-your-document.html#line-breaks-and-page-breaks"><i class="fa fa-check"></i><b>6.3</b> Line breaks and page breaks</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="formatting-your-document.html"><a href="formatting-your-document.html#line-breaks"><i class="fa fa-check"></i><b>6.3.1</b> Line breaks</a></li>
+<li class="chapter" data-level="6.3.2" data-path="formatting-your-document.html"><a href="formatting-your-document.html#page-breaks"><i class="fa fa-check"></i><b>6.3.2</b> Page breaks</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="formatting-your-document.html"><a href="formatting-your-document.html#paragraphs"><i class="fa fa-check"></i><b>6.4</b> Paragraphs</a></li>
+<li class="chapter" data-level="6.5" data-path="formatting-your-document.html"><a href="formatting-your-document.html#spaces"><i class="fa fa-check"></i><b>6.5</b> Spaces</a></li>
+<li class="chapter" data-level="6.6" data-path="formatting-your-document.html"><a href="formatting-your-document.html#skips"><i class="fa fa-check"></i><b>6.6</b> Skips</a></li>
+<li class="chapter" data-level="6.7" data-path="formatting-your-document.html"><a href="formatting-your-document.html#text-alignment"><i class="fa fa-check"></i><b>6.7</b> Text Alignment</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="lists.html"><a href="lists.html"><i class="fa fa-check"></i><b>7</b> Lists</a></li>
+<li class="chapter" data-level="8" data-path="font-styles.html"><a href="font-styles.html"><i class="fa fa-check"></i><b>8</b> Font Styles</a></li>
+<li class="chapter" data-level="9" data-path="table-of-contents.html"><a href="table-of-contents.html"><i class="fa fa-check"></i><b>9</b> Table of Contents</a></li>
+<li class="chapter" data-level="10" data-path="title-page.html"><a href="title-page.html"><i class="fa fa-check"></i><b>10</b> Title Page</a></li>
+<li class="chapter" data-level="11" data-path="commenting-your-code.html"><a href="commenting-your-code.html"><i class="fa fa-check"></i><b>11</b> Commenting your code</a></li>
+<li class="part"><span><b>II Tables, Figures, and References</b></span></li>
+<li class="chapter" data-level="12" data-path="introduction-1.html"><a href="introduction-1.html"><i class="fa fa-check"></i><b>12</b> Introduction</a></li>
+<li class="chapter" data-level="13" data-path="labels.html"><a href="labels.html"><i class="fa fa-check"></i><b>13</b> Labels</a></li>
+<li class="chapter" data-level="14" data-path="footnotes.html"><a href="footnotes.html"><i class="fa fa-check"></i><b>14</b> Footnotes</a></li>
+<li class="chapter" data-level="15" data-path="packages.html"><a href="packages.html"><i class="fa fa-check"></i><b>15</b> Packages</a></li>
+<li class="chapter" data-level="16" data-path="including-figures-pictures.html"><a href="including-figures-pictures.html"><i class="fa fa-check"></i><b>16</b> Including Figures &amp; Pictures</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="including-figures-pictures.html"><a href="including-figures-pictures.html#including-figures"><i class="fa fa-check"></i><b>16.1</b> Including Figures</a></li>
+<li class="chapter" data-level="16.2" data-path="including-figures-pictures.html"><a href="including-figures-pictures.html#including-a-picture"><i class="fa fa-check"></i><b>16.2</b> Including a Picture</a></li>
+<li class="chapter" data-level="16.3" data-path="including-figures-pictures.html"><a href="including-figures-pictures.html#picture-dimensions"><i class="fa fa-check"></i><b>16.3</b> Picture Dimensions</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="floats.html"><a href="floats.html"><i class="fa fa-check"></i><b>17</b> Floats</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="floats.html"><a href="floats.html#float-location"><i class="fa fa-check"></i><b>17.1</b> Float Location</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="float-barriers.html"><a href="float-barriers.html"><i class="fa fa-check"></i><b>18</b> Float Barriers</a></li>
+<li class="chapter" data-level="19" data-path="sub-figures.html"><a href="sub-figures.html"><i class="fa fa-check"></i><b>19</b> Sub-Figures</a></li>
+<li class="chapter" data-level="20" data-path="captions-flos-pet-hate.html"><a href="captions-flos-pet-hate.html"><i class="fa fa-check"></i><b>20</b> Captions (Flo’s Pet Hate)</a></li>
+<li class="chapter" data-level="21" data-path="setting-tables.html"><a href="setting-tables.html"><i class="fa fa-check"></i><b>21</b> Setting Tables</a>
+<ul>
+<li class="chapter" data-level="21.1" data-path="setting-tables.html"><a href="setting-tables.html#separation-lines"><i class="fa fa-check"></i><b>21.1</b> Separation Lines</a></li>
+<li class="chapter" data-level="21.2" data-path="setting-tables.html"><a href="setting-tables.html#fixed-width-of-columns"><i class="fa fa-check"></i><b>21.2</b> Fixed Width of Columns</a></li>
+<li class="chapter" data-level="21.3" data-path="setting-tables.html"><a href="setting-tables.html#controlling-vertical-adjustment"><i class="fa fa-check"></i><b>21.3</b> Controlling Vertical Adjustment</a></li>
+<li class="chapter" data-level="21.4" data-path="setting-tables.html"><a href="setting-tables.html#combining-rows-and-columns"><i class="fa fa-check"></i><b>21.4</b> Combining Rows and Columns</a></li>
+<li class="chapter" data-level="21.5" data-path="setting-tables.html"><a href="setting-tables.html#tabularx"><i class="fa fa-check"></i><b>21.5</b> Tabularx</a></li>
+<li class="chapter" data-level="21.6" data-path="setting-tables.html"><a href="setting-tables.html#defining-new-column-types"><i class="fa fa-check"></i><b>21.6</b> Defining New Column Types</a></li>
+<li class="chapter" data-level="21.7" data-path="setting-tables.html"><a href="setting-tables.html#specifying-row-height"><i class="fa fa-check"></i><b>21.7</b> Specifying Row Height</a></li>
+<li class="chapter" data-level="21.8" data-path="setting-tables.html"><a href="setting-tables.html#the-table-floating-environment"><i class="fa fa-check"></i><b>21.8</b> The ‘Table’ Floating Environment</a></li>
+</ul></li>
+<li class="chapter" data-level="22" data-path="lists-of-figures-and-tables.html"><a href="lists-of-figures-and-tables.html"><i class="fa fa-check"></i><b>22</b> Lists of Figures and Tables</a></li>
+<li class="chapter" data-level="23" data-path="referencing-and-the-bibliography.html"><a href="referencing-and-the-bibliography.html"><i class="fa fa-check"></i><b>23</b> Referencing and the Bibliography</a>
+<ul>
+<li class="chapter" data-level="23.1" data-path="referencing-and-the-bibliography.html"><a href="referencing-and-the-bibliography.html#the-bibliography"><i class="fa fa-check"></i><b>23.1</b> The Bibliography</a>
+<ul>
+<li class="chapter" data-level="23.1.1" data-path="referencing-and-the-bibliography.html"><a href="referencing-and-the-bibliography.html#bib-files"><i class="fa fa-check"></i><b>23.1.1</b> .bib files</a></li>
+</ul></li>
+<li class="chapter" data-level="23.2" data-path="referencing-and-the-bibliography.html"><a href="referencing-and-the-bibliography.html#citing-bibliography-resources"><i class="fa fa-check"></i><b>23.2</b> Citing Bibliography Resources</a></li>
+<li class="chapter" data-level="23.3" data-path="referencing-and-the-bibliography.html"><a href="referencing-and-the-bibliography.html#endnotes"><i class="fa fa-check"></i><b>23.3</b> Endnotes</a></li>
+</ul></li>
+<li class="part"><span><b>III Advanced Documents</b></span></li>
+<li class="chapter" data-level="24" data-path="introduction-2.html"><a href="introduction-2.html"><i class="fa fa-check"></i><b>24</b> Introduction</a></li>
+<li class="chapter" data-level="25" data-path="beamer-presentation.html"><a href="beamer-presentation.html"><i class="fa fa-check"></i><b>25</b> Beamer Presentation</a>
+<ul>
+<li class="chapter" data-level="25.1" data-path="beamer-presentation.html"><a href="beamer-presentation.html#first-beamer-presentation"><i class="fa fa-check"></i><b>25.1</b> First Beamer Presentation</a></li>
+<li class="chapter" data-level="25.2" data-path="beamer-presentation.html"><a href="beamer-presentation.html#title-frame"><i class="fa fa-check"></i><b>25.2</b> Title Frame</a></li>
+<li class="chapter" data-level="25.3" data-path="beamer-presentation.html"><a href="beamer-presentation.html#themes"><i class="fa fa-check"></i><b>25.3</b> Themes</a></li>
+<li class="chapter" data-level="25.4" data-path="beamer-presentation.html"><a href="beamer-presentation.html#frame-title"><i class="fa fa-check"></i><b>25.4</b> Frame Title</a></li>
+<li class="chapter" data-level="25.5" data-path="beamer-presentation.html"><a href="beamer-presentation.html#sections"><i class="fa fa-check"></i><b>25.5</b> Sections</a></li>
+<li class="chapter" data-level="25.6" data-path="beamer-presentation.html"><a href="beamer-presentation.html#atbeginsection"><i class="fa fa-check"></i><b>25.6</b> AtBeginSection</a></li>
+<li class="chapter" data-level="25.7" data-path="beamer-presentation.html"><a href="beamer-presentation.html#colour-boxes"><i class="fa fa-check"></i><b>25.7</b> Colour Boxes</a></li>
+<li class="chapter" data-level="25.8" data-path="beamer-presentation.html"><a href="beamer-presentation.html#table-of-contents-1"><i class="fa fa-check"></i><b>25.8</b> Table of Contents</a></li>
+<li class="chapter" data-level="25.9" data-path="beamer-presentation.html"><a href="beamer-presentation.html#overlays-and-pauses"><i class="fa fa-check"></i><b>25.9</b> Overlays and Pauses</a></li>
+<li class="chapter" data-level="25.10" data-path="beamer-presentation.html"><a href="beamer-presentation.html#columns"><i class="fa fa-check"></i><b>25.10</b> Columns</a></li>
+<li class="chapter" data-level="25.11" data-path="beamer-presentation.html"><a href="beamer-presentation.html#blocks"><i class="fa fa-check"></i><b>25.11</b> Blocks</a></li>
+<li class="chapter" data-level="25.12" data-path="beamer-presentation.html"><a href="beamer-presentation.html#figures-and-tables"><i class="fa fa-check"></i><b>25.12</b> Figures and Tables</a></li>
+<li class="chapter" data-level="25.13" data-path="beamer-presentation.html"><a href="beamer-presentation.html#summary"><i class="fa fa-check"></i><b>25.13</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="26" data-path="books.html"><a href="books.html"><i class="fa fa-check"></i><b>26</b> Books</a>
+<ul>
+<li class="chapter" data-level="26.0.1" data-path="books.html"><a href="books.html#main-file"><i class="fa fa-check"></i><b>26.0.1</b> Main File</a></li>
+<li class="chapter" data-level="26.1" data-path="books.html"><a href="books.html#the-preamble-file"><i class="fa fa-check"></i><b>26.1</b> The Preamble File</a></li>
+<li class="chapter" data-level="26.2" data-path="books.html"><a href="books.html#chapter-file"><i class="fa fa-check"></i><b>26.2</b> Chapter File</a></li>
+<li class="chapter" data-level="26.3" data-path="books.html"><a href="books.html#listings"><i class="fa fa-check"></i><b>26.3</b> Listings</a>
+<ul>
+<li class="chapter" data-level="" data-path="books.html"><a href="books.html#a-basic-example"><i class="fa fa-check"></i>A Basic Example</a></li>
+</ul></li>
+<li class="chapter" data-level="26.4" data-path="books.html"><a href="books.html#formatting-listings"><i class="fa fa-check"></i><b>26.4</b> Formatting Listings</a></li>
+<li class="chapter" data-level="26.5" data-path="books.html"><a href="books.html#using-source-files"><i class="fa fa-check"></i><b>26.5</b> Using Source Files</a></li>
+<li class="chapter" data-level="26.6" data-path="books.html"><a href="books.html#inline-code"><i class="fa fa-check"></i><b>26.6</b> Inline code</a></li>
+<li class="chapter" data-level="26.7" data-path="books.html"><a href="books.html#natbib-advanced-citations"><i class="fa fa-check"></i><b>26.7</b> Natbib – Advanced Citations</a></li>
+</ul></li>
+<li class="chapter" data-level="27" data-path="tips-tricks.html"><a href="tips-tricks.html"><i class="fa fa-check"></i><b>27</b> Tips &amp; Tricks</a>
+<ul>
+<li class="chapter" data-level="27.1" data-path="tips-tricks.html"><a href="tips-tricks.html#page-dimensions"><i class="fa fa-check"></i><b>27.1</b> Page Dimensions</a></li>
+<li class="chapter" data-level="27.2" data-path="tips-tricks.html"><a href="tips-tricks.html#styling"><i class="fa fa-check"></i><b>27.2</b> Styling</a>
+<ul>
+<li class="chapter" data-level="27.2.1" data-path="tips-tricks.html"><a href="tips-tricks.html#page-number"><i class="fa fa-check"></i><b>27.2.1</b> Page number</a></li>
+<li class="chapter" data-level="27.2.2" data-path="tips-tricks.html"><a href="tips-tricks.html#header-and-footer-style"><i class="fa fa-check"></i><b>27.2.2</b> Header and footer style</a></li>
+</ul></li>
+<li class="chapter" data-level="27.3" data-path="tips-tricks.html"><a href="tips-tricks.html#shortcuts-and-special-escapes"><i class="fa fa-check"></i><b>27.3</b> Shortcuts and Special Escapes</a>
+<ul>
+<li class="chapter" data-level="27.3.1" data-path="tips-tricks.html"><a href="tips-tricks.html#shortcuts"><i class="fa fa-check"></i><b>27.3.1</b> Shortcuts</a></li>
+<li class="chapter" data-level="27.3.2" data-path="tips-tricks.html"><a href="tips-tricks.html#special-escapes"><i class="fa fa-check"></i><b>27.3.2</b> Special Escapes</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Academic Writing with LaTeX</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="setting-tables" class="section level1 hasAnchor" number="21">
+<h1><span class="header-section-number">21</span> Setting Tables<a href="setting-tables.html#setting-tables" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Tables are a useful way of presenting both qualitative and quantitative data in any written piece of work and can often be very helpful in summarizing complex ideas conveyed in the text. While setting them up in LaTeX might appear a bit tedious at first, it gives you a high degree of flexibility and allows you to craft them just the way you want them to look.</p>
+<p>Moreover, for all those who would like to present the results of quantitative analysis, many commonly used statistical tools such as Stata (esttab) or R (stargazer, xtable and others) have packages that allow you to create publication-ready LaTeX tables with one or two simple functions.</p>
+<p>Tables are set in LaTeX using the tabular environment. The tabular environment begins with \begin{tabular}{cols} and ends with \end{tabular}. Instead of cols, however, we specify the number of columns our table has, as well as the location of text in each of them. So, for example, {ccc} would mean three columns with text centred in each of them, while {lr} would mean two columns, first one with text aligned to the left and the second one to the right. The three basic tabular column types are:
+- l – left-justified text in column
+- c – centred text in column
+- r – right-justified text in column
+ After defining the table, each row is entered by simply entering the content of each cell separated with the ‘&amp;’ character row-wise. To notify LaTeX that a row ends, you use ‘\\’, the same character used to insert new line outside of the tabular environment. Note that the number of entries in each row must always match the number of rows specified in the curly braces at the beginning of the tabular environment. You can see a basic table in the example.
+ 
+ 
+<img src="files2/part2_05_tables_01.png" width="25%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb33-1"><a href="setting-tables.html#cb33-1" tabindex="-1"></a>\begin{tabular}{ccc}</span>
+<span id="cb33-2"><a href="setting-tables.html#cb33-2" tabindex="-1"></a>1 &amp; 2 &amp; 3 \\</span>
+<span id="cb33-3"><a href="setting-tables.html#cb33-3" tabindex="-1"></a>4 &amp; 5 &amp; 6 \\</span>
+<span id="cb33-4"><a href="setting-tables.html#cb33-4" tabindex="-1"></a>7 &amp; 8 &amp; 9 \\</span>
+<span id="cb33-5"><a href="setting-tables.html#cb33-5" tabindex="-1"></a>\end{tabular}</span></code></pre></div>
+<p>As you can see, the output produced by the example does not look too impressive. It may also appear quite tedious to enter all those ‘&amp;’ characters. Fortunately, TexStudio comes in handy with a button allowing you to enter a new row automatically and then only fill in the blank spaces with your content. It is located on the right-hand side of the application toolbar, several buttons to the right from the “compile” button, as seen below.</p>
+<p><img src="files2/toolbar_newrow-circle.png" width="100%" style="display: block; margin: auto;" /></p>
+<div id="separation-lines" class="section level2 hasAnchor" number="21.1">
+<h2><span class="header-section-number">21.1</span> Separation Lines<a href="setting-tables.html#separation-lines" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>To make it look a bit more like a table, you can add lines separating rows and columns. For rows, this is specified by adding the \hline markup tag after the row you want the line to appear. For columns this is set alongside the column specification in the curly braces following the beginning of the tabular environment, using the vertical bar character ‘|’. For example \begin{tabular}{c||c||c} means three columns with text centered in cells, separated by double vertical lines. Both can be seen in the example below:</p>
+<p><img src="files2/part2_05_tables_02.png" width="50%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb34-1"><a href="setting-tables.html#cb34-1" tabindex="-1"></a>Table with horizontal separation lines.</span>
+<span id="cb34-2"><a href="setting-tables.html#cb34-2" tabindex="-1"></a>\begin{center}</span>
+<span id="cb34-3"><a href="setting-tables.html#cb34-3" tabindex="-1"></a>    \begin{tabular}{ccc}</span>
+<span id="cb34-4"><a href="setting-tables.html#cb34-4" tabindex="-1"></a>        1 &amp; 2 &amp; 3 \\</span>
+<span id="cb34-5"><a href="setting-tables.html#cb34-5" tabindex="-1"></a>        \hline</span>
+<span id="cb34-6"><a href="setting-tables.html#cb34-6" tabindex="-1"></a>        4 &amp; 5 &amp; 6 \\</span>
+<span id="cb34-7"><a href="setting-tables.html#cb34-7" tabindex="-1"></a>        \hline</span>
+<span id="cb34-8"><a href="setting-tables.html#cb34-8" tabindex="-1"></a>        \hline</span>
+<span id="cb34-9"><a href="setting-tables.html#cb34-9" tabindex="-1"></a>        7 &amp; 8 &amp; 9 \\</span>
+<span id="cb34-10"><a href="setting-tables.html#cb34-10" tabindex="-1"></a>    \end{tabular}</span>
+<span id="cb34-11"><a href="setting-tables.html#cb34-11" tabindex="-1"></a>\end{center}</span>
+<span id="cb34-12"><a href="setting-tables.html#cb34-12" tabindex="-1"></a></span>
+<span id="cb34-13"><a href="setting-tables.html#cb34-13" tabindex="-1"></a>Table with vertical separation lines.</span>
+<span id="cb34-14"><a href="setting-tables.html#cb34-14" tabindex="-1"></a>\begin{center}</span>
+<span id="cb34-15"><a href="setting-tables.html#cb34-15" tabindex="-1"></a>    \begin{tabular}{c|c||c}</span>
+<span id="cb34-16"><a href="setting-tables.html#cb34-16" tabindex="-1"></a>        1 &amp; 2 &amp; 3 \\</span>
+<span id="cb34-17"><a href="setting-tables.html#cb34-17" tabindex="-1"></a>        4 &amp; 5 &amp; 6 \\</span>
+<span id="cb34-18"><a href="setting-tables.html#cb34-18" tabindex="-1"></a>        7 &amp; 8 &amp; 9 \\</span>
+<span id="cb34-19"><a href="setting-tables.html#cb34-19" tabindex="-1"></a>    \end{tabular}</span>
+<span id="cb34-20"><a href="setting-tables.html#cb34-20" tabindex="-1"></a>\end{center}</span></code></pre></div>
+<p><strong>Only because something is possible, does not mean you should do it. Never ever ever use vertical lines in a Table!</strong></p>
+<p>You can also use the brackets at the end of a row to add extra spacing before the beginning of the next row, which is particularly useful for table headers. Note that you need to specify the value and then the unit first – for example, [0.5ex] corresponds with roughly half of the height of a lowercase ‘x’ letter in the current font, while [0.5cm] would mean 0.5 centemeters. Check units in LaTeX for more information.</p>
+<p><img src="files2/part2_05_tables_03.png" width="50%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb35-1"><a href="setting-tables.html#cb35-1" tabindex="-1"></a>\begin{center}</span>
+<span id="cb35-2"><a href="setting-tables.html#cb35-2" tabindex="-1"></a>    \begin{tabular}{l|c|r}</span>
+<span id="cb35-3"><a href="setting-tables.html#cb35-3" tabindex="-1"></a>     \textbf{Col. 1} &amp; \textbf{Col. 2} &amp; \textbf{Col. 3} \\ [0.5ex]</span>
+<span id="cb35-4"><a href="setting-tables.html#cb35-4" tabindex="-1"></a>     \hline \hline</span>
+<span id="cb35-5"><a href="setting-tables.html#cb35-5" tabindex="-1"></a>     1 &amp; 2 &amp; 3 \\</span>
+<span id="cb35-6"><a href="setting-tables.html#cb35-6" tabindex="-1"></a>     4 &amp; 5 &amp; 6 \\</span>
+<span id="cb35-7"><a href="setting-tables.html#cb35-7" tabindex="-1"></a>     7 &amp; 8 &amp; 9 \\</span>
+<span id="cb35-8"><a href="setting-tables.html#cb35-8" tabindex="-1"></a>     10 &amp; 11 &amp; 12 \\</span>
+<span id="cb35-9"><a href="setting-tables.html#cb35-9" tabindex="-1"></a>     13 &amp; 14 &amp; 15 \\</span>
+<span id="cb35-10"><a href="setting-tables.html#cb35-10" tabindex="-1"></a>    \end{tabular}</span>
+<span id="cb35-11"><a href="setting-tables.html#cb35-11" tabindex="-1"></a>\end{center}</span></code></pre></div>
+</div>
+<div id="fixed-width-of-columns" class="section level2 hasAnchor" number="21.2">
+<h2><span class="header-section-number">21.2</span> Fixed Width of Columns<a href="setting-tables.html#fixed-width-of-columns" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>If you need to keep the width of a specified column, you can do that by using the p column type followed by curly braces indicating your desired width. As a result, if your text width exceeds the width of the row, it will be wrapped and the width of the row will decrease, as seen in the example.</p>
+<p><img src="files2/part2_05_tables_04.png" width="50%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb36-1"><a href="setting-tables.html#cb36-1" tabindex="-1"></a>\begin{center}</span>
+<span id="cb36-2"><a href="setting-tables.html#cb36-2" tabindex="-1"></a>    \begin{tabular}{ p{2cm} | p{2cm} | p{2cm} }</span>
+<span id="cb36-3"><a href="setting-tables.html#cb36-3" tabindex="-1"></a>     \textbf{Col. 1} &amp; \textbf{Col. 2} &amp; \textbf{Col. 3}\\ [0.1cm]</span>
+<span id="cb36-4"><a href="setting-tables.html#cb36-4" tabindex="-1"></a>     \hline</span>
+<span id="cb36-5"><a href="setting-tables.html#cb36-5" tabindex="-1"></a>     This row will be longer to fit the length of this cell &amp; text &amp; text \\</span>
+<span id="cb36-6"><a href="setting-tables.html#cb36-6" tabindex="-1"></a>     \hline</span>
+<span id="cb36-7"><a href="setting-tables.html#cb36-7" tabindex="-1"></a>     text &amp; text &amp; text\\</span>
+<span id="cb36-8"><a href="setting-tables.html#cb36-8" tabindex="-1"></a>     \hline</span>
+<span id="cb36-9"><a href="setting-tables.html#cb36-9" tabindex="-1"></a>     text &amp; text &amp; text\\</span>
+<span id="cb36-10"><a href="setting-tables.html#cb36-10" tabindex="-1"></a>     \hline</span>
+<span id="cb36-11"><a href="setting-tables.html#cb36-11" tabindex="-1"></a>    \end{tabular}</span>
+<span id="cb36-12"><a href="setting-tables.html#cb36-12" tabindex="-1"></a>\end{center}</span></code></pre></div>
+</div>
+<div id="controlling-vertical-adjustment" class="section level2 hasAnchor" number="21.3">
+<h2><span class="header-section-number">21.3</span> Controlling Vertical Adjustment<a href="setting-tables.html#controlling-vertical-adjustment" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>As you might have noticed, the p column type discussed in the previous section aligns each row to the top border of the row. Sometimes, it might be useful to centre the content of each row vertically or align it to the bottom border. This can be done with the column types m{width}, which centres the column text vertically and b{width}, which aligns it to the bottom. These columns can be found in the array package, which can be loaded by putting \usepackage{array} in the preamble of your document, similarily to the way it was done when loading the graphicx package used for including images in your document. Remember that you have to specify the width of these column types in any of the units supported by LaTeX, just as in the case of the p{width} column type.</p>
+<p><img src="files2/part2_05_tables_05.png" width="50%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb37-1"><a href="setting-tables.html#cb37-1" tabindex="-1"></a>Presentation of how the \textbf{m} column type works:</span>
+<span id="cb37-2"><a href="setting-tables.html#cb37-2" tabindex="-1"></a></span>
+<span id="cb37-3"><a href="setting-tables.html#cb37-3" tabindex="-1"></a>\begin{center}</span>
+<span id="cb37-4"><a href="setting-tables.html#cb37-4" tabindex="-1"></a>    \begin{tabular}{m{2cm}|m{2cm}|m{2cm}}</span>
+<span id="cb37-5"><a href="setting-tables.html#cb37-5" tabindex="-1"></a>    Col. 1 &amp; Col. 2 &amp; Col. 3\\</span>
+<span id="cb37-6"><a href="setting-tables.html#cb37-6" tabindex="-1"></a>    \hline</span>
+<span id="cb37-7"><a href="setting-tables.html#cb37-7" tabindex="-1"></a>    The sentence in this cell is wider than the pre-defined width, therefore it&#39;s wrapped into new lines. &amp; Some text in the middle. &amp; Some more text in the middle. \\</span>
+<span id="cb37-8"><a href="setting-tables.html#cb37-8" tabindex="-1"></a>    \hline</span>
+<span id="cb37-9"><a href="setting-tables.html#cb37-9" tabindex="-1"></a>    \end{tabular}</span>
+<span id="cb37-10"><a href="setting-tables.html#cb37-10" tabindex="-1"></a>\end{center}</span>
+<span id="cb37-11"><a href="setting-tables.html#cb37-11" tabindex="-1"></a></span>
+<span id="cb37-12"><a href="setting-tables.html#cb37-12" tabindex="-1"></a>Presentation of how the \textbf{b} column type works:</span>
+<span id="cb37-13"><a href="setting-tables.html#cb37-13" tabindex="-1"></a></span>
+<span id="cb37-14"><a href="setting-tables.html#cb37-14" tabindex="-1"></a>\begin{center}</span>
+<span id="cb37-15"><a href="setting-tables.html#cb37-15" tabindex="-1"></a>    \begin{tabular}{b{2cm}|b{2cm}|b{2cm}}</span>
+<span id="cb37-16"><a href="setting-tables.html#cb37-16" tabindex="-1"></a>        Col. 1 &amp; Col. 2 &amp; Col. 3\\</span>
+<span id="cb37-17"><a href="setting-tables.html#cb37-17" tabindex="-1"></a>        \hline</span>
+<span id="cb37-18"><a href="setting-tables.html#cb37-18" tabindex="-1"></a>        The sentence in this cell is wider than the pre-defined width, therefore it&#39;s wrapped into new lines. &amp; Some text at the bottom. &amp; Some more text at the bottom. \\</span>
+<span id="cb37-19"><a href="setting-tables.html#cb37-19" tabindex="-1"></a>        \hline</span>
+<span id="cb37-20"><a href="setting-tables.html#cb37-20" tabindex="-1"></a>    \end{tabular}</span>
+<span id="cb37-21"><a href="setting-tables.html#cb37-21" tabindex="-1"></a>\end{center}</span></code></pre></div>
+</div>
+<div id="combining-rows-and-columns" class="section level2 hasAnchor" number="21.4">
+<h2><span class="header-section-number">21.4</span> Combining Rows and Columns<a href="setting-tables.html#combining-rows-and-columns" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>It’s also often useful to combine several cells into one, either row-wise or column-wise. To combine columns, you can use the \multicolumn markup tag. Following the tag, you need to specify three things in subsequent curly braces {number of columns}{column type}{text}. The \multicolumn tag is simply treated as a cell content, but it reduces the number of cells in a given row (i.e. if you specified {c|c|c} at the beginning of the tabular environment and you merge two rows, you will only need to specify two cells – the merged one and the remaining one.</p>
+<p><img src="files2/part2_05_tables_06.png" width="50%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb38-1"><a href="setting-tables.html#cb38-1" tabindex="-1"></a>\begin{center}</span>
+<span id="cb38-2"><a href="setting-tables.html#cb38-2" tabindex="-1"></a>    \begin{tabular}{c|c|c}</span>
+<span id="cb38-3"><a href="setting-tables.html#cb38-3" tabindex="-1"></a>        \multicolumn{3}{c}{\textbf{Table Header}} \\ [0.5ex]</span>
+<span id="cb38-4"><a href="setting-tables.html#cb38-4" tabindex="-1"></a>        \hline</span>
+<span id="cb38-5"><a href="setting-tables.html#cb38-5" tabindex="-1"></a>        \textbf{Col. 1} &amp; \textbf{Col. 2} &amp; \textbf{Col. 3} \\ [0.5ex]</span>
+<span id="cb38-6"><a href="setting-tables.html#cb38-6" tabindex="-1"></a>        \hline</span>
+<span id="cb38-7"><a href="setting-tables.html#cb38-7" tabindex="-1"></a>        \multicolumn{2}{c|}{1 \&amp; 2} &amp; 3 \\</span>
+<span id="cb38-8"><a href="setting-tables.html#cb38-8" tabindex="-1"></a>        \hline</span>
+<span id="cb38-9"><a href="setting-tables.html#cb38-9" tabindex="-1"></a>        4 &amp; 5 &amp; 6 \\</span>
+<span id="cb38-10"><a href="setting-tables.html#cb38-10" tabindex="-1"></a>        \hline</span>
+<span id="cb38-11"><a href="setting-tables.html#cb38-11" tabindex="-1"></a>        7 &amp; 8 &amp; 9 \\</span>
+<span id="cb38-12"><a href="setting-tables.html#cb38-12" tabindex="-1"></a>        \hline</span>
+<span id="cb38-13"><a href="setting-tables.html#cb38-13" tabindex="-1"></a>        10 &amp; \multicolumn{2}{|c}{11 \&amp; 12} \\</span>
+<span id="cb38-14"><a href="setting-tables.html#cb38-14" tabindex="-1"></a>        \hline</span>
+<span id="cb38-15"><a href="setting-tables.html#cb38-15" tabindex="-1"></a>        13 &amp; 14 &amp; 15 \\</span>
+<span id="cb38-16"><a href="setting-tables.html#cb38-16" tabindex="-1"></a>    \end{tabular}</span>
+<span id="cb38-17"><a href="setting-tables.html#cb38-17" tabindex="-1"></a>\end{center}</span></code></pre></div>
+<p>To combine rows, remember to load the ‘multirow’ package. You can do that by putting \usepackage{multirow} in the preamble of your document. The \multirow markup tag allows you to specify three options in the curly braces – {number of rows}{width}{text}. To merge a cell row-wise, put the tag in the row in the cell in which you would like your extended cell to begin. Then specify the number of rows it will take. You can use ’*’ instead of the {width} parameters to maintain the default parameters of your tabular environment. Make sure that you leave the rows you want merged blank, as in the example below.</p>
+<p><img src="files2/part2_05_tables_07.png" width="50%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb39-1"><a href="setting-tables.html#cb39-1" tabindex="-1"></a>This is how you merge cells by row:</span>
+<span id="cb39-2"><a href="setting-tables.html#cb39-2" tabindex="-1"></a>\begin{center}</span>
+<span id="cb39-3"><a href="setting-tables.html#cb39-3" tabindex="-1"></a>\begin{tabular}{c|c|c}</span>
+<span id="cb39-4"><a href="setting-tables.html#cb39-4" tabindex="-1"></a>\textbf{Col. 1} &amp; \textbf{Col. 2} &amp; \textbf{Col. 3} \\ [0.5ex]</span>
+<span id="cb39-5"><a href="setting-tables.html#cb39-5" tabindex="-1"></a>\hline \hline</span>
+<span id="cb39-6"><a href="setting-tables.html#cb39-6" tabindex="-1"></a>1 &amp; 2 &amp; 3 \\</span>
+<span id="cb39-7"><a href="setting-tables.html#cb39-7" tabindex="-1"></a>\hline</span>
+<span id="cb39-8"><a href="setting-tables.html#cb39-8" tabindex="-1"></a>4 &amp; \multirow{2}*{5 \&amp; 8} &amp; 6 \\</span>
+<span id="cb39-9"><a href="setting-tables.html#cb39-9" tabindex="-1"></a>\cline{1-1} \cline{3-3}</span>
+<span id="cb39-10"><a href="setting-tables.html#cb39-10" tabindex="-1"></a>7 &amp; &amp; 9 \\</span>
+<span id="cb39-11"><a href="setting-tables.html#cb39-11" tabindex="-1"></a>\hline</span>
+<span id="cb39-12"><a href="setting-tables.html#cb39-12" tabindex="-1"></a>10 &amp; 11 &amp; \multirow{2}*{12 \&amp; 15} \\</span>
+<span id="cb39-13"><a href="setting-tables.html#cb39-13" tabindex="-1"></a>\cline{1-2}</span>
+<span id="cb39-14"><a href="setting-tables.html#cb39-14" tabindex="-1"></a>13 &amp; 14 &amp; \\</span>
+<span id="cb39-15"><a href="setting-tables.html#cb39-15" tabindex="-1"></a>\end{tabular}</span>
+<span id="cb39-16"><a href="setting-tables.html#cb39-16" tabindex="-1"></a>\end{center}</span></code></pre></div>
+<p>The \cline{i-j} tag is a useful alternative to the \hline tag discussed before when it comes to drawing horizontal lines in tables with merged cells. Using \hline between two rows with some of the cells merged vertically would cause the line to go through the middle of the merged cells. \cline{i-j} allows to avoid that, by specifying which range of cells from the previous row should be separated horizontally from the next row. The range is specified by the values i and j in the curly braces. So \cline{2-5} will cause cells between the 2nd and 5th columns to be separated horizontally from the next row, while \cline{3-3} would separate only the cell from the 3rd column.</p>
+<p>Finally, it’s possible to merge selected cells both row-wise and column-wise. To do this, you simply have to combine the \muticolumn and \multirow markup tags. For it to work, you need to first insert a \multicolumn markup tag in the first row and cell you want to merge, and then put a \multirow tag within it, specifying the number of rows you want to merge. Then, in all the following rows you want to be merged you need to specify an empty \multicolumn tag, with the same specification as the ones before.</p>
+<p><img src="files2/part2_05_tables_08.png" width="50%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb40-1"><a href="setting-tables.html#cb40-1" tabindex="-1"></a>\begin{center}</span>
+<span id="cb40-2"><a href="setting-tables.html#cb40-2" tabindex="-1"></a>    \begin{tabular}{c|c|c}</span>
+<span id="cb40-3"><a href="setting-tables.html#cb40-3" tabindex="-1"></a>        \textbf{Col.1 } &amp; \textbf{Col. 2} &amp; \textbf{Col. 3} \\ [0.5ex]</span>
+<span id="cb40-4"><a href="setting-tables.html#cb40-4" tabindex="-1"></a>        \hline \hline</span>
+<span id="cb40-5"><a href="setting-tables.html#cb40-5" tabindex="-1"></a>        1 &amp; 2 &amp; 3 \\</span>
+<span id="cb40-6"><a href="setting-tables.html#cb40-6" tabindex="-1"></a>        \hline</span>
+<span id="cb40-7"><a href="setting-tables.html#cb40-7" tabindex="-1"></a>        4 &amp; 5 &amp; 6 \\</span>
+<span id="cb40-8"><a href="setting-tables.html#cb40-8" tabindex="-1"></a>        \hline</span>
+<span id="cb40-9"><a href="setting-tables.html#cb40-9" tabindex="-1"></a>        7 &amp; \multicolumn{2}{c}{\multirow{2}*{8 \&amp; 9 \&amp; 11 \&amp; 12}}\\</span>
+<span id="cb40-10"><a href="setting-tables.html#cb40-10" tabindex="-1"></a>        \cline{1-1}</span>
+<span id="cb40-11"><a href="setting-tables.html#cb40-11" tabindex="-1"></a>        10 &amp; \multicolumn{2}{c}{} \\</span>
+<span id="cb40-12"><a href="setting-tables.html#cb40-12" tabindex="-1"></a>        \hline</span>
+<span id="cb40-13"><a href="setting-tables.html#cb40-13" tabindex="-1"></a>        13 &amp; 14 &amp; 15 \\</span>
+<span id="cb40-14"><a href="setting-tables.html#cb40-14" tabindex="-1"></a>    \end{tabular}</span>
+<span id="cb40-15"><a href="setting-tables.html#cb40-15" tabindex="-1"></a>\end{center}</span></code></pre></div>
+</div>
+<div id="tabularx" class="section level2 hasAnchor" number="21.5">
+<h2><span class="header-section-number">21.5</span> Tabularx<a href="setting-tables.html#tabularx" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>So far you’ve learned how to specify the width of individual columns using the tabular environment. In some cases, it is also good to be able to specify the width of the entire table and keep the width of each column evenly distributed across the table. This can be achieved using the tabularx package. To use it, simply insert \usepackage{tabularx} in the preamble of your document. Then you can use \begin{tabularx}{width}{preamble} instead of the tabular environment. Width specifies the width of the entire table (similarily to the \includegraphics markup tag used for including images in the document) – you can define it using various numeric units available in LaTeX (pt, cm, in) or in reference to the width of the text in the document, using \textwidth. Tabularx contains a new column type, “X”, which means that the width of this column will be determined in relation to the width of the entire table. The rest of the table setup is exactly the same as in the tabular environment.</p>
+<p><img src="files2/part2_05_tables_09.png" width="50%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb41-1"><a href="setting-tables.html#cb41-1" tabindex="-1"></a>\begin{center}</span>
+<span id="cb41-2"><a href="setting-tables.html#cb41-2" tabindex="-1"></a>    \begin{tabularx}{0.6\textwidth}{X|X|X}</span>
+<span id="cb41-3"><a href="setting-tables.html#cb41-3" tabindex="-1"></a>        \textbf{Col. 1} &amp; \textbf{Col. 2} &amp; \textbf{Col. 3} \\ [0.5ex]</span>
+<span id="cb41-4"><a href="setting-tables.html#cb41-4" tabindex="-1"></a>        \hline \hline</span>
+<span id="cb41-5"><a href="setting-tables.html#cb41-5" tabindex="-1"></a>        1 &amp; 2 &amp; 3 \\</span>
+<span id="cb41-6"><a href="setting-tables.html#cb41-6" tabindex="-1"></a>        \hline</span>
+<span id="cb41-7"><a href="setting-tables.html#cb41-7" tabindex="-1"></a>        4 &amp; 5 &amp; 6 \\</span>
+<span id="cb41-8"><a href="setting-tables.html#cb41-8" tabindex="-1"></a>        \hline</span>
+<span id="cb41-9"><a href="setting-tables.html#cb41-9" tabindex="-1"></a>        7 &amp; 8 &amp; 9 \\</span>
+<span id="cb41-10"><a href="setting-tables.html#cb41-10" tabindex="-1"></a>        \hline</span>
+<span id="cb41-11"><a href="setting-tables.html#cb41-11" tabindex="-1"></a>        10 &amp; 11 &amp; 12 \\</span>
+<span id="cb41-12"><a href="setting-tables.html#cb41-12" tabindex="-1"></a>        \hline</span>
+<span id="cb41-13"><a href="setting-tables.html#cb41-13" tabindex="-1"></a>        13 &amp; 14 &amp; 15 \\</span>
+<span id="cb41-14"><a href="setting-tables.html#cb41-14" tabindex="-1"></a>    \end{tabularx}</span>
+<span id="cb41-15"><a href="setting-tables.html#cb41-15" tabindex="-1"></a>\end{center}</span></code></pre></div>
+<p>In the tabularx environment, you can also mix the X column type with the tabular column type (l, r, c), so that the width of some of the columns is determined by overall table width (the X columns), while the width of others is determined by the width of the text/fixed (the l, r, c).</p>
+<p>Some of the columns can be determined by the width of the table, while either will be determined by the width of the text within them (using the default tabular formats – c for centred (l, r, c).</p>
+<p><img src="files2/part2_05_tables_10.PNG" width="50%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb42-1"><a href="setting-tables.html#cb42-1" tabindex="-1"></a>\begin{center}</span>
+<span id="cb42-2"><a href="setting-tables.html#cb42-2" tabindex="-1"></a>    \begin{tabularx}{0.6\textwidth}{X|c|X}</span>
+<span id="cb42-3"><a href="setting-tables.html#cb42-3" tabindex="-1"></a>        \textbf{Col. 1} &amp; \textbf{Col. 2} &amp; \textbf{Col. 3} \\ [0.5ex]</span>
+<span id="cb42-4"><a href="setting-tables.html#cb42-4" tabindex="-1"></a>        \hline \hline</span>
+<span id="cb42-5"><a href="setting-tables.html#cb42-5" tabindex="-1"></a>        1 &amp; 2 &amp; 3 \\</span>
+<span id="cb42-6"><a href="setting-tables.html#cb42-6" tabindex="-1"></a>        \hline</span>
+<span id="cb42-7"><a href="setting-tables.html#cb42-7" tabindex="-1"></a>        4 &amp; 5 &amp; 6 \\</span>
+<span id="cb42-8"><a href="setting-tables.html#cb42-8" tabindex="-1"></a>        \hline</span>
+<span id="cb42-9"><a href="setting-tables.html#cb42-9" tabindex="-1"></a>        7 &amp; 8 &amp; 9 \\</span>
+<span id="cb42-10"><a href="setting-tables.html#cb42-10" tabindex="-1"></a>        \hline</span>
+<span id="cb42-11"><a href="setting-tables.html#cb42-11" tabindex="-1"></a>        10 &amp; 11 &amp; 12 \\</span>
+<span id="cb42-12"><a href="setting-tables.html#cb42-12" tabindex="-1"></a>        \hline</span>
+<span id="cb42-13"><a href="setting-tables.html#cb42-13" tabindex="-1"></a>        13 &amp; 14 &amp; 15 \\</span>
+<span id="cb42-14"><a href="setting-tables.html#cb42-14" tabindex="-1"></a>    \end{tabularx}</span>
+<span id="cb42-15"><a href="setting-tables.html#cb42-15" tabindex="-1"></a>\end{center}</span></code></pre></div>
+<p>Finally, merging columns and rows can be applied in tabularx, just as in tabular:</p>
+<p><img src="files2/part2_05_tables_11.PNG" width="50%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb43-1"><a href="setting-tables.html#cb43-1" tabindex="-1"></a>\begin{center}</span>
+<span id="cb43-2"><a href="setting-tables.html#cb43-2" tabindex="-1"></a>    \begin{tabularx}{0.8\textwidth}{X|X|X}</span>
+<span id="cb43-3"><a href="setting-tables.html#cb43-3" tabindex="-1"></a>        \textbf{Col. 1} &amp; \textbf{Col. 2} &amp; \textbf{Col. 3} \\ [0.5ex]</span>
+<span id="cb43-4"><a href="setting-tables.html#cb43-4" tabindex="-1"></a>        \hline \hline</span>
+<span id="cb43-5"><a href="setting-tables.html#cb43-5" tabindex="-1"></a>        1 &amp; 2 &amp; 3 \\</span>
+<span id="cb43-6"><a href="setting-tables.html#cb43-6" tabindex="-1"></a>        \hline</span>
+<span id="cb43-7"><a href="setting-tables.html#cb43-7" tabindex="-1"></a>        4 &amp; 5 &amp; 6 \\</span>
+<span id="cb43-8"><a href="setting-tables.html#cb43-8" tabindex="-1"></a>        \hline</span>
+<span id="cb43-9"><a href="setting-tables.html#cb43-9" tabindex="-1"></a>        7 &amp; \multirow{2}*{8 \&amp; 11} &amp; 9 \\</span>
+<span id="cb43-10"><a href="setting-tables.html#cb43-10" tabindex="-1"></a>        \cline{1-1} \cline{3-3}</span>
+<span id="cb43-11"><a href="setting-tables.html#cb43-11" tabindex="-1"></a>        10 &amp; &amp; 12 \\</span>
+<span id="cb43-12"><a href="setting-tables.html#cb43-12" tabindex="-1"></a>        \hline</span>
+<span id="cb43-13"><a href="setting-tables.html#cb43-13" tabindex="-1"></a>        13 &amp; \multicolumn{2}{c}{14 \&amp; 15} \\</span>
+<span id="cb43-14"><a href="setting-tables.html#cb43-14" tabindex="-1"></a>    \end{tabularx}</span>
+<span id="cb43-15"><a href="setting-tables.html#cb43-15" tabindex="-1"></a>\end{center}</span></code></pre></div>
+</div>
+<div id="defining-new-column-types" class="section level2 hasAnchor" number="21.6">
+<h2><span class="header-section-number">21.6</span> Defining New Column Types<a href="setting-tables.html#defining-new-column-types" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>As you might have noticed, the default “X” column type in LaTeX is not centred, and by default, we have no control over its positioning. However, this can be changed by defining a new column type in the document preamble, after you define all the packages used.</p>
+<p>The \newcolumntype command defines a new column type for the tabularx environment based on the default X column. The content of the first curly braces following the command is just the name we assign to the newly created column. Note that the name always has to be a single letter. In this case, for the sake of convenience and clarity, it’s good to name newly defined columns with capital letters (i.e. R for right justification, C for centring and L for left justification) – this makes them easy to remember and we avoid confusing them with the tabular column types defined with small letters.</p>
+<p>The second curly braces contain the definition of the new column type. Without going into too much detail, it’s sufficient to remember that, counter-intuitively, \raggedright defines to tabularx column to be justified to the left, \centering to be centred and \raggedleft to be justified to the right. It’s important to remember that these columns can be manually defined, rather than to memorize the exact content of the \newcolumntype command – whenever you will need it, you can just simply copy and paste it.</p>
+<p>As you can see in the example, with these newly defined columns we are able to control the justification of the cell content.</p>
+<p><img src="files2/part2_05_tables_12.PNG" width="50%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb44-1"><a href="setting-tables.html#cb44-1" tabindex="-1"></a>\documentclass{article}</span>
+<span id="cb44-2"><a href="setting-tables.html#cb44-2" tabindex="-1"></a>\usepackage{multirow}</span>
+<span id="cb44-3"><a href="setting-tables.html#cb44-3" tabindex="-1"></a>\usepackage{tabularx}</span>
+<span id="cb44-4"><a href="setting-tables.html#cb44-4" tabindex="-1"></a>\newcolumntype{L}{&gt;{\raggedright\arraybackslash}X}</span>
+<span id="cb44-5"><a href="setting-tables.html#cb44-5" tabindex="-1"></a>\newcolumntype{C}{&gt;{\centering\arraybackslash}X}</span>
+<span id="cb44-6"><a href="setting-tables.html#cb44-6" tabindex="-1"></a>\newcolumntype{R}{&gt;{\raggedleft\arraybackslash}X}</span>
+<span id="cb44-7"><a href="setting-tables.html#cb44-7" tabindex="-1"></a>\begin{document}</span>
+<span id="cb44-8"><a href="setting-tables.html#cb44-8" tabindex="-1"></a>All three column types defined above are used in the table below:</span>
+<span id="cb44-9"><a href="setting-tables.html#cb44-9" tabindex="-1"></a>\begin{center}</span>
+<span id="cb44-10"><a href="setting-tables.html#cb44-10" tabindex="-1"></a>\begin{tabularx}{0.8\textwidth}{L|C|R}</span>
+<span id="cb44-11"><a href="setting-tables.html#cb44-11" tabindex="-1"></a>\textbf{Col. 1} &amp; \textbf{Col. 2} &amp; \textbf{Col. 3} \\ [0.5ex]</span>
+<span id="cb44-12"><a href="setting-tables.html#cb44-12" tabindex="-1"></a>\hline \hline</span>
+<span id="cb44-13"><a href="setting-tables.html#cb44-13" tabindex="-1"></a>1 &amp; 2 &amp; 3 \\</span>
+<span id="cb44-14"><a href="setting-tables.html#cb44-14" tabindex="-1"></a>\hline</span>
+<span id="cb44-15"><a href="setting-tables.html#cb44-15" tabindex="-1"></a>4 &amp; 5 &amp; 6 \\</span>
+<span id="cb44-16"><a href="setting-tables.html#cb44-16" tabindex="-1"></a>\hline</span>
+<span id="cb44-17"><a href="setting-tables.html#cb44-17" tabindex="-1"></a>7 &amp; 8 &amp; 9 \\</span>
+<span id="cb44-18"><a href="setting-tables.html#cb44-18" tabindex="-1"></a>\hline</span>
+<span id="cb44-19"><a href="setting-tables.html#cb44-19" tabindex="-1"></a>10 &amp; 11 &amp; 12 \\</span>
+<span id="cb44-20"><a href="setting-tables.html#cb44-20" tabindex="-1"></a>\hline</span>
+<span id="cb44-21"><a href="setting-tables.html#cb44-21" tabindex="-1"></a>13 &amp; 14 &amp; 15 \\</span>
+<span id="cb44-22"><a href="setting-tables.html#cb44-22" tabindex="-1"></a>\end{tabularx}</span>
+<span id="cb44-23"><a href="setting-tables.html#cb44-23" tabindex="-1"></a>\end{center}</span>
+<span id="cb44-24"><a href="setting-tables.html#cb44-24" tabindex="-1"></a>\end{document}</span></code></pre></div>
+<p>The \newcolumntype command also allows to make many other modifications and create your own, customizable column layouts. For example, by using \newcolumntype{y}[1]{&gt;{\centering\arraybackslash}m{#1}} we can create a column type ‘y’, which is based on the type m (i.e. has a specified width and centres the text vertically), but also additionally applies horizontal centering as well. Generally, however, you don’t need to worry about understanding the intricacies of the \newcolumntype syntax – usually, when you need to customize your columns, it’s enough to just search for suggestions online – it’s likely that some other people have encountered the problem before you, and the solution is already out there. Nevertheless, the ability to specify the width of a table to a fixed number and the customizability of the column types often makes the tabularx package more useful that the basic tabular.</p>
+</div>
+<div id="specifying-row-height" class="section level2 hasAnchor" number="21.7">
+<h2><span class="header-section-number">21.7</span> Specifying Row Height<a href="setting-tables.html#specifying-row-height" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Tabualrx also makes it possible to set the height of rows in your document to a fixed value. You can do this by adding \setlength{\extrarowheight{height}} before the table in which you want to change the row heights. Every row of each table following this line in your .tex file will have this exact height. To change it back to the default setting, simply use \setlength{\extrarowheight{1pt}}.</p>
+<p>Here’s an example of how it works:</p>
+<p><img src="files2/part2_05_tables_13.PNG" width="35%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb45-1"><a href="setting-tables.html#cb45-1" tabindex="-1"></a>\bigskip</span>
+<span id="cb45-2"><a href="setting-tables.html#cb45-2" tabindex="-1"></a></span>
+<span id="cb45-3"><a href="setting-tables.html#cb45-3" tabindex="-1"></a>%increase the row height</span>
+<span id="cb45-4"><a href="setting-tables.html#cb45-4" tabindex="-1"></a>\setlength{\extrarowheight}{10pt}   </span>
+<span id="cb45-5"><a href="setting-tables.html#cb45-5" tabindex="-1"></a>\begin{tabular}{c|c|c}</span>
+<span id="cb45-6"><a href="setting-tables.html#cb45-6" tabindex="-1"></a>    1 &amp; 2 &amp; 3 \\</span>
+<span id="cb45-7"><a href="setting-tables.html#cb45-7" tabindex="-1"></a>    \hline</span>
+<span id="cb45-8"><a href="setting-tables.html#cb45-8" tabindex="-1"></a>    4 &amp; 5 &amp; 6 \\</span>
+<span id="cb45-9"><a href="setting-tables.html#cb45-9" tabindex="-1"></a>    \hline</span>
+<span id="cb45-10"><a href="setting-tables.html#cb45-10" tabindex="-1"></a>    7 &amp; 8 &amp; 9 \\</span>
+<span id="cb45-11"><a href="setting-tables.html#cb45-11" tabindex="-1"></a></span>
+<span id="cb45-12"><a href="setting-tables.html#cb45-12" tabindex="-1"></a>\end{tabular}</span>
+<span id="cb45-13"><a href="setting-tables.html#cb45-13" tabindex="-1"></a></span>
+<span id="cb45-14"><a href="setting-tables.html#cb45-14" tabindex="-1"></a>\bigskip</span>
+<span id="cb45-15"><a href="setting-tables.html#cb45-15" tabindex="-1"></a></span>
+<span id="cb45-16"><a href="setting-tables.html#cb45-16" tabindex="-1"></a>%return to default values</span>
+<span id="cb45-17"><a href="setting-tables.html#cb45-17" tabindex="-1"></a>\setlength{\extrarowheight}{1pt}</span>
+<span id="cb45-18"><a href="setting-tables.html#cb45-18" tabindex="-1"></a></span>
+<span id="cb45-19"><a href="setting-tables.html#cb45-19" tabindex="-1"></a>\begin{tabular}{c|c|c}</span>
+<span id="cb45-20"><a href="setting-tables.html#cb45-20" tabindex="-1"></a>    1 &amp; 2 &amp; 3 \\</span>
+<span id="cb45-21"><a href="setting-tables.html#cb45-21" tabindex="-1"></a>    \hline</span>
+<span id="cb45-22"><a href="setting-tables.html#cb45-22" tabindex="-1"></a>    4 &amp; 5 &amp; 6 \\</span>
+<span id="cb45-23"><a href="setting-tables.html#cb45-23" tabindex="-1"></a>    \hline</span>
+<span id="cb45-24"><a href="setting-tables.html#cb45-24" tabindex="-1"></a>    7 &amp; 8 &amp; 9 \\</span>
+<span id="cb45-25"><a href="setting-tables.html#cb45-25" tabindex="-1"></a>\end{tabular}</span></code></pre></div>
+</div>
+<div id="the-table-floating-environment" class="section level2 hasAnchor" number="21.8">
+<h2><span class="header-section-number">21.8</span> The ‘Table’ Floating Environment<a href="setting-tables.html#the-table-floating-environment" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Similarily to figures, tables also have their own float environment in LaTeX. As you may remember, the floating environments allow to control the positioning of an object in the document. You can also add captions to these environments, as well as label them, which makes referencing tables anywhere in the document much easier.</p>
+<p><img src="files2/part2_05_tables_14.PNG" width="50%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb46-1"><a href="setting-tables.html#cb46-1" tabindex="-1"></a>\begin{table}[h!]</span>
+<span id="cb46-2"><a href="setting-tables.html#cb46-2" tabindex="-1"></a>    \centering</span>
+<span id="cb46-3"><a href="setting-tables.html#cb46-3" tabindex="-1"></a>    \begin{tabular}{c|c|c}</span>
+<span id="cb46-4"><a href="setting-tables.html#cb46-4" tabindex="-1"></a>        \textbf{Col. 1} &amp; \textbf{Col. 2} &amp;\textbf{Col. 3}\\</span>
+<span id="cb46-5"><a href="setting-tables.html#cb46-5" tabindex="-1"></a>        \hline</span>
+<span id="cb46-6"><a href="setting-tables.html#cb46-6" tabindex="-1"></a>        1 &amp; 2 &amp; 3 \\</span>
+<span id="cb46-7"><a href="setting-tables.html#cb46-7" tabindex="-1"></a>        4 &amp; 5 &amp; 6 \\</span>
+<span id="cb46-8"><a href="setting-tables.html#cb46-8" tabindex="-1"></a>        7 &amp; 8 &amp; 9 \\</span>
+<span id="cb46-9"><a href="setting-tables.html#cb46-9" tabindex="-1"></a>        10 &amp; 11 &amp; 12 \\</span>
+<span id="cb46-10"><a href="setting-tables.html#cb46-10" tabindex="-1"></a>        13 &amp; 14 &amp; 15 \\</span>
+<span id="cb46-11"><a href="setting-tables.html#cb46-11" tabindex="-1"></a>    \end{tabular}</span>
+<span id="cb46-12"><a href="setting-tables.html#cb46-12" tabindex="-1"></a>\caption{Some numbers}</span>
+<span id="cb46-13"><a href="setting-tables.html#cb46-13" tabindex="-1"></a>\label{tab:num1}</span>
+<span id="cb46-14"><a href="setting-tables.html#cb46-14" tabindex="-1"></a>\end{table}</span>
+<span id="cb46-15"><a href="setting-tables.html#cb46-15" tabindex="-1"></a></span>
+<span id="cb46-16"><a href="setting-tables.html#cb46-16" tabindex="-1"></a>In this sentence, I am referring to Table \ref{tab:num1}.</span></code></pre></div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="captions-flos-pet-hate.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="lists-of-figures-and-tables.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+},
+"toc_depth": 2,
+"keep_tex": true
+});
+});
+</script>
+
+</body>
+
+</html>
