@@ -64,7 +64,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -316,18 +316,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">23.2</span> Citing Bibliography Resources<a href="referencing-and-the-bibliography.html#citing-bibliography-resources" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><img src="files2/part2_07_output.png" width="50%" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb50"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb50-1"><a href="referencing-and-the-bibliography.html#cb50-1" tabindex="-1"></a>\documentclass{article}</span>
-<span id="cb50-2"><a href="referencing-and-the-bibliography.html#cb50-2" tabindex="-1"></a>\usepackage[round, sort, comma]{natbib}</span>
-<span id="cb50-3"><a href="referencing-and-the-bibliography.html#cb50-3" tabindex="-1"></a>\begin{document}</span>
-<span id="cb50-4"><a href="referencing-and-the-bibliography.html#cb50-4" tabindex="-1"></a>In this sentence, I reference the article \textit{Beyond Running Tally: Partisan Bias in Political Perceptions} included in the bibliography \citep{bartels2002}. </span>
-<span id="cb50-5"><a href="referencing-and-the-bibliography.html#cb50-5" tabindex="-1"></a>This sentence references the book of the Austrian-British philosopher Karl Popper \citep[pp. 14--15]{popper1934}.</span>
-<span id="cb50-6"><a href="referencing-and-the-bibliography.html#cb50-6" tabindex="-1"></a>This sentence references a chapter in the Oxford Handbook of Political Methodology \citep{bollen2008}.</span>
-<span id="cb50-7"><a href="referencing-and-the-bibliography.html#cb50-7" tabindex="-1"></a>Finally, the last sentence refers to a World Bank Data Set, including measures such as HDI \citep{worldbank2019}.</span>
-<span id="cb50-8"><a href="referencing-and-the-bibliography.html#cb50-8" tabindex="-1"></a>\bibliographystyle{myapa}   </span>
+<span id="cb50-2"><a href="referencing-and-the-bibliography.html#cb50-2" tabindex="-1"></a>\usepackage[natbibapa]{apacite} </span>
+<span id="cb50-3"><a href="referencing-and-the-bibliography.html#cb50-3" tabindex="-1"></a>\bibliographystyle{apacitex}</span>
+<span id="cb50-4"><a href="referencing-and-the-bibliography.html#cb50-4" tabindex="-1"></a>\begin{document}</span>
+<span id="cb50-5"><a href="referencing-and-the-bibliography.html#cb50-5" tabindex="-1"></a>In this sentence, I reference the article \textit{Beyond Running Tally: Partisan Bias in Political Perceptions} included in the bibliography \citep{bartels2002}. </span>
+<span id="cb50-6"><a href="referencing-and-the-bibliography.html#cb50-6" tabindex="-1"></a>This sentence references the book of the Austrian-British philosopher Karl Popper \citep[pp. 14--15]{popper1934}.</span>
+<span id="cb50-7"><a href="referencing-and-the-bibliography.html#cb50-7" tabindex="-1"></a>This sentence references a chapter in the Oxford Handbook of Political Methodology \citep{bollen2008}.</span>
+<span id="cb50-8"><a href="referencing-and-the-bibliography.html#cb50-8" tabindex="-1"></a>Finally, the last sentence refers to a World Bank Data Set, including measures such as HDI \citep{worldbank2019}.</span>
 <span id="cb50-9"><a href="referencing-and-the-bibliography.html#cb50-9" tabindex="-1"></a>\bibliography{my_bibliography}</span>
 <span id="cb50-10"><a href="referencing-and-the-bibliography.html#cb50-10" tabindex="-1"></a>\end{document}</span></code></pre></div>
-<p>In order to start referencing resources in your text, all you need to do is load a dedicated package called NatBib in the preamble of your document, notify LaTeX of the bibliography style you wish to use (\bibliographystyle), and the bibliography file you are using with a \bibliography markup tag at the end of the document. Then you can cite each entry in your bibliography using \citep{resource} markup tag, where resource is the tag you have assigned in the .bib file. For example \citep{bollen2008} will compile as (Bollen et al., 2008). Additionally, you can use square brackets after the \citep tag to add a note to be included in the parentheses with the citation, for example, the exact pages to which you are referring. If you want to reference specific pages, say 14-15 of Popper’s book, you can do that by using \citep[pp. 14–15]{popper1934}, which compiles as (Popper, 1934, pp. 14-15).</p>
+<p>In order to start referencing resources in your text, all you need to do is load a dedicated package called in the preamble of your document, notify LaTeX of the bibliography style you wish to use (\bibliographystyle), and the bibliography file you are using with a \bibliography markup tag at the end of the document. Then you can cite each entry in your bibliography using \citep{resource} markup tag, where resource is the tag you have assigned in the .bib file. For example \citep{bollen2008} will compile as (Bollen et al., 2008). Additionally, you can use square brackets after the \citep tag to add a note to be included in the parentheses with the citation, for example, the exact pages to which you are referring. If you want to reference specific pages, say 14-15 of Popper’s book, you can do that by using \citep[pp. 14–15]{popper1934}, which compiles as (Popper, 1934, pp. 14-15).</p>
 <p>NatBib contains various other citation formats and you can find a full list <a href="https://gking.harvard.edu/files/natnotes2.pdf">here</a>. </p>
-<p>Note that the \bibliographystyle markup tag sets the style of your bibliography – that includes the layout of your bibliography at the end, as well as the citation style. The style “myapa” has been rewritten so that it conforms with the referencing requirements in PAIS. You can download it <a href="uploads/myapa.bst">here</a>, and you need to place it in the same folder as the .tex file. The full list of styles can be found <a href="https://www.overleaf.com/learn/latex/Natbib_bibliography_styles">here</a>.</p>
 </div>
 <div id="endnotes" class="section level2 hasAnchor" number="23.3">
 <h2><span class="header-section-number">23.3</span> Endnotes<a href="referencing-and-the-bibliography.html#endnotes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
