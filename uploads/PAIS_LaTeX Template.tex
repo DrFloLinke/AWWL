@@ -43,18 +43,18 @@
 
 \newcommand*{\titleGM}{\begingroup % Create the command for including the title page in the document
 \thispagestyle{empty}
+{\centering\includegraphics[width=0.4\linewidth]{PAIS.png}\\[3\baselineskip]}%include PAIS logo
 \hbox{ % Horizontal box
-\hspace*{0.15\textwidth} % Whitespace to the left of the title page
-\rule{1.5pt}{\textheight} % Vertical line
+\hspace*{0.1\textwidth} % Whitespace to the left of the title page
+\rule{1.5pt}{0.6\textheight} % Vertical line
 \hspace*{0.05\textwidth} % Whitespace between the vertical line and title page text
-\parbox[b]{0.75\textwidth}{ % Paragraph box which restricts text to less than the width of the page
-{\centering\includegraphics[width=0.5\linewidth]{PAIS.png}\\[3\baselineskip]}%include PAIS logo
+\parbox[b]{0.85\textwidth}{ % Paragraph box which restricts text to less than the width of the page
 {\noindent\Huge\bfseries Essay Title\\} %add essay title
 {\noindent\LARGE\bfseries POxxx - Module Title\\}\\[2\baselineskip] % Module Code and Name
 {\large \textit{ \textbf{Registration Number:} u1234567}}\\ % Enter your registration number here, no name!
 
 
-\vspace{0.3\textheight} % Whitespace between the title block and the publisher
+\vspace{0.25\textheight} % Whitespace between the title block and the publisher
 {\large \textsc{Total Number of Words: XXXX}} \\ %total word count including figures
 {\large \textsc{Words for Figures and Tables: XXX}}\\[\baselineskip] %word count for figures only
 }}
