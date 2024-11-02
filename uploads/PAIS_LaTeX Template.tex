@@ -1,0 +1,186 @@
+\documentclass{report}
+\usepackage{amsmath} % AMS Math Package
+\usepackage{graphicx} % Allows for eps images
+\usepackage{multicol} % Allows for multiple columns
+\usepackage[dvips,letterpaper,margin=1in,bottom=1in]{geometry}
+
+\usepackage{tabularx}
+\newcolumntype{C}{>{\centering\arraybackslash}X} %centering in equal column widths
+
+\usepackage{bbm}
+\usepackage[utf8]{inputenc} 
+\usepackage[acronym, toc]{glossaries}
+\usepackage[english]{babel}
+\usepackage{lipsum}
+\usepackage{placeins} %to define float barriers
+
+\addto\captionsenglish{% Changes the title of the table of contents
+  \renewcommand{\contentsname}%
+    {Table of Contents}%
+}
+
+\usepackage{tocloft}
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}} % for chapters
+\renewcommand{\cfttoctitlefont}{\Huge\sffamily} % tocloft
+\renewcommand{\cftloftitlefont}{\Huge\sffamily} % tocloft
+\renewcommand{\cftlottitlefont}{\Huge\sffamily} % tocloft
+\renewcommand{\cftchapfont}{\sffamily} % tocloft
+
+\usepackage{titlesec}
+\titleformat{\chapter}{\huge}{\thechapter.}{0.5em}{}
+\titlespacing{\chapter}{0pt}{*6}{*2}
+  
+\usepackage[natbibapa]{apacite} 
+\bibliographystyle{apacitex}
+
+
+
+\usepackage{url} %for line breaks in URLS in bibliography
+\def\UrlBreaks{\do\/\do-}
+
+\titleclass{\chapter}{straight} %no page break after chapters
+
+
+\newcommand*{\titleGM}{\begingroup % Create the command for including the title page in the document
+\thispagestyle{empty}
+\hbox{ % Horizontal box
+\hspace*{0.15\textwidth} % Whitespace to the left of the title page
+\rule{1.5pt}{\textheight} % Vertical line
+\hspace*{0.05\textwidth} % Whitespace between the vertical line and title page text
+\parbox[b]{0.75\textwidth}{ % Paragraph box which restricts text to less than the width of the page
+{\centering\includegraphics[width=0.5\linewidth]{PAIS.png}\\[3\baselineskip]}%include PAIS logo
+{\noindent\Huge\bfseries Essay Title\\} %add essay title
+{\noindent\LARGE\bfseries POxxx - Module Title\\}\\[2\baselineskip] % Module Code and Name
+{\large \textit{ \textbf{Registration Number:} u1234567}}\\ % Enter your registration number here, no name!
+
+
+\vspace{0.3\textheight} % Whitespace between the title block and the publisher
+{\large \textsc{Total Number of Words: XXXX}} \\ %total word count including figures
+{\large \textsc{Words for Figures and Tables: XXX}}\\[\baselineskip] %word count for figures only
+}}
+\endgroup}
+
+% ***********************************************************
+% ********************** END HEADER *************************
+% ***********************************************************
+\begin{document}
+{\fontfamily{cmss}\selectfont
+\titleGM
+\clearpage
+\pagenumbering{roman}
+\tableofcontents
+\clearpage
+%\addcontentsline{toc}{chapter}{\listfigurename}{\protect\newpage} % remove % at the start of line to add lof
+%\listoffigures % remove % at the start of line to add lof
+\addcontentsline{toc}{chapter}{\listtablename}
+\listoftables
+
+%Acronyms
+%\clearpage %%% remove the % signs of you want to include a list of acronyms
+%\addcontentsline{toc}{chapter}{Acronyms}
+%\printglossary[type=\acronymtype, nonumberlist]
+
+
+
+%Arabic page numbers
+\newpage
+\pagenumbering{arabic}
+
+
+%==================================================
+\chapter*{Introduction}
+\addcontentsline{toc}{chapter}{Introduction}
+
+
+\lipsum[1]
+
+%==================================================
+\chapter*{Literature Review}
+\addcontentsline{toc}{chapter}{Literature Review}
+
+Just to cite one author here: \citep{prz:2000}
+
+
+
+
+%==================================================
+\chapter*{Theory}
+\addcontentsline{toc}{chapter}{Theory}
+
+
+\lipsum[1]
+
+
+%==================================================
+\chapter*{Hypotheses}
+\addcontentsline{toc}{chapter}{Hypotheses}
+
+
+\lipsum[1]
+
+
+%==================================================
+\chapter*{Conceptualisation and Measurement}
+\addcontentsline{toc}{chapter}{Conceptualisation and Measurement}
+
+\lipsum[1]
+
+
+
+%==================================================
+\chapter*{Data}
+\addcontentsline{toc}{chapter}{Data}
+
+
+\lipsum[1]
+
+
+%==================================================
+\chapter*{Method}
+\addcontentsline{toc}{chapter}{Method}
+
+\lipsum[1]
+
+
+%==================================================
+\chapter*{Analysis}
+\addcontentsline{toc}{chapter}{Analysis}
+
+
+\FloatBarrier
+\begin{table}[!htbp] \centering 
+	 \begin{tabularx}{10cm}{lCCCC} 		
+		&  \\[-1.8ex] \hline\hline
+		&  \\[-1.8ex]
+		Variable	&	Mean  &  Median   & Mode & Variance \\ \hline
+		&  \\[-1.8ex]
+ A 								  &    1    &	3	&	5 &  7            \\  	                   
+ B 								  &    2    &	4	&	6 &  8            \\
+ \\[-1.8ex]\hline\hline 		                              
+ \\[-1.8ex]  
+	\end{tabularx}	
+	\caption{Descriptive Statistics}
+	\label{tbl:descr}
+\end{table}
+
+As we can see in Table \ref{tbl:descr}...
+
+%==================================================
+\chapter*{Discussion}
+\addcontentsline{toc}{chapter}{Discussion}
+
+\lipsum[1]
+
+%==================================================
+\chapter*{Conclusion}
+\addcontentsline{toc}{chapter}{Conclusion}
+
+\lipsum[1]
+
+%==================================
+% List of References
+\newpage
+\bibliography{bibliography.bib}
+\addcontentsline{toc}{chapter}{References}
+}
+\end{document}

@@ -54,6 +54,7 @@ the-bibliography
 bib-files
 citing-bibliography-resources
 endnotes
+an-essay-template
 introduction-2
 beamer-presentation
 first-beamer-presentation
