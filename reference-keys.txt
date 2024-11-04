@@ -4,7 +4,7 @@ tab:listings
 tab:natbib
 tab:geometry
 tab:shortcuts
-introduction
+introductions
 what-is-latex
 why-should-i-choose-latex-over-my-current-document-system
 download-and-installation
@@ -26,7 +26,7 @@ font-styles
 table-of-contents
 title-page
 commenting-your-code
-introduction-1
+introduction
 labels
 footnotes
 packages
@@ -55,7 +55,7 @@ bib-files
 citing-bibliography-resources
 endnotes
 an-essay-template
-introduction-2
+introduction-1
 beamer-presentation
 first-beamer-presentation
 title-frame
