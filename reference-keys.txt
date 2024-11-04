@@ -5,7 +5,6 @@ tab:natbib
 tab:geometry
 tab:shortcuts
 introduction
-pointless-point
 what-is-latex
 why-should-i-choose-latex-over-my-current-document-system
 download-and-installation
