@@ -206,7 +206,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="23.2" data-path="referencing-and-the-bibliography.html"><a href="referencing-and-the-bibliography.html#citing-bibliography-resources"><i class="fa fa-check"></i><b>23.2</b> Citing Bibliography Resources</a></li>
 <li class="chapter" data-level="23.3" data-path="referencing-and-the-bibliography.html"><a href="referencing-and-the-bibliography.html#endnotes"><i class="fa fa-check"></i><b>23.3</b> Endnotes</a></li>
 </ul></li>
-<li class="chapter" data-level="24" data-path="an-essay-template.html"><a href="an-essay-template.html"><i class="fa fa-check"></i><b>24</b> An Essay Template</a></li>
+<li class="chapter" data-level="24" data-path="an-essay-template.html"><a href="an-essay-template.html"><i class="fa fa-check"></i><b>24</b> An Essay Template</a>
+<ul>
+<li class="chapter" data-level="24.1" data-path="an-essay-template.html"><a href="an-essay-template.html#in-text-references"><i class="fa fa-check"></i><b>24.1</b> In-Text References</a></li>
+<li class="chapter" data-level="24.2" data-path="an-essay-template.html"><a href="an-essay-template.html#footnote-references"><i class="fa fa-check"></i><b>24.2</b> Footnote References</a></li>
+</ul></li>
 <li class="part"><span><b>III Advanced Documents</b></span></li>
 <li class="chapter" data-level="25" data-path="introduction-2.html"><a href="introduction-2.html"><i class="fa fa-check"></i><b>25</b> Introduction</a></li>
 <li class="chapter" data-level="26" data-path="beamer-presentation.html"><a href="beamer-presentation.html"><i class="fa fa-check"></i><b>26</b> Beamer Presentation</a>
@@ -317,35 +321,51 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">23.2</span> Citing Bibliography Resources<a href="referencing-and-the-bibliography.html#citing-bibliography-resources" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><img src="files2/part2_07_output.png" width="50%" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb50"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb50-1"><a href="referencing-and-the-bibliography.html#cb50-1" tabindex="-1"></a>\documentclass{article}</span>
-<span id="cb50-2"><a href="referencing-and-the-bibliography.html#cb50-2" tabindex="-1"></a>\usepackage[natbibapa]{apacite} </span>
-<span id="cb50-3"><a href="referencing-and-the-bibliography.html#cb50-3" tabindex="-1"></a>\bibliographystyle{apacitex}</span>
-<span id="cb50-4"><a href="referencing-and-the-bibliography.html#cb50-4" tabindex="-1"></a>\begin{document}</span>
-<span id="cb50-5"><a href="referencing-and-the-bibliography.html#cb50-5" tabindex="-1"></a>In this sentence, I reference the article \textit{Beyond Running Tally: Partisan Bias in Political Perceptions} included in the bibliography \citep{bartels2002}. </span>
-<span id="cb50-6"><a href="referencing-and-the-bibliography.html#cb50-6" tabindex="-1"></a>This sentence references the book of the Austrian-British philosopher Karl Popper \citep[pp. 14--15]{popper1934}.</span>
-<span id="cb50-7"><a href="referencing-and-the-bibliography.html#cb50-7" tabindex="-1"></a>This sentence references a chapter in the Oxford Handbook of Political Methodology \citep{bollen2008}.</span>
-<span id="cb50-8"><a href="referencing-and-the-bibliography.html#cb50-8" tabindex="-1"></a>Finally, the last sentence refers to a World Bank Data Set, including measures such as HDI \citep{worldbank2019}.</span>
-<span id="cb50-9"><a href="referencing-and-the-bibliography.html#cb50-9" tabindex="-1"></a>\bibliography{my_bibliography}</span>
-<span id="cb50-10"><a href="referencing-and-the-bibliography.html#cb50-10" tabindex="-1"></a>\end{document}</span></code></pre></div>
-<p>In order to start referencing resources in your text, all you need to do is load a dedicated package called in the preamble of your document, notify LaTeX of the bibliography style you wish to use (\bibliographystyle), and the bibliography file you are using with a \bibliography markup tag at the end of the document. Then you can cite each entry in your bibliography using \citep{resource} markup tag, where resource is the tag you have assigned in the .bib file. For example \citep{bollen2008} will compile as (Bollen et al., 2008). Additionally, you can use square brackets after the \citep tag to add a note to be included in the parentheses with the citation, for example, the exact pages to which you are referring. If you want to reference specific pages, say 14-15 of Popper’s book, you can do that by using \citep[pp. 14–15]{popper1934}, which compiles as (Popper, 1934, pp. 14-15).</p>
-<p>NatBib contains various other citation formats and you can find a full list <a href="https://gking.harvard.edu/files/natnotes2.pdf">here</a>. </p>
+<span id="cb50-2"><a href="referencing-and-the-bibliography.html#cb50-2" tabindex="-1"></a>\usepackage[autostyle]{csquotes}</span>
+<span id="cb50-3"><a href="referencing-and-the-bibliography.html#cb50-3" tabindex="-1"></a>\usepackage[</span>
+<span id="cb50-4"><a href="referencing-and-the-bibliography.html#cb50-4" tabindex="-1"></a>    backend=biber,</span>
+<span id="cb50-5"><a href="referencing-and-the-bibliography.html#cb50-5" tabindex="-1"></a>    style=apa,</span>
+<span id="cb50-6"><a href="referencing-and-the-bibliography.html#cb50-6" tabindex="-1"></a>    natbib=true]{biblatex}</span>
+<span id="cb50-7"><a href="referencing-and-the-bibliography.html#cb50-7" tabindex="-1"></a>\addbibresource{bibliography.bib}</span>
+<span id="cb50-8"><a href="referencing-and-the-bibliography.html#cb50-8" tabindex="-1"></a>\begin{document}</span>
+<span id="cb50-9"><a href="referencing-and-the-bibliography.html#cb50-9" tabindex="-1"></a>In this sentence, I reference the article \textit{Beyond Running Tally: Partisan Bias in Political Perceptions} included in the bibliography \citep{bartels2002}. </span>
+<span id="cb50-10"><a href="referencing-and-the-bibliography.html#cb50-10" tabindex="-1"></a>This sentence references the book of the Austrian-British philosopher Karl Popper \citep[pp. 14--15]{popper1934}.</span>
+<span id="cb50-11"><a href="referencing-and-the-bibliography.html#cb50-11" tabindex="-1"></a>This sentence references a chapter in the Oxford Handbook of Political Methodology \citep{bollen2008}.</span>
+<span id="cb50-12"><a href="referencing-and-the-bibliography.html#cb50-12" tabindex="-1"></a>Finally, the last sentence refers to a World Bank Data Set, including measures such as HDI \citep{worldbank2019}.</span>
+<span id="cb50-13"><a href="referencing-and-the-bibliography.html#cb50-13" tabindex="-1"></a>\bibliography{my_bibliography}</span>
+<span id="cb50-14"><a href="referencing-and-the-bibliography.html#cb50-14" tabindex="-1"></a>\end{document}</span></code></pre></div>
+<p>In order to start referencing resources in your text, all you need to do is load a dedicated package called in the preamble of your document. This package has a number of different citations styles of which “apa: is the most frequently used one in the Social Sciences. You also need to notify LaTeX of the the bibliography file you are using with a \addbibresource after loading the biblatex package. The last thing you need to do is to add the line \printbibliography where you wish the bibliography to be placed. Then you can cite each entry in your bibliography using the \parencite{resource} markup tag, where resource is the tag you have assigned in the .bib file. For example \parencite{bollen2008} will compile as (Bollen et al., 2008). Alternatively, you can use \textcite{bollen2008} will compile as Bollen et al. (2008). Additionally, you can use square brackets after the \parencite and \textcite tags to add a note to be included in the parentheses with the citation, for example, the exact pages to which you are referring. If you want to reference specific pages, say 14-15 of Popper’s book, you can do that by using \parencite[see][pp. 14–15]{popper1934}, which compiles as (see Popper, 1934, pp. 14-15).</p>
+<p>If you want to use footnote references, then the same setup as before applies, but you need to change the style of the biblatex command to “verbose”, such as:</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb51-1"><a href="referencing-and-the-bibliography.html#cb51-1" tabindex="-1"></a>\documentclass{article}</span>
+<span id="cb51-2"><a href="referencing-and-the-bibliography.html#cb51-2" tabindex="-1"></a>\usepackage[autostyle]{csquotes}</span>
+<span id="cb51-3"><a href="referencing-and-the-bibliography.html#cb51-3" tabindex="-1"></a>\usepackage[</span>
+<span id="cb51-4"><a href="referencing-and-the-bibliography.html#cb51-4" tabindex="-1"></a>    backend=biber,</span>
+<span id="cb51-5"><a href="referencing-and-the-bibliography.html#cb51-5" tabindex="-1"></a>    style=verbose,</span>
+<span id="cb51-6"><a href="referencing-and-the-bibliography.html#cb51-6" tabindex="-1"></a>    natbib=true]{biblatex}</span>
+<span id="cb51-7"><a href="referencing-and-the-bibliography.html#cb51-7" tabindex="-1"></a>\addbibresource{bibliography.bib}</span>
+<span id="cb51-8"><a href="referencing-and-the-bibliography.html#cb51-8" tabindex="-1"></a>\begin{document}</span>
+<span id="cb51-9"><a href="referencing-and-the-bibliography.html#cb51-9" tabindex="-1"></a>Text</span>
+<span id="cb51-10"><a href="referencing-and-the-bibliography.html#cb51-10" tabindex="-1"></a>\bibliography{my_bibliography}</span>
+<span id="cb51-11"><a href="referencing-and-the-bibliography.html#cb51-11" tabindex="-1"></a>\end{document}</span></code></pre></div>
+<p>To produce footnote citations, you need to use \footcite instead of the aforementioned \textcite and \parencite.</p>
 </div>
 <div id="endnotes" class="section level2 hasAnchor" number="23.3">
 <h2><span class="header-section-number">23.3</span> Endnotes<a href="referencing-and-the-bibliography.html#endnotes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><img src="files2/part2_08_endnotes_pages-combined.png" width="50%" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb51"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb51-1"><a href="referencing-and-the-bibliography.html#cb51-1" tabindex="-1"></a>\documentclass{article}</span>
-<span id="cb51-2"><a href="referencing-and-the-bibliography.html#cb51-2" tabindex="-1"></a>\usepackage{endnotes}</span>
-<span id="cb51-3"><a href="referencing-and-the-bibliography.html#cb51-3" tabindex="-1"></a></span>
-<span id="cb51-4"><a href="referencing-and-the-bibliography.html#cb51-4" tabindex="-1"></a>\begin{document}</span>
-<span id="cb51-5"><a href="referencing-and-the-bibliography.html#cb51-5" tabindex="-1"></a></span>
-<span id="cb51-6"><a href="referencing-and-the-bibliography.html#cb51-6" tabindex="-1"></a>\section{Introduction}</span>
-<span id="cb51-7"><a href="referencing-and-the-bibliography.html#cb51-7" tabindex="-1"></a></span>
-<span id="cb51-8"><a href="referencing-and-the-bibliography.html#cb51-8" tabindex="-1"></a>This is a sentence that refers to a document endnote. \endnote{Some text}</span>
-<span id="cb51-9"><a href="referencing-and-the-bibliography.html#cb51-9" tabindex="-1"></a></span>
-<span id="cb51-10"><a href="referencing-and-the-bibliography.html#cb51-10" tabindex="-1"></a>\clearpage</span>
-<span id="cb51-11"><a href="referencing-and-the-bibliography.html#cb51-11" tabindex="-1"></a></span>
-<span id="cb51-12"><a href="referencing-and-the-bibliography.html#cb51-12" tabindex="-1"></a>\theendnotes</span>
-<span id="cb51-13"><a href="referencing-and-the-bibliography.html#cb51-13" tabindex="-1"></a></span>
-<span id="cb51-14"><a href="referencing-and-the-bibliography.html#cb51-14" tabindex="-1"></a>\end{document}</span></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb52-1"><a href="referencing-and-the-bibliography.html#cb52-1" tabindex="-1"></a>\documentclass{article}</span>
+<span id="cb52-2"><a href="referencing-and-the-bibliography.html#cb52-2" tabindex="-1"></a>\usepackage{endnotes}</span>
+<span id="cb52-3"><a href="referencing-and-the-bibliography.html#cb52-3" tabindex="-1"></a></span>
+<span id="cb52-4"><a href="referencing-and-the-bibliography.html#cb52-4" tabindex="-1"></a>\begin{document}</span>
+<span id="cb52-5"><a href="referencing-and-the-bibliography.html#cb52-5" tabindex="-1"></a></span>
+<span id="cb52-6"><a href="referencing-and-the-bibliography.html#cb52-6" tabindex="-1"></a>\section{Introduction}</span>
+<span id="cb52-7"><a href="referencing-and-the-bibliography.html#cb52-7" tabindex="-1"></a></span>
+<span id="cb52-8"><a href="referencing-and-the-bibliography.html#cb52-8" tabindex="-1"></a>This is a sentence that refers to a document endnote. \endnote{Some text}</span>
+<span id="cb52-9"><a href="referencing-and-the-bibliography.html#cb52-9" tabindex="-1"></a></span>
+<span id="cb52-10"><a href="referencing-and-the-bibliography.html#cb52-10" tabindex="-1"></a>\clearpage</span>
+<span id="cb52-11"><a href="referencing-and-the-bibliography.html#cb52-11" tabindex="-1"></a></span>
+<span id="cb52-12"><a href="referencing-and-the-bibliography.html#cb52-12" tabindex="-1"></a>\theendnotes</span>
+<span id="cb52-13"><a href="referencing-and-the-bibliography.html#cb52-13" tabindex="-1"></a></span>
+<span id="cb52-14"><a href="referencing-and-the-bibliography.html#cb52-14" tabindex="-1"></a>\end{document}</span></code></pre></div>
 <p>If you prefer your footnotes to appear at the end of your document, use the package ‘endnotes’. To create an endnote use the \endnote markup tag, and enter \theendnotes in the part of your document in which you would like them to appear (usually at the end), similarly to the \tableofcontents tag for the table of contents or the \bibliography tag for references.</p>
 </div>
 </div>

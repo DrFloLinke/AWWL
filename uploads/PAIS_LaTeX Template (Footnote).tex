@@ -13,6 +13,7 @@
 \usepackage[english]{babel}
 \usepackage{lipsum}
 \usepackage{placeins} %to define float barriers
+\usepackage[autostyle]{csquotes}
 
 \addto\captionsenglish{% Changes the title of the table of contents
   \renewcommand{\contentsname}%
@@ -30,9 +31,15 @@
 \titleformat{\chapter}{\huge}{\thechapter.}{0.5em}{}
 \titlespacing{\chapter}{0pt}{*6}{*2}
   
-\usepackage[natbibapa]{apacite} 
-\bibliographystyle{apacitex}
+%\usepackage[natbibapa]{apacite} 
+%\bibliographystyle{apacitex}
 
+
+\usepackage[
+    backend=biber,
+    style=verbose,
+    natbib=true]{biblatex}
+\addbibresource{bibliography.bib}
 
 
 \usepackage{url} %for line breaks in URLS in bibliography
@@ -98,7 +105,8 @@
 \chapter*{Literature Review}
 \addcontentsline{toc}{chapter}{Literature Review}
 
-Just to cite one author here: \citep{prz:2000}
+
+It is argued in the literature that development does not bring democracy about.\footcite[see][p.x]{prz:2000}
 
 
 
@@ -180,7 +188,8 @@ As we can see in Table \ref{tbl:descr}...
 %==================================
 % List of References
 \newpage
-\bibliography{bibliography.bib}
+%\bibliography{bibliography.bib}
+\printbibliography
 \addcontentsline{toc}{chapter}{References}
 }
 \end{document}
