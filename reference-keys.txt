@@ -49,10 +49,12 @@ defining-new-column-types
 specifying-row-height
 the-table-floating-environment
 lists-of-figures-and-tables
-referencing-and-the-bibliography
-the-bibliography
+referencing-and-the-list-of-references
+terminology
+the-list-of-references
 bib-files
-citing-bibliography-resources
+citing-.bib-resources
+compiling-the-list-of-references
 endnotes
 an-essay-template
 in-text-references

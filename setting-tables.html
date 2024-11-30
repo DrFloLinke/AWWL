@@ -197,14 +197,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="21.8" data-path="setting-tables.html"><a href="setting-tables.html#the-table-floating-environment"><i class="fa fa-check"></i><b>21.8</b> The ‘Table’ Floating Environment</a></li>
 </ul></li>
 <li class="chapter" data-level="22" data-path="lists-of-figures-and-tables.html"><a href="lists-of-figures-and-tables.html"><i class="fa fa-check"></i><b>22</b> Lists of Figures and Tables</a></li>
-<li class="chapter" data-level="23" data-path="referencing-and-the-bibliography.html"><a href="referencing-and-the-bibliography.html"><i class="fa fa-check"></i><b>23</b> Referencing and the Bibliography</a>
+<li class="chapter" data-level="23" data-path="referencing-and-the-list-of-references.html"><a href="referencing-and-the-list-of-references.html"><i class="fa fa-check"></i><b>23</b> Referencing and the List of References</a>
 <ul>
-<li class="chapter" data-level="23.1" data-path="referencing-and-the-bibliography.html"><a href="referencing-and-the-bibliography.html#the-bibliography"><i class="fa fa-check"></i><b>23.1</b> The Bibliography</a>
+<li class="chapter" data-level="23.1" data-path="referencing-and-the-list-of-references.html"><a href="referencing-and-the-list-of-references.html#terminology"><i class="fa fa-check"></i><b>23.1</b> Terminology</a></li>
+<li class="chapter" data-level="23.2" data-path="referencing-and-the-list-of-references.html"><a href="referencing-and-the-list-of-references.html#the-list-of-references"><i class="fa fa-check"></i><b>23.2</b> The List of References</a>
 <ul>
-<li class="chapter" data-level="23.1.1" data-path="referencing-and-the-bibliography.html"><a href="referencing-and-the-bibliography.html#bib-files"><i class="fa fa-check"></i><b>23.1.1</b> .bib files</a></li>
+<li class="chapter" data-level="23.2.1" data-path="referencing-and-the-list-of-references.html"><a href="referencing-and-the-list-of-references.html#bib-files"><i class="fa fa-check"></i><b>23.2.1</b> .bib files</a></li>
 </ul></li>
-<li class="chapter" data-level="23.2" data-path="referencing-and-the-bibliography.html"><a href="referencing-and-the-bibliography.html#citing-bibliography-resources"><i class="fa fa-check"></i><b>23.2</b> Citing Bibliography Resources</a></li>
-<li class="chapter" data-level="23.3" data-path="referencing-and-the-bibliography.html"><a href="referencing-and-the-bibliography.html#endnotes"><i class="fa fa-check"></i><b>23.3</b> Endnotes</a></li>
+<li class="chapter" data-level="23.3" data-path="referencing-and-the-list-of-references.html"><a href="referencing-and-the-list-of-references.html#citing-.bib-resources"><i class="fa fa-check"></i><b>23.3</b> Citing .bib Resources</a></li>
+<li class="chapter" data-level="23.4" data-path="referencing-and-the-list-of-references.html"><a href="referencing-and-the-list-of-references.html#compiling-the-list-of-references"><i class="fa fa-check"></i><b>23.4</b> Compiling the List of References</a></li>
+<li class="chapter" data-level="23.5" data-path="referencing-and-the-list-of-references.html"><a href="referencing-and-the-list-of-references.html#endnotes"><i class="fa fa-check"></i><b>23.5</b> Endnotes</a></li>
 </ul></li>
 <li class="chapter" data-level="24" data-path="an-essay-template.html"><a href="an-essay-template.html"><i class="fa fa-check"></i><b>24</b> An Essay Template</a>
 <ul>
@@ -636,6 +638,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
