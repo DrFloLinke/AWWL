@@ -31,10 +31,6 @@
 \titleformat{\chapter}{\huge}{\thechapter.}{0.5em}{}
 \titlespacing{\chapter}{0pt}{*6}{*2}
   
-%\usepackage[natbibapa]{apacite} 
-%\bibliographystyle{apacitex}
-
-
 \usepackage[
     backend=biber,
     style=verbose,
@@ -188,7 +184,7 @@ As we can see in Table \ref{tbl:descr}...
 %==================================
 % List of References
 \newpage
-%\bibliography{bibliography.bib}
+\renewcommand{\bibname}{List of References}
 \printbibliography
 \addcontentsline{toc}{chapter}{References}
 }
