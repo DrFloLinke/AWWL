@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Font Styles | Academic Writing with LaTeX</title>
-  <meta name="description" content="Font Styles | Academic Writing with LaTeX" />
+  <title>Accessibility | Academic Writing with LaTeX</title>
+  <meta name="description" content="Accessibility | Academic Writing with LaTeX" />
   <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Font Styles | Academic Writing with LaTeX" />
+  <meta property="og:title" content="Accessibility | Academic Writing with LaTeX" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Font Styles | Academic Writing with LaTeX" />
+  <meta name="twitter:title" content="Accessibility | Academic Writing with LaTeX" />
   
   
   
@@ -28,8 +28,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="lists.html"/>
-<link rel="next" href="table-of-contents.html"/>
+<link rel="prev" href="index.html"/>
+<link rel="next" href="introduction.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -275,111 +275,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="font-styles" class="section level1 unnumbered hasAnchor">
-<h1>Font Styles<a href="font-styles.html#font-styles" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Generally, LaTeX uses the Computer Modern font as default. Sometimes, you mind find it useful to modify its style or size. To modify the style of the font you are currently using you use special markup tags. For the bold font, you simply type \textbf{text you want in bold}. Similarly, for italics you write \textit{text you want in italics}. Finally, for underlined text, you use \underline{text you want underlined}.</p>
-<p><img src="files/font-styles-screenshot.png" width="50%" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb10-1"><a href="font-styles.html#cb10-1" tabindex="-1"></a>\noindent This is how you write \textit{italics}, \textbf{bold} and \underline{underlined} text in LaTeX. \\</span>
-<span id="cb10-2"><a href="font-styles.html#cb10-2" tabindex="-1"></a>\\</span>
-<span id="cb10-3"><a href="font-styles.html#cb10-3" tabindex="-1"></a>You can also {\footnotesize decrease} or {\Large increase} the font for couple of words mid-sentence. \\</span>
-<span id="cb10-4"><a href="font-styles.html#cb10-4" tabindex="-1"></a>\\</span>
-<span id="cb10-5"><a href="font-styles.html#cb10-5" tabindex="-1"></a>What&#39;s even more useful, you can changed the font size of an entire area:\\</span>
-<span id="cb10-6"><a href="font-styles.html#cb10-6" tabindex="-1"></a>\begin{footnotesize}</span>
-<span id="cb10-7"><a href="font-styles.html#cb10-7" tabindex="-1"></a>This here is small text.</span>
-<span id="cb10-8"><a href="font-styles.html#cb10-8" tabindex="-1"></a>\end{footnotesize} \\</span>
-<span id="cb10-9"><a href="font-styles.html#cb10-9" tabindex="-1"></a>\begin{large}</span>
-<span id="cb10-10"><a href="font-styles.html#cb10-10" tabindex="-1"></a>This here is large text. </span>
-<span id="cb10-11"><a href="font-styles.html#cb10-11" tabindex="-1"></a>\end{large} \\</span>
-<span id="cb10-12"><a href="font-styles.html#cb10-12" tabindex="-1"></a>And this is the default size again!</span></code></pre></div>
-<p>To change the font size from the default (which is 10pt for the document class ‘article’), you can use markup tags describing the size you want. This can be done either mid-sentence or for entire area, as seen in the figure above.</p>
-<p>Table <a href="font-styles.html#tab:fontsizes">1</a> demonstrates the effect that different LaTeX commands have on the font in relation to the standard font size that has been set for the document. To make things a little bit easier for you, TeXstudio has dedicated buttons for font styles, similar to those you may be familiar with from text editors you have used, such as Microsoft Word – you can find them located left of the TeX file editor.</p>
-<table>
-<caption><span id="tab:fontsizes">Table 1: </span>Font Sizes</caption>
-<thead>
-<tr class="header">
-<th align="left">If standard font size is</th>
-<th align="left">10pt</th>
-<th align="left">11pt</th>
-<th align="left">12pt</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">These commands change it to …</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">\tiny</td>
-<td align="left">5pt</td>
-<td align="left">6pt</td>
-<td align="left">6pt</td>
-</tr>
-<tr class="odd">
-<td align="left">\scriptsize</td>
-<td align="left">7pt</td>
-<td align="left">8pt</td>
-<td align="left">8pt</td>
-</tr>
-<tr class="even">
-<td align="left">\footnotesize</td>
-<td align="left">8pt</td>
-<td align="left">9pt</td>
-<td align="left">10pt</td>
-</tr>
-<tr class="odd">
-<td align="left">\small</td>
-<td align="left">9pt</td>
-<td align="left">10pt</td>
-<td align="left">11pt</td>
-</tr>
-<tr class="even">
-<td align="left">\normalsize</td>
-<td align="left">10pt</td>
-<td align="left">11pt</td>
-<td align="left">12pt</td>
-</tr>
-<tr class="odd">
-<td align="left">\large</td>
-<td align="left">12pt</td>
-<td align="left">12pt</td>
-<td align="left">14pt</td>
-</tr>
-<tr class="even">
-<td align="left">\Large</td>
-<td align="left">14pt</td>
-<td align="left">14pt</td>
-<td align="left">17pt</td>
-</tr>
-<tr class="odd">
-<td align="left">\LARGE</td>
-<td align="left">17pt</td>
-<td align="left">17pt</td>
-<td align="left">20pt</td>
-</tr>
-<tr class="even">
-<td align="left">\huge</td>
-<td align="left">20pt</td>
-<td align="left">20pt</td>
-<td align="left">25pt</td>
-</tr>
-<tr class="odd">
-<td align="left">\Huge</td>
-<td align="left">25pt</td>
-<td align="left">25pt</td>
-<td align="left">25pt</td>
-</tr>
-</tbody>
-</table>
+<div id="accessibility" class="section level1 unnumbered hasAnchor">
+<h1>Accessibility<a href="accessibility.html#accessibility" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>For those of you who prefer a dark background, like me, you can select this option from the menu at the top of the page. Click the “A” symbol, and then you can choose between “white”, “sepia”, or “night”.</p>
+<p>The companion uses the font “<a href="https://fonts.google.com/specimen/Cantarell">Cantarell</a>”.</p>
+
 </div>
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-<a href="lists.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="table-of-contents.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="introduction.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
