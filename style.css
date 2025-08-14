@@ -8,11 +8,8 @@
    Fira Math Font Import
 ---------------------------------------- */
 
-@font-face {
-  font-family: 'Fira Math';
-  src: url('files/fonts/FiraMath-Regular.otf') format('opentype');
-}
 
+@import url('https://fonts.googleapis.com/css2?family=Recursive:wght,MONO@375,1&display=swap');
 
 /* ----------------------------------------
    Base Styles
@@ -62,20 +59,33 @@ h2, h3, h4 {
   color: #e8f1f2;
 }
 
-li.appendix span, li.part span {
+
+/* Left sidebar TOC: PART and (if present) APPENDIX dividers */
+.book-toc li.book-part,
+.book-toc li.appendix {
   font-family: 'Lexend', sans-serif;
-  margin-top: 1.5em;
+  margin-top: 2.0em;
   opacity: 1 !important;
   text-transform: uppercase;
+  color: #cb7334 !important; 
+}
+
+/* Uppercase the very top "Table of contents" heading in bs4_book */
+header.sidebar.sidebar-book nav[aria-label="Table of contents"] > h2 {
+  font-family: 'Lexend', sans-serif;
+  text-transform: uppercase !important;
+  opacity: 1 !important;
+  margin-top: 2.0em;
+  color: #cb7334 !important;
 }
 
 
 /* Darken the active highlight in the "On this page" TOC */
 .nav-link.active {
-  background-color: #44496f !important;  /* a darker shade you like */
-  color: #e1e2ea !important;             /* keep text readable */
+  background-color: #44496f !important;  /* a darker shade*/
+  color: #e1e2ea !important;            
   font-weight: 600;
-  border-radius: 4px;                    /* optional rounded corners */
+  border-radius: 4px;                    
 }
 
 /* Sidebar links */
@@ -125,22 +135,7 @@ li.appendix span, li.part span {
 
 
 
-/* ----------------------------------------
-   Tables
----------------------------------------- */
-table, th, td {
-  color: #e1e2ea !important;
-  background-color: #1d1f2b !important;
-  border-color: #adbdd1 !important;
-}
 
-thead, caption {
-  color: #e1e2ea !important;
-}
-
-table {
-  caption-side: bottom;
-}
 
 /* ----------------------------------------
    Figures & Captions
@@ -154,6 +149,16 @@ img {
 .caption {
   text-align: center;
 }
+
+
+/* Control the space between the image and the caption (bs4_book / Bootstrap) */
+.figure .figure-img     { margin-bottom: 1em !important; } /* gap above caption */
+.figure .figure-caption { margin-top: 0em !important; }          /* optional */
+
+/* If your build uses the older markup (<p class="caption">) instead: */
+.figure > p.caption { margin-top: 1em !important; }
+
+
 
 /* ----------------------------------------
    Callout Blocks
@@ -245,6 +250,7 @@ div.video {
   font-size: 105%;
 }
 
+
 .flashcard {
   background: #111111;
   color: #e1e2ea !important;
@@ -264,6 +270,8 @@ div.video {
   color: #e57726 !important;
   background-color: #111111 !important;
 }
+
+
 
 
 .figure,
@@ -313,7 +321,7 @@ div.video {
 code, kbd, samp {
   background-color: #1d1f2b !important;
   color: #e1e2ea !important;
-  font-family: 'Fira Mono', monospace !important;
+  font-family: "Recursive", sans-serif !important;
   padding: 0.15em 0.15em;
   font-size: 0.85em;
   box-shadow: none !important;
@@ -333,7 +341,7 @@ code, kbd, samp {
   border-radius: 6px;
   padding: 1em;
   font-size: 0.9rem !important;
-  font-family: 'Fira Mono', monospace !important;
+  font-family: "Recursive", sans-serif !important;
   line-height: 1.4 !important;
   white-space: pre-wrap !important;
   overflow-x: auto !important;
@@ -388,7 +396,7 @@ pre:not(.sourceCode) {
   border: 2px solid #5a5f80;
   border-radius: 6px;
   font-size: 0.9rem !important;
-  font-family: 'Fira Mono', monospace !important;
+  font-family: "Recursive", sans-serif !important;
   line-height: 1.4 !important;
   white-space: pre-wrap !important;
   width: 100% !important;
@@ -436,21 +444,223 @@ hr {
   margin: 2em 0;
 }
 
+
 /* ----------------------------------------
-   No Borders in Tables
+   Tables
+---------------------------------------- */
+table, th, td {
+  color: #e1e2ea !important;
+  background-color: #1d1f2b !important;
+  border-color: #adbdd1 !important;
+  font-size: 0.9em;
+}
+
+thead, caption {
+  color: #e1e2ea !important;
+}
+
+table {
+  caption-side: bottom;
+}
+
+
+/* ---------------------------------------------------
+   No Borders in Tables, default: all borders present
+   
+   apply with
+   <div class="custom-html-table">
+   ...table...
+   </div>
+------------------------------------------------------ */
+
+/* remove all borders */
+.custom-html-table table,
+.custom-html-table th,
+.custom-html-table td {
+  border: none !important;
+  border-collapse: collapse;
+}
+
+/* Top and bottom border: double line */
+.custom-html-table table {
+  border-top: 4px double #e1e2ea !important;
+  border-bottom: 4px double #e1e2ea !important;
+}
+
+/* Border under the header row only (single solid line) */
+.custom-html-table table thead tr {
+  border-bottom: 1.5px solid #e1e2ea !important;
+}
+
+.custom-html-table table thead th {
+  border-bottom: 1.5px solid #e1e2ea !important;
+}
+
+/* Center text and add small padding */
+.custom-html-table th,
+.custom-html-table td {
+  text-align: left;
+  padding: 0.2em 0.4em;
+}
+
+
+/* TOP-BOTTOMRULE Remove all borders except double top & bottom on table */
+.top-bottom-rule-only table,
+.top-bottom-rule-only th,
+.top-bottom-rule-only td {
+  border: none !important;
+  border-collapse: collapse;
+}
+
+.top-bottom-rule-only table {
+  border-top: 4px double #e1e2ea !important;
+  border-bottom: 4px double #e1e2ea !important;
+}
+
+
+
+
+
+/* GLOSSARY TABLES */
+
+/* remove all borders */
+.glossary-table table,
+.glossary-table th,
+.glossary-table td {
+  border: none !important;
+  border-collapse: collapse;
+}
+
+/* Top and bottom border: double line */
+.glossary-table table {
+  border-top: 4px double #e1e2ea !important;
+  border-bottom: 4px double #e1e2ea !important;
+}
+
+/* Border under the header row only (single solid line) */
+.glossary-table table thead tr {
+  border-bottom: 1.5px solid #e1e2ea !important;
+}
+
+.glossary-table table thead th {
+  border-bottom: 1.5px solid #e1e2ea !important;
+}
+
+/* Center text and add small padding */
+.glossary-table th,
+.glossary-table td {
+  text-align: left;
+  padding: 0.7em 0.4em;
+}
+
+/* ----------------------------------------
+   Download This Button
 ---------------------------------------- */
 
-table, th, td {
-  border: none !important;
+a.btn-primary {
+  background-color: #e57726;
+  border-color: #e57726;
+  color: #000;
+  margin-top: 0.75rem;
+  display: inline-block;
+  text-align: left; /* ensures text aligns left inside button */
+  padding: 0.5em 1em; /* optional, for spacing */
 }
 
-.book .content table,
-.book .content table th,
-.book .content table td {
-  border: none !important;
+a.btn-primary:hover {
+  background-color: #e57726;
+  border-color: #e57726;
+  color: #000;
+}
+
+a.btn-primary .btn-content {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  text-align: left;
+}
+
+.icon-img {
+  width: 1em;
+  height: 1em;
+  margin-right: 0.4em;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+/* muted gray for disabled state */
+a.btn-primary.disabled,
+a.btn-primary[aria-disabled="true"] {
+  background-color: #cb7334;
+  border-color: #cb7334;
+  color: #4d4d4d;
+  pointer-events: none;
+  cursor: not-allowed;
+  opacity: 0.85;
+  text-decoration: none;
+  margin-top: 0.75rem;
 }
 
 
+/* ----------------------------------------
+   Display on mobiles
+---------------------------------------- */
+
+/* --- Mobile TOC / Navbar dropdown (bs4_book) --- */
+@media (max-width: 991.98px) {
+  /* Collapsible TOC panel (id is #toc in bs4_book) */
+  #toc,
+  #toc.collapse,
+  #toc.collapse.show,
+  .sidebar .collapse,
+  .sidebar .collapse.show,
+  header.sidebar.sidebar-book,
+  header.sidebar.sidebar-book nav[aria-label="Table of contents"] {
+    background-color: #1d1f2b !important;
+    color: #e1e2ea !important;
+  }
+
+  /* Links inside the mobile TOC */
+/* Links inside the mobile TOC - scoped to nav only */
+#toc nav a,
+header.sidebar.sidebar-book nav a {
+  color: #b3b7cb !important;
+  text-decoration: none !important;
+}
+#toc nav a:hover,
+header.sidebar.sidebar-book nav a:hover {
+  background: #393A3B !important;
+  color: #e1e2ea !important;
+}
+
+
+/* When TOC is rendered as a navbar dropdown on small screens */
+.navbar .dropdown-menu {
+  background-color: #1d1f2b !important;
+  color: #e1e2ea !important;
+  border-color: #5a5f80 !important;
+}
+.navbar .dropdown-item {
+  color: #b3b7cb !important;
+}
+.navbar .dropdown-item:hover,
+.navbar .dropdown-item:focus {
+  background-color: #393A3B !important;
+  color: #e1e2ea !important;
+}
+.navbar .dropdown-item.active,
+.navbar .dropdown-item:active {
+  background-color: #44496f !important;
+  color: #e1e2ea !important;
+}
+
+/* Ensure the "Table of contents" toggle button matches the theme */
+.navbar .nav-link.dropdown-toggle,
+.navbar .navbar-toggler {
+  color: #b3b7cb !important;
+  border-color: #5a5f80 !important;
+}
 
 
 
