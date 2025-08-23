@@ -1,0 +1,1792 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.39">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Tables, Figures, and References – Academic Writing with LaTeX</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./03-LaTeX_3.html" rel="next">
+<link href="./01-LaTeX_1.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-7c884608bb88d9d23eddf9360d6659a5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<meta name="theme-color" content="#1d1f2b" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#1d1f2b" media="(prefers-color-scheme: light)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<script>
+// This MUST come before the script src above
+window.MathJax = {
+  tex: {
+    // (Quarto already sets these, but harmless to repeat)
+    inlineMath: [['\\(', '\\)'], ['$', '$']],
+    displayMath: [['\\[', '\\]'], ['$$', '$$']]
+  },
+  // Tell the CHTML output to use Fira
+  chtml: { font: 'mathjax-fira' }
+};
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml-nofont.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./images/Crest_white.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title"><span class="title-long">Academic Writing with LaTeX</span> <span class="title-short">AWWL</span></span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://drfloreiche.github.io/"> 
+<span class="menu-text">Flo’s Home</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02-LaTeX_2.html"><span class="chapter-title">Tables, Figures, and References</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-LaTeX_1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">The First LaTeX Document</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-LaTeX_2.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Tables, Figures, and References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-LaTeX_3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Advanced Documents</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#labels" id="toc-labels" class="nav-link" data-scroll-target="#labels">Labels</a></li>
+  <li><a href="#footnotes" id="toc-footnotes" class="nav-link" data-scroll-target="#footnotes">Footnotes</a></li>
+  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
+  <li><a href="#including-figures-pictures" id="toc-including-figures-pictures" class="nav-link" data-scroll-target="#including-figures-pictures">Including Figures &amp; Pictures</a>
+  <ul class="collapse">
+  <li><a href="#including-figures" id="toc-including-figures" class="nav-link" data-scroll-target="#including-figures">Including Figures</a></li>
+  <li><a href="#including-a-picture" id="toc-including-a-picture" class="nav-link" data-scroll-target="#including-a-picture">Including a Picture</a></li>
+  <li><a href="#picture-dimensions" id="toc-picture-dimensions" class="nav-link" data-scroll-target="#picture-dimensions">Picture Dimensions</a></li>
+  </ul></li>
+  <li><a href="#floats" id="toc-floats" class="nav-link" data-scroll-target="#floats">Floats</a>
+  <ul class="collapse">
+  <li><a href="#float-location" id="toc-float-location" class="nav-link" data-scroll-target="#float-location">Float Location</a></li>
+  </ul></li>
+  <li><a href="#float-barriers" id="toc-float-barriers" class="nav-link" data-scroll-target="#float-barriers">Float Barriers</a></li>
+  <li><a href="#sub-figures" id="toc-sub-figures" class="nav-link" data-scroll-target="#sub-figures">Sub-Figures</a></li>
+  <li><a href="#captions-flos-pet-hate" id="toc-captions-flos-pet-hate" class="nav-link" data-scroll-target="#captions-flos-pet-hate">Captions (Flo’s Pet Hate)</a></li>
+  <li><a href="#setting-tables" id="toc-setting-tables" class="nav-link" data-scroll-target="#setting-tables">Setting Tables</a>
+  <ul class="collapse">
+  <li><a href="#separation-lines" id="toc-separation-lines" class="nav-link" data-scroll-target="#separation-lines">Separation Lines</a></li>
+  <li><a href="#fixed-width-of-columns" id="toc-fixed-width-of-columns" class="nav-link" data-scroll-target="#fixed-width-of-columns">Fixed Width of Columns</a></li>
+  <li><a href="#controlling-vertical-adjustment" id="toc-controlling-vertical-adjustment" class="nav-link" data-scroll-target="#controlling-vertical-adjustment">Controlling Vertical Adjustment</a></li>
+  <li><a href="#combining-rows-and-columns" id="toc-combining-rows-and-columns" class="nav-link" data-scroll-target="#combining-rows-and-columns">Combining Rows and Columns</a></li>
+  <li><a href="#tabularx" id="toc-tabularx" class="nav-link" data-scroll-target="#tabularx">Tabularx</a></li>
+  <li><a href="#defining-new-column-types" id="toc-defining-new-column-types" class="nav-link" data-scroll-target="#defining-new-column-types">Defining New Column Types</a></li>
+  <li><a href="#specifying-row-height" id="toc-specifying-row-height" class="nav-link" data-scroll-target="#specifying-row-height">Specifying Row Height</a></li>
+  <li><a href="#the-table-floating-environment" id="toc-the-table-floating-environment" class="nav-link" data-scroll-target="#the-table-floating-environment">The ‘Table’ Floating Environment</a></li>
+  </ul></li>
+  <li><a href="#lists-of-figures-and-tables" id="toc-lists-of-figures-and-tables" class="nav-link" data-scroll-target="#lists-of-figures-and-tables">Lists of Figures and Tables</a></li>
+  <li><a href="#referencing-and-the-list-of-references" id="toc-referencing-and-the-list-of-references" class="nav-link" data-scroll-target="#referencing-and-the-list-of-references">Referencing and the List of References</a>
+  <ul class="collapse">
+  <li><a href="#terminology" id="toc-terminology" class="nav-link" data-scroll-target="#terminology">Terminology</a></li>
+  <li><a href="#the-list-of-references" id="toc-the-list-of-references" class="nav-link" data-scroll-target="#the-list-of-references">The List of References</a>
+  <ul class="collapse">
+  <li><a href="#bib-files" id="toc-bib-files" class="nav-link" data-scroll-target="#bib-files">.bib files</a></li>
+  </ul></li>
+  <li><a href="#citing-.bib-resources" id="toc-citing-.bib-resources" class="nav-link" data-scroll-target="#citing-.bib-resources">Citing .bib Resources</a></li>
+  <li><a href="#compiling-the-list-of-references" id="toc-compiling-the-list-of-references" class="nav-link" data-scroll-target="#compiling-the-list-of-references">Compiling the List of References</a></li>
+  <li><a href="#endnotes" id="toc-endnotes" class="nav-link" data-scroll-target="#endnotes">Endnotes</a></li>
+  </ul></li>
+  <li><a href="#an-essay-template" id="toc-an-essay-template" class="nav-link" data-scroll-target="#an-essay-template">An Essay Template</a>
+  <ul class="collapse">
+  <li><a href="#in-text-references" id="toc-in-text-references" class="nav-link" data-scroll-target="#in-text-references">In-Text References</a></li>
+  <li><a href="#footnote-references" id="toc-footnote-references" class="nav-link" data-scroll-target="#footnote-references">Footnote References</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">Tables, Figures, and References</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level1 unnumbered">
+<h1 class="unnumbered">Introduction</h1>
+<p>In this&nbsp;chapter, we will cover the following topics:</p>
+<ul>
+<li>Labels</li>
+<li>Footnotes</li>
+<li>Including figures and pictures</li>
+<li>Captions</li>
+<li>Sub-figures</li>
+<li>Creating tables</li>
+<li>Citing bibliography resources</li>
+<li>Endnotes</li>
+</ul>
+</section>
+<section id="labels" class="level1 unnumbered">
+<h1 class="unnumbered">Labels</h1>
+<p>LaTeX allows you to label different environments using the <code>\label{}</code> tag and then later reference them in any part of your document using <code>\ref{}</code>. In the example, you can see how to label and reference sections and subsections. Objects that can be labelled include paragraphs, figures, footnotes, tables and many others. You can use any word you want for each label, as long as every time you use a unique label. It’s a good practice, to keep your labels short and related to the object you are labelling – that way, you can remember them more easily once you need to reference them later in your document. The example presents a good practice of labelling objects first with the abbreviation for their type (e.g.&nbsp;sec for section, tab for table or fig for figure), followed by a colon and then by a short label of the particular object. It’s a common practice to do it like this, however, feel free to come up with a labelling scheme of your own. The numbering for each object is automatic, so you don’t have to worry about remembering which paragraph or figure number you want to reference – LaTeX will update the number for you if you swap their order.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="files2/labels-screenshot.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>\begin{document}</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>\section{First}{\label{sec:sec1}}</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>\subsection{Sub-first}{\label{sec:subsec1}}</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>\section{Second}</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>In here I want to reference section \ref{sec:sec1} and then subsection \ref{sec:subsec1}.</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>\end{document}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="footnotes" class="level1 unnumbered">
+<h1 class="unnumbered">Footnotes</h1>
+<p>You can add footnotes to your LaTeX documents simply by using the markup tag <code>\footnote{}</code>. The text that you insert between the curly braces will end up as a footnote in the bottom of the current page. Same as LaTeX environments, footnotes can also be referenced, as seen in the example.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="files2/part2_02_footnotes.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>\documentclass{article}</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>\begin{document}</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>\section{Footnotes}</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>We can add a footnote to this text easily \footnote{This is an example footnote}.</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>\\</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>We can also label footnotes, so that we can refer to them later \footnote{\label{myfootnote} This is a second footnote}. LaTeX numbers them automatically. </span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>\\</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>Here I refer to footnote \ref{myfootnote}.</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>\end{document}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="packages" class="level1 unnumbered">
+<h1 class="unnumbered">Packages</h1>
+<p>LaTeX has a lot of functionalities beyond those already discussed. Many of them are included in so-called ‘packages’. These are sets of utilities providing you with new functionalities and ways of customising your document. To add a new package, you simply insert the tag <code>\usepackage{name}</code> in the preamble of your document. You will see how to use one of the most important packages in the next section, where you’ll learn how to insert figures into your document.</p>
+</section>
+<section id="including-figures-pictures" class="level1 unnumbered">
+<h1 class="unnumbered">Including Figures &amp; Pictures</h1>
+<section id="including-figures" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="including-figures">Including Figures</h2>
+<p>Graphicx package and basic figures</p>
+<p>The LaTeX package graphicx makes it possible to insert external graphics into your document. To use the package, simply include the tag <code>\usepackage{graphicx}</code> in the preamble of your document, as in the example below.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="files2/including-figures-screenshot.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>\documentclass{article}</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>%load packages:</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>\usepackage{graphicx}</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>%document info:</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>\title{Sample LaTeX document}</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>\date{20 April 2019}</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>\author{John Doe \\&nbsp;</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>&nbsp; &nbsp; Department of Politics and International Studies \\&nbsp;</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>&nbsp; &nbsp; University of Warwick}</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>\begin{document}</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>&nbsp; &nbsp; Some sample text.</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>\end{document}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="including-a-picture" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="including-a-picture">Including a Picture</h2>
+<p>In order to include a picture, simply use the <code>\includegraphics</code> markup tag surrounded by the figure environment, as seen in the screenshot below.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="files2/part2_03_figures_02.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>\begin{figure}</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>&nbsp; &nbsp; \includegraphics{koala.jpg}</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>\end{figure}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Note that for that to work, the picture ‘coala.jpg’ has to be in the same directory (i.e.&nbsp;folder) as your .tex file. To insert a picture from another folder, simply reference its directory explicitly, as shown in the example below.</p>
+<p>For Windows:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>\begin{figure}</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>\includegraphics{C:/Users/Jon Doe/Pictures/koala.jpg}</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>\end{figure}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>For Mac:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>\begin{figure}</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>\includegraphics{/Library/Desktop Pictures/koala.jpg}</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>\end{figure}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="picture-dimensions" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="picture-dimensions">Picture Dimensions</h2>
+<p>As you can see the resulting picture is rather oversized, doesn’t fit the page and takes up a lot of space. That’s because, by default, LaTeX inserts a picture in its original size – similarly as when you insert graphics in traditional text editors such as Word. To avoid that, we can specify the picture’s size using square brackets before the curly brackets with the file name, as shown in the screenshot below.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="files2/part2_03_figures_04.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>\begin{figure}</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    \includegraphics[width = \textwidth]{koala.jpg}</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>\end{figure}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The resulting figure takes the width of the text written around the picture while maintaining its aspect ratio. We can also specify the size of the pictures manually in centimetres.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="files2/part2_03_figures_05.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>\begin{figure}</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    \includegraphics[width = 12cm, height = 4cm]{koala.jpg}</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>\end{figure}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This, however, can result in distorting the original picture, as in the example. To fix that we can use the ‘keepaspectratio’ option. Which will make the picture as close as possible to the desired size, while maintaining the original aspect ratio of the file.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="files2/part2_03_figures_06.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>\begin{figure}</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    \includegraphics[</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    width = 12cm,</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    height = 4cm,</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    keepaspectratio]{koala.jpg}</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>\end{figure}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="floats" class="level1 unnumbered">
+<h1 class="unnumbered">Floats</h1>
+<p>As discussed before, whenever the text you are setting in the .tex file runs beyond the limit of the current page, it’s simply continued in the next page, similarly to what would happen in Word or Pages. Such rule cannot be applied to figures and tables, which need to appear entirely on one page – this is the rationale for using float objects in LaTeX. Floats is the name for a special category of objects in LaTeX, namely those that, unlike text, cannot be split between two pages. Those objects are figures and tables. Whenever you enter a floating environment in LaTeX, you follow it by square brackets, in which you specify the default position it should appear on a new page. You will see the example of this in the next section, applied to figure positioning.</p>
+<p>The idea of floats results in a minor, yet very important distinction in LaTeX when it comes to starting a new page. As mentioned earlier in this course, both <code>\newpage</code> and <code>\clearpage</code> can be used to create a new page. However, in the situation when there’s some float pending to be printed on the next page, <code>\clearpage</code> will result in a separate page(s) in which all the queued floats will be inserted, and a new separate page for text will be inserted. When <code>\newpage</code> is used, on the other hand, it will simply create a new page, even if there’s a float on it. The difference can be seen when typesetting the two variants below:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="files2/part2_03_figures_07_floats_newpage-combined.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>Some text \vspace{10cm}</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>Some other text \vspace{5cm}</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>\begin{figure}</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    \centering</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    \includegraphics[width = 0.8\textwidth]{koala.jpg}</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    \caption{This is a picture of coala.}</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    \label{coala}</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>\end{figure}</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>\newpage</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>This is some more text.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="files2/part2_03_figures_07_floats_clearpage-combined.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>Some text \vspace{10cm}</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>Some other text \vspace{5cm}</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>\begin{figure}</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    \centering</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    \includegraphics[width = 0.8\textwidth]{koala.jpg}</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    \caption{This is a picture of coala.}</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    \label{coala}</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>\end{figure}</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>\clearpage</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>This is some more text.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="float-location" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="float-location">Float Location</h2>
+<p>Figure is an example of one of the two float objects in LaTeX. You can use square brackets to choose the figure’s location on the page. Depending on the letter – h, t, b we can select the figure to be placed here, at the top of the page or at its bottom. However, note that LaTeX has some built-in parameters to determine what a ‘good’ positioning of a float object is. You may use the ‘!’ with your placement specification to force LaTeX to override its default parameters and rely on your suggestion instead.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="files2/part2_03_figures_08.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>Some sample text. </span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>\begin{figure}[h!]</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    \includegraphics[width=\textwidth]{koala.jpg}</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>\end{figure}    </span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>Other sample text.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="files2/part2_03_figures_09.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>Some sample text. </span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>\begin{figure}[t!]</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    \includegraphics[width=\textwidth]{koala.jpg}</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>\end{figure}    </span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>Other sample text.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="files2/part2_03_figures_10.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>Some sample text. </span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>\begin{figure}[b!]</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    \includegraphics[width=\textwidth]{koala.jpg}</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>\end{figure}    </span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>Other sample text.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="float-barriers" class="level1 unnumbered">
+<h1 class="unnumbered">Float Barriers</h1>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="files2/part2_03_figures_12_pages-combined.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>\documentclass{article}</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>\usepackage{graphicx}</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>\usepackage{lipsum}</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>\begin{document}</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>\section{Some latin text}</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>\lipsum[1-3] %this simply generates dummy text</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>\begin{figure}[!h]</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>\includegraphics[width=\textwidth]{koala.jpg}</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>\end{figure}</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>\section{Some more latin text}</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>\lipsum[1-2] %this simply generates dummy text</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>\end{document}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Sometimes the LaTeX float algorithm may be a little unpredictable and misplace your figure. Consider the simple example shown by the first LaTeX code (note that the <code>\lipsum</code> tag is simply used for generating dummy text for LaTeX examples). You have two document sections, Secton I and Section II, and a Figure relevant to the content of Section I. Therefore, you want to place the Figure after all the Section I text, but before the heading of Section II. Because the text from Section I is long, it won’t fit the same page as the Figure. By default, LaTeX will fill the remainder of the page with text from Section 2 and flush out the Figure on the next page. To prevent that, you can use the <code>\FloatBarrier</code> tag from the placeins package. The <code>\FloatBarrier</code> prevents floating environments from floating beyond the place you enter the tag. It is useful to place such barriers at the end of every section, to make sure that each figure remains in its relevant section. This can be seen in the second example:&nbsp;</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="files2/part2_03_figures_13_pages-combined.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>\documentclass{article}</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>\usepackage{graphicx}</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>\usepackage{lipsum}</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>\usepackage{placeins} %this package containts the FloatBarrier tag</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>\begin{document}</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>\section{Some latin text}</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>\lipsum[1-3] %this simply generates dummy text</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>\begin{figure}[!h]</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>    \includegraphics[width=\textwidth]{koala.jpg}</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>\end{figure}</span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>\FloatBarrier</span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>\section{Some more latin text}</span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>\lipsum[1-2] %this simply generates dummy text</span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>\end{document}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="sub-figures" class="level1 unnumbered">
+<h1 class="unnumbered">Sub-Figures</h1>
+<p>If you need a more advanced figure layout, LaTeX allows you to join multiple sub-figures into one figure – each of them can have their own caption as well as a label for further referencing. Moreover, it’s easy to ensure that they are perfectly aligned with regard to one another, as well as to the overall text layout. To use subfigures, the first thing you will need to do is include <code>\usepackage{subcaption}</code> in the preamble of your document. As you can see in the example, to divide a figure into several subfigures, we simply add a subfigure environment for each subfigure we want to include into one figure environment. Each subfigure environment is associated with its own positioning option specified in the square brackets. It usually makes sense to set them all to the same option (for example t in the example), as it leads to good alignment of the subfigures. Note that we also specify the width of each subfigure using the curly braces – in this case, each of the two koala photos has the width of 0.6 of the text width. When using <code>\includegraphics</code> within the subfigure environment, we can set the width to <code>\textwidth</code>, as the <code>\textwidth</code> attribute is defined separately for the subfigure float (in this case as 0.6 of the document text width).&nbsp;</p>
+<p>The distance and layout of the subfigures can be determined by using the spacing markup tags covered in Part 1 of the course. So for example by using <code>\\ \vspace{5mm}</code> between the subfigure environments, we lay the subfigures out vertically, separated by a 5 mm space.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="files2/part2_04_subfigures_01.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>\begin{figure}[ht!]</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    \centering</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    \begin{subfigure}[t]{0.6\textwidth}</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>        \centering</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>        \includegraphics[width=\textwidth]{koala.jpg}</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>        \caption{A koala}</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>        \label{fig:koala1}</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>    \end{subfigure}</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>    \\ \vspace{5mm}</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>    \begin{subfigure}[t]{0.6\textwidth}</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>        \centering</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>        \includegraphics[width=\textwidth]{koala.jpg}</span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>        \caption{Another koala}</span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>        \label{fig:koala2}</span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>    \end{subfigure}</span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>    \caption{Two koalas}</span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>    \label{fig:koalas1}</span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>\end{figure}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>In this example, on the other hand, the subfigures are placed in a horizontal 2 by 1 layout. That’s because the subfigure environments are separated by the <code>\hfill</code> tag, which fills the space between them horizontally. Using <code>\hfill</code> maximizes the possible distance between the two subfigures, however, <code>\hspace{}</code> would also work if you want to specify the distance manually. Note that if you want to place several subfigures next to each other as in this example, their total width cannot exceed <code>\textwidth</code>. So we can place two figures with <code>width = 0.45 \textwidth</code> or three figures with <code>width = 0.3\textwidth</code> in this manner, but not two figures with <code>width = 0.6\width</code>, as 0.6x2 = 1.2.&nbsp;</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="files2/part2_04_subfigures_02.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>\begin{figure}[ht!]</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>\centering</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>\begin{subfigure}[h]{0.4\textwidth}</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>\centering</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>\includegraphics[width=\textwidth]{koala.jpg}</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>\caption{A koala}</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>\label{fig:koala3}</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>\end{subfigure}</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>\hfill</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>\begin{subfigure}[h]{0.4\textwidth}</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>\centering</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>\includegraphics[width=\textwidth]{koala.jpg}</span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>\caption{Another koala}</span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>\label{fig:koala4}</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>\end{subfigure}</span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>\caption{Two koalas}</span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>\label{fig:koalas2}</span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>\end{figure}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This last example shows a 3 by 1 horizontal layout of subfigures.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="files2/part2_04_subfigures_03.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>\begin{figure}[ht!]</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    \centering</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    \begin{subfigure}[b]{0.3\textwidth}</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>        \centering</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>        \includegraphics[width=\textwidth]{koala.jpg}</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>        \caption{Koala}</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>        \label{fig:koala}</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>    \end{subfigure}</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>    \hfill</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>    \begin{subfigure}[b]{0.3\textwidth}</span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>        \centering</span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>        \includegraphics[width=\textwidth]{lemur.jpg}</span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>        \caption{Lemur}</span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>        \label{fig:lemur}</span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>    \end{subfigure}</span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>    \hfill</span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a>    \begin{subfigure}[b]{0.3\textwidth}</span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>        \centering</span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a>        \includegraphics[width=\textwidth]{sloth.jpg}</span>
+<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a>        \caption{Sloth}</span>
+<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a>        \label{fig:sloth}</span>
+<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a>    \end{subfigure}</span>
+<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a>    \caption{Three different animals}</span>
+<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a>    \label{fig:animals}</span>
+<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a>\end{figure}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="captions-flos-pet-hate" class="level1 unnumbered">
+<h1 class="unnumbered">Captions (Flo’s Pet Hate)</h1>
+<p>Finally, every figure (and table, see next Section) <strong>must</strong><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> include a caption to describe its content and a label, which can be referenced in the text (similarly to sections and footnotes, as discussed in previous sections).&nbsp;This caption must sit <strong>underneath</strong><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> the figure (or table).</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="files2/part2_03_figures_11.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>Some sample text. </span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>\begin{figure}[h!]</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    \includegraphics[width=\textwidth]{koala.jpg}</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>    \caption{This is a picture of a coala.}</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>    \label{coala}</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>\end{figure}    </span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>Other sample text referring to Figure \ref{coala}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="setting-tables" class="level1 unnumbered">
+<h1 class="unnumbered">Setting Tables</h1>
+<p>Tables are a useful way of presenting both qualitative and quantitative data in any written piece of work and can often be very helpful in summarizing complex ideas conveyed in the text. While setting them up in LaTeX might appear a bit tedious at first, it gives you a high degree of flexibility and allows you to craft them just the way you want them to look.</p>
+<p>Moreover, for all those who would like to present the results of quantitative analysis, many commonly used statistical tools such as Stata (esttab) or R (stargazer, xtable and others) have packages that allow you to create publication-ready LaTeX tables with one or two simple functions.</p>
+<p>Tables are set in LaTeX using the tabular environment. The tabular environment begins with <code>\begin{tabular}{cols}</code> and ends with <code>\end{tabular}</code>. Instead of cols, however, we specify the number of columns our table has, as well as the location of text in each of them. So, for example, {ccc} would mean three columns with text centred in each of them, while {lr} would mean two columns, first one with text aligned to the left and the second one to the right. The three basic tabular column types are: - l – left-justified text in column - c – centred text in column - r – right-justified text in column &nbsp;After defining the table, each row is entered by simply entering the content of each cell separated with the ‘&amp;’ character row-wise. To notify LaTeX that a row ends, you use <code>\\</code>, the same character used to insert new line outside of the tabular environment. Note that the number of entries in each row must always match the number of rows specified in the curly braces at the beginning of the tabular environment. You can see a basic table in the example.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="files2/part2_05_tables_01.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:25.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>\begin{tabular}{ccc}</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>1 &amp; 2 &amp; 3 \\</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>4 &amp; 5 &amp; 6 \\</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>7 &amp; 8 &amp; 9 \\</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>\end{tabular}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>As you can see, the output produced by the example does not look too impressive. It may also appear quite tedious to enter all those ‘&amp;’ characters. Fortunately, TexStudio comes in handy with a button allowing you to enter a new row automatically and then only fill in the blank spaces with your content. It is located on the right-hand side of the application toolbar, several buttons to the right from the “compile” button, as seen below.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="files2/toolbar_newrow-circle.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="separation-lines" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="separation-lines">Separation Lines</h2>
+<p>To make it look a bit more like a table, you can add lines separating rows and columns. For rows, this is specified by adding the <code>\hline</code> markup tag after the row you want the line to appear. For columns this is set alongside the column specification in the curly braces following the beginning of the tabular environment, using the vertical bar character <code>|</code>. For example <code>\begin{tabular}{c||c||c}</code> means three columns with text centered in cells, separated by double vertical lines. Both can be seen in the example below:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="files2/part2_05_tables_02.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>Table with horizontal separation lines.</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>\begin{center}</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    \begin{tabular}{ccc}</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>        1 &amp; 2 &amp; 3 \\</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>        \hline</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>        4 &amp; 5 &amp; 6 \\</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>        \hline</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>        \hline</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>        7 &amp; 8 &amp; 9 \\</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>    \end{tabular}</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>\end{center}</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>Table with vertical separation lines.</span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>\begin{center}</span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>    \begin{tabular}{c|c||c}</span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>        1 &amp; 2 &amp; 3 \\</span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a>        4 &amp; 5 &amp; 6 \\</span>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a>        7 &amp; 8 &amp; 9 \\</span>
+<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a>    \end{tabular}</span>
+<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a>\end{center}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Only because something is possible, does not mean you should do it. Never ever ever use vertical lines in a Table!</strong></p>
+<p>You can also use the brackets at the end of a row to add extra spacing before the beginning of the next row, which is particularly useful for table headers. Note that you need to specify the value and then the unit first – for example, [0.5ex] corresponds with roughly half of the height of a lowercase ‘x’ letter in the current font, while [0.5cm] would mean 0.5 centemeters. Check units in LaTeX for more information.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="files2/part2_05_tables_03.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>\begin{center}</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    \begin{tabular}{l|c|r}</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>     \textbf{Col. 1} &amp; \textbf{Col. 2} &amp; \textbf{Col. 3} \\ [0.5ex]</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>     \hline \hline</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>     1 &amp; 2 &amp; 3 \\</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>     4 &amp; 5 &amp; 6 \\</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>     7 &amp; 8 &amp; 9 \\</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>     10 &amp; 11 &amp; 12 \\</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>     13 &amp; 14 &amp; 15 \\</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>    \end{tabular}</span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>\end{center}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="fixed-width-of-columns" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="fixed-width-of-columns">Fixed Width of Columns</h2>
+<p>If you need to keep the width of a specified column, you can do that by using the p column type followed by curly braces indicating your desired width. As a result, if your text width exceeds the width of the row, it will be wrapped and the width of the row will decrease, as seen in the example.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="files2/part2_05_tables_04.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>\begin{center}</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    \begin{tabular}{ p{2cm} | p{2cm} | p{2cm} }</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>     \textbf{Col. 1} &amp; \textbf{Col. 2} &amp; \textbf{Col. 3}\\ [0.1cm]</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>     \hline</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>     This row will be longer to fit the length of this cell &amp; text &amp; text \\</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>     \hline</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>     text &amp; text &amp; text\\</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>     \hline</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>     text &amp; text &amp; text\\</span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>     \hline</span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>    \end{tabular}</span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>\end{center}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="controlling-vertical-adjustment" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="controlling-vertical-adjustment">Controlling Vertical Adjustment</h2>
+<p>As you might have noticed, the p column type discussed in the previous section aligns each row to the top border of the row. Sometimes, it might be useful to centre the content of each row vertically or align it to the bottom border. This can be done with the column types m{width}, which centres the column text vertically and b{width}, which aligns it to the bottom. These columns can be found in the array package, which can be loaded by putting <code>\usepackage{array}</code> in the preamble of your document, similarily to the way it was done when loading the graphicx package used for including images in your document. Remember that you have to specify the width of these column types in any of the units supported by LaTeX, just as in the case of the p{width} column type.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="files2/part2_05_tables_05.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>Presentation of how the \textbf{m} column type works:</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>\begin{center}</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>    \begin{tabular}{m{2cm}|m{2cm}|m{2cm}}</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>    Col. 1 &amp; Col. 2 &amp; Col. 3\\</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>    \hline</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>    The sentence in this cell is wider than the pre-defined width, therefore it's wrapped into new lines. &amp; Some text in the middle. &amp; Some more text in the middle. \\</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>    \hline</span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>    \end{tabular}</span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>\end{center}</span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>Presentation of how the \textbf{b} column type works:</span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>\begin{center}</span>
+<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a>    \begin{tabular}{b{2cm}|b{2cm}|b{2cm}}</span>
+<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a>        Col. 1 &amp; Col. 2 &amp; Col. 3\\</span>
+<span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a>        \hline</span>
+<span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a>        The sentence in this cell is wider than the pre-defined width, therefore it's wrapped into new lines. &amp; Some text at the bottom. &amp; Some more text at the bottom. \\</span>
+<span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a>        \hline</span>
+<span id="cb25-20"><a href="#cb25-20" aria-hidden="true" tabindex="-1"></a>    \end{tabular}</span>
+<span id="cb25-21"><a href="#cb25-21" aria-hidden="true" tabindex="-1"></a>\end{center}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="combining-rows-and-columns" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="combining-rows-and-columns">Combining Rows and Columns</h2>
+<p>It’s also often useful to combine several cells into one, either row-wise or column-wise. To combine columns, you can use the <code>\multicolumn</code> markup tag. Following the tag, you need to specify three things in subsequent curly braces {number of columns}{column type}{text}. The <code>\multicolumn</code> tag is simply treated as a cell content, but it reduces the number of cells in a given row (i.e.&nbsp;if you specified {c|c|c} at the beginning of the tabular environment and you merge two rows, you will only need to specify two cells – the merged one and the remaining one.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="files2/part2_05_tables_06.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>\begin{center}</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    \begin{tabular}{c|c|c}</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>        \multicolumn{3}{c}{\textbf{Table Header}} \\ [0.5ex]</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>        \hline</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>        \textbf{Col. 1} &amp; \textbf{Col. 2} &amp; \textbf{Col. 3} \\ [0.5ex]</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>        \hline</span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>        \multicolumn{2}{c|}{1 \&amp; 2} &amp; 3 \\</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>        \hline</span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>        4 &amp; 5 &amp; 6 \\</span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>        \hline</span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>        7 &amp; 8 &amp; 9 \\</span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>        \hline</span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a>        10 &amp; \multicolumn{2}{|c}{11 \&amp; 12} \\</span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a>        \hline</span>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a>        13 &amp; 14 &amp; 15 \\</span>
+<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a>    \end{tabular}</span>
+<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a>\end{center}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>To combine rows, remember to load the ‘multirow’ package. You can do that by putting <code>\usepackage{multirow}</code> in the preamble of your document. The <code>\multirow</code> markup tag allows you to specify three options in the curly braces – {number of rows}{width}{text}. To merge a cell row-wise, put the tag in the row in the cell in which you would like your extended cell to begin. Then specify the number of rows it will take. You can use ’*’ instead of the {width} parameters to maintain the default parameters of your tabular environment. Make sure that you leave the rows you want merged blank, as in the example below.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="files2/part2_05_tables_07.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>This is how you merge cells by row:</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>\begin{center}</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>\begin{tabular}{c|c|c}</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>\textbf{Col. 1} &amp; \textbf{Col. 2} &amp; \textbf{Col. 3} \\ [0.5ex]</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>\hline \hline</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>1 &amp; 2 &amp; 3 \\</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>\hline</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>4 &amp; \multirow{2}*{5 \&amp; 8} &amp; 6 \\</span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>\cline{1-1} \cline{3-3}</span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>7 &amp; &amp; 9 \\</span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>\hline</span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>10 &amp; 11 &amp; \multirow{2}*{12 \&amp; 15} \\</span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>\cline{1-2}</span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>13 &amp; 14 &amp; \\</span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a>\end{tabular}</span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a>\end{center}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The <code>\cline{i-j}</code> tag is a useful alternative to the <code>\hline</code> tag discussed before when it comes to drawing horizontal lines in tables with merged cells. Using <code>\hline</code> between two rows with some of the cells merged vertically would cause the line to go through the middle of the merged cells. <code>\cline{i-j}</code> allows to avoid that, by specifying which range of cells from the previous row should be separated horizontally from the next row. The range is specified by the values i and j in the curly braces. So <code>\cline{2-5}</code> will cause cells between the 2nd and 5th columns to be separated horizontally from the next row, while <code>\cline{3-3}</code> would separate only the cell from the 3rd column.</p>
+<p>Finally, it’s possible to merge selected cells both row-wise and column-wise. To do this, you simply have to combine the <code>\muticolumn</code> and <code>\multirow</code> markup tags. For it to work, you need to first insert a <code>\multicolumn</code> markup tag in the first row and cell you want to merge, and then put a <code>\multirow</code> tag within it, specifying the number of rows you want to merge. Then, in all the following rows you want to be merged you need to specify an empty <code>\multicolumn</code> tag, with the same specification as the ones before.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="files2/part2_05_tables_08.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>\begin{center}</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    \begin{tabular}{c|c|c}</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>        \textbf{Col.1 } &amp; \textbf{Col. 2} &amp; \textbf{Col. 3} \\ [0.5ex]</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>        \hline \hline</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>        1 &amp; 2 &amp; 3 \\</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>        \hline</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>        4 &amp; 5 &amp; 6 \\</span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>        \hline</span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>        7 &amp; \multicolumn{2}{c}{\multirow{2}*{8 \&amp; 9 \&amp; 11 \&amp; 12}}\\</span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>        \cline{1-1}</span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a>        10 &amp; \multicolumn{2}{c}{} \\</span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a>        \hline</span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a>        13 &amp; 14 &amp; 15 \\</span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a>    \end{tabular}</span>
+<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a>\end{center}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="tabularx" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="tabularx">Tabularx</h2>
+<p>So far you’ve learned how to specify the width of individual columns using the tabular environment. In some cases, it is also good to be able to specify the width of the entire table and keep the width of each column evenly distributed across the table. This can be achieved using the tabularx package. To use it, simply insert <code>\usepackage{tabularx}</code> in the preamble of your document. Then you can use <code>\begin{tabularx}{width}{preamble}</code> instead of the tabular environment. Width specifies the width of the entire table (similarily to the <code>\includegraphics</code> markup tag used for including images in the document) – you can define it using various numeric units available in LaTeX (pt, cm, in) or in reference to the width of the text in the document, using <code>\textwidth</code>. Tabularx contains a new column type, “X”, which means that the width of this column will be determined in relation to the width of the entire table. The rest of the table setup is exactly the same as in the tabular environment.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="files2/part2_05_tables_09.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>\begin{center}</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    \begin{tabularx}{0.6\textwidth}{X|X|X}</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>        \textbf{Col. 1} &amp; \textbf{Col. 2} &amp; \textbf{Col. 3} \\ [0.5ex]</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>        \hline \hline</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>        1 &amp; 2 &amp; 3 \\</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>        \hline</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>        4 &amp; 5 &amp; 6 \\</span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>        \hline</span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>        7 &amp; 8 &amp; 9 \\</span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>        \hline</span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>        10 &amp; 11 &amp; 12 \\</span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>        \hline</span>
+<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a>        13 &amp; 14 &amp; 15 \\</span>
+<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a>    \end{tabularx}</span>
+<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a>\end{center}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>In the tabularx environment, you can also mix the X column type with the tabular column type (l, r, c), so that the width of some of the columns is determined by overall table width (the X columns), while the width of others is determined by the width of the text/fixed (the l, r, c).</p>
+<p>Some of the columns can be determined by the width of the table, while either will be determined by the width of the text within them (using the default tabular formats – c for centred (l, r, c).</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="files2/part2_05_tables_10.PNG" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>\begin{center}</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    \begin{tabularx}{0.6\textwidth}{X|c|X}</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>        \textbf{Col. 1} &amp; \textbf{Col. 2} &amp; \textbf{Col. 3} \\ [0.5ex]</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>        \hline \hline</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>        1 &amp; 2 &amp; 3 \\</span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>        \hline</span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>        4 &amp; 5 &amp; 6 \\</span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>        \hline</span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>        7 &amp; 8 &amp; 9 \\</span>
+<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a>        \hline</span>
+<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a>        10 &amp; 11 &amp; 12 \\</span>
+<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a>        \hline</span>
+<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a>        13 &amp; 14 &amp; 15 \\</span>
+<span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a>    \end{tabularx}</span>
+<span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a>\end{center}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Finally, merging columns and rows can be applied in tabularx, just as in tabular:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="files2/part2_05_tables_11.PNG" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>\begin{center}</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>    \begin{tabularx}{0.8\textwidth}{X|X|X}</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>        \textbf{Col. 1} &amp; \textbf{Col. 2} &amp; \textbf{Col. 3} \\ [0.5ex]</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>        \hline \hline</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>        1 &amp; 2 &amp; 3 \\</span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>        \hline</span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>        4 &amp; 5 &amp; 6 \\</span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>        \hline</span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>        7 &amp; \multirow{2}*{8 \&amp; 11} &amp; 9 \\</span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a>        \cline{1-1} \cline{3-3}</span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a>        10 &amp; &amp; 12 \\</span>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a>        \hline</span>
+<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a>        13 &amp; \multicolumn{2}{c}{14 \&amp; 15} \\</span>
+<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a>    \end{tabularx}</span>
+<span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a>\end{center}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="defining-new-column-types" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="defining-new-column-types">Defining New Column Types</h2>
+<p>As you might have noticed, the default “X” column type in LaTeX is not centred, and by default, we have no control over its positioning. However, this can be changed by defining a new column type in the document preamble, after you define all the packages used.</p>
+<p>The <code>\newcolumntype</code> command defines a new column type for the tabularx environment based on the default X column. The content of the first curly braces following the command is just the name we assign to the newly created column. Note that the name always has to be a single letter. In this case, for the sake of convenience and clarity, it’s good to name newly defined columns with capital letters (i.e.&nbsp;R for right justification, C for centring and L for left justification) – this makes them easy to remember and we avoid confusing them with the tabular column types defined with small letters.</p>
+<p>The second curly braces contain the definition of the new column type. Without going into too much detail, it’s sufficient to remember that, counter-intuitively, <code>\raggedright</code> defines to tabularx column to be justified to the left, <code>\centering</code> to be centred and <code>\raggedleft</code> to be justified to the right. It’s important to remember that these columns can be manually defined, rather than to memorize the exact content of the <code>\newcolumntype</code> command – whenever you will need it, you can just simply copy and paste it.</p>
+<p>As you can see in the example, with these newly defined columns we are able to control the justification of the cell content.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="files2/part2_05_tables_12.PNG" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>\documentclass{article}</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>\usepackage{multirow}</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>\usepackage{tabularx}</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>\newcolumntype{L}{&gt;{\raggedright\arraybackslash}X}</span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>\newcolumntype{C}{&gt;{\centering\arraybackslash}X}</span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>\newcolumntype{R}{&gt;{\raggedleft\arraybackslash}X}</span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>\begin{document}</span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>All three column types defined above are used in the table below:</span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>\begin{center}</span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>\begin{tabularx}{0.8\textwidth}{L|C|R}</span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>\textbf{Col. 1} &amp; \textbf{Col. 2} &amp; \textbf{Col. 3} \\ [0.5ex]</span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a>\hline \hline</span>
+<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a>1 &amp; 2 &amp; 3 \\</span>
+<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a>\hline</span>
+<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a>4 &amp; 5 &amp; 6 \\</span>
+<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a>\hline</span>
+<span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a>7 &amp; 8 &amp; 9 \\</span>
+<span id="cb32-18"><a href="#cb32-18" aria-hidden="true" tabindex="-1"></a>\hline</span>
+<span id="cb32-19"><a href="#cb32-19" aria-hidden="true" tabindex="-1"></a>10 &amp; 11 &amp; 12 \\</span>
+<span id="cb32-20"><a href="#cb32-20" aria-hidden="true" tabindex="-1"></a>\hline</span>
+<span id="cb32-21"><a href="#cb32-21" aria-hidden="true" tabindex="-1"></a>13 &amp; 14 &amp; 15 \\</span>
+<span id="cb32-22"><a href="#cb32-22" aria-hidden="true" tabindex="-1"></a>\end{tabularx}</span>
+<span id="cb32-23"><a href="#cb32-23" aria-hidden="true" tabindex="-1"></a>\end{center}</span>
+<span id="cb32-24"><a href="#cb32-24" aria-hidden="true" tabindex="-1"></a>\end{document}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The <code>\newcolumntype</code> command also allows to make many other modifications and create your own, customizable column layouts. For example, by using <code>\newcolumntype{y}[1]{&gt;{\centering\arraybackslash}m{#1}}</code> we can create a column type ‘y’, which is based on the type m (i.e.&nbsp;has a specified width and centres the text vertically), but also additionally applies horizontal centering as well. Generally, however, you don’t need to worry about understanding the intricacies of the <code>\newcolumntype</code> syntax – usually, when you need to customize your columns, it’s enough to just search for suggestions online – it’s likely that some other people have encountered the problem before you, and the solution is already out there. Nevertheless, the ability to specify the width of a table to a fixed number and the customizability of the column types often makes the tabularx package more useful that the basic tabular.</p>
+</section>
+<section id="specifying-row-height" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="specifying-row-height">Specifying Row Height</h2>
+<p><code>tabularx</code> also makes it possible to set the height of rows in your document to a fixed value. You can do this by adding <code>\setlength{\extrarowheight{height}}</code> before the table in which you want to change the row heights. Every row of each table following this line in your .tex file will have this exact height. To change it back to the default setting, simply use <code>\setlength{\extrarowheight{1pt}}</code>.</p>
+<p>Here’s an example of how it works:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="files2/part2_05_tables_13.PNG" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:35.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>\bigskip</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>%increase the row height</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>\setlength{\extrarowheight}{10pt}   </span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>\begin{tabular}{c|c|c}</span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>    1 &amp; 2 &amp; 3 \\</span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>    \hline</span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>    4 &amp; 5 &amp; 6 \\</span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>    \hline</span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>    7 &amp; 8 &amp; 9 \\</span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a>\end{tabular}</span>
+<span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-14"><a href="#cb33-14" aria-hidden="true" tabindex="-1"></a>\bigskip</span>
+<span id="cb33-15"><a href="#cb33-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-16"><a href="#cb33-16" aria-hidden="true" tabindex="-1"></a>%return to default values</span>
+<span id="cb33-17"><a href="#cb33-17" aria-hidden="true" tabindex="-1"></a>\setlength{\extrarowheight}{1pt}</span>
+<span id="cb33-18"><a href="#cb33-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-19"><a href="#cb33-19" aria-hidden="true" tabindex="-1"></a>\begin{tabular}{c|c|c}</span>
+<span id="cb33-20"><a href="#cb33-20" aria-hidden="true" tabindex="-1"></a>    1 &amp; 2 &amp; 3 \\</span>
+<span id="cb33-21"><a href="#cb33-21" aria-hidden="true" tabindex="-1"></a>    \hline</span>
+<span id="cb33-22"><a href="#cb33-22" aria-hidden="true" tabindex="-1"></a>    4 &amp; 5 &amp; 6 \\</span>
+<span id="cb33-23"><a href="#cb33-23" aria-hidden="true" tabindex="-1"></a>    \hline</span>
+<span id="cb33-24"><a href="#cb33-24" aria-hidden="true" tabindex="-1"></a>    7 &amp; 8 &amp; 9 \\</span>
+<span id="cb33-25"><a href="#cb33-25" aria-hidden="true" tabindex="-1"></a>\end{tabular}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="the-table-floating-environment" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="the-table-floating-environment">The ‘Table’ Floating Environment</h2>
+<p>Similarily to figures, tables also have their own float environment in LaTeX. As you may remember, the floating environments allow to control the positioning of an object in the document. You can also add captions to these environments, as well as label them, which makes referencing tables anywhere in the document much easier.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="files2/part2_05_tables_14.PNG" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>\begin{table}[h!]</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>    \centering</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>    \begin{tabular}{c|c|c}</span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>        \textbf{Col. 1} &amp; \textbf{Col. 2} &amp;\textbf{Col. 3}\\</span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>        \hline</span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>        1 &amp; 2 &amp; 3 \\</span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>        4 &amp; 5 &amp; 6 \\</span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>        7 &amp; 8 &amp; 9 \\</span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a>        10 &amp; 11 &amp; 12 \\</span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a>        13 &amp; 14 &amp; 15 \\</span>
+<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a>    \end{tabular}</span>
+<span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a>\caption{Some numbers}</span>
+<span id="cb34-13"><a href="#cb34-13" aria-hidden="true" tabindex="-1"></a>\label{tab:num1}</span>
+<span id="cb34-14"><a href="#cb34-14" aria-hidden="true" tabindex="-1"></a>\end{table}</span>
+<span id="cb34-15"><a href="#cb34-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-16"><a href="#cb34-16" aria-hidden="true" tabindex="-1"></a>In this sentence, I am referring to Table \ref{tab:num1}.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="lists-of-figures-and-tables" class="level1 unnumbered">
+<h1 class="unnumbered">Lists of Figures and Tables</h1>
+<p>Listing the figures and tables you’ve used in your LaTeX document is very straightforward – to insert a list of figures, simply place a <code>\listoffigures</code> markup tag in the place you want it to appear (usually beginning of the document) and to add a list of tables use <code>\listoftables</code>. Note that for the figures and tables to be included in their respective lists, they need to have a caption added (using the <code>\caption{}</code> tag inside their respective floats).</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>\documentclass{article}</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>\usepackage{graphicx}</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>\begin{document}</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>\listoffigures</span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>\listoftables</span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>\newpage</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Caution:</strong> once you include a <code>\listoffigures</code> and <code>\listoftables</code> in your document, LaTeX creates two files in the directory of your .tex file and .pdf output, with extensions .lof (short for list of figures) and .lot (short for list of tables). If you make some changes and you want the lists to be updated, you will need to delete these files first.</p>
+</section>
+<section id="referencing-and-the-list-of-references" class="level1 unnumbered">
+<h1 class="unnumbered">Referencing and the List of References</h1>
+<section id="terminology" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="terminology">Terminology</h2>
+<p>Can I just clarify what I mean by “Bibliography” and “List of References” (LoR). These are often used synonymously, or even worse erroneously (yes, I am looking at you, PAIS UG Handbook). So here goes:</p>
+<blockquote class="blockquote">
+<p>Whilst a list of references will only contain the works cited in the text, a bibliography also contains the sources you have used for background reading without including them in your output.</p>
+</blockquote>
+</section>
+<section id="the-list-of-references" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="the-list-of-references">The List of References</h2>
+<section id="bib-files" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="bib-files">.bib files</h3>
+<p>Similarly to other text editors, LaTeX allows you to create a bibliography source file, which can later be used to reference sources in the text. To store the list of sources, LaTeX uses a separate file with extension ‘.bib’. You can create them and edit them using TexStudio, just as you would for a normal .tex file. Note that it is best to save your .bib file in the same folder as the .tex file in which you want to include the bibliography. After a file is created, you simply use one line of LaTeX code and a reference section will appear at the end with all resources you have cited.</p>
+<p>Within the .bib file, each entry has a specified structure, which allows you to specify the type of the resource, the label you assign to it, its author, year of publication and many others. The first example shows a BiBTeX entry for a journal article. Each entry begins with ‘@’, followed by the predefined BibTeX resource types (in this case, ‘article’). After that, a set of curly braces is opened – between them, you define the property of your resource. First a tag (in this case bartels2002) – this is a keyword you will use to cite the resource in your text, much like figure and table labels discussed earlier. You can tag each entry however you want, however it is good practice to stick to a coherent and clear naming convention, especially if you are planning to include many entries in your work. Following that are different attributes of your resource separated by commas. The value for each attribute is provided in curly braces after an “=” character.</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>@article{bartels2002,</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>    author = {Larry M. Bartels},</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>    title       = {Beyond Running Tally: Partisan Bias in Political Perceptions},</span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>    journal     = {Political Behavior},</span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>    volume      = {24},</span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>    number      = {10},</span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>    pages       = {117-150},</span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>    year        = {2002},</span>
+<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>    month       = {6},</span>
+<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a>    DOI         = {https://doi.org/10.1023/A:1021226224601}}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The examples below show the structure of other different resources – a book, a section in a collection (such as Oxford or Routledge Handbooks) and a miscellaneous object (such as a data set). In the examples, each entry is tagged by the author’s name followed by the year of publication. Note that many attributes are optional in most resource types and it’s up to you how detailed do you want to make the specification of each resource. More importantly, some of these are specific to a particular resource type (for example (‘booktitle’ will be meaningful for the @incollection resource type, but not for @article).&nbsp;</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>@book{popper1934,</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>    author      = {Karl R. Popper},</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>    title       = {The Logic of Scientific Discovery},</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>    year        =  {1934},</span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>    publisher   = {Routledge}}</span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>@incollection{bollen2008,</span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>    author      = {Kenneth A. Bollen and Sophia Rabe‐Hesketh and Anders Skrondal},</span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>    title       = {Structural Equation Models},</span>
+<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a>    booktitle   = {The Oxford Handbook of Political Methodology},</span>
+<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a>    year        =  {2008},</span>
+<span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a>    editor      = {Janet M. Box-Steffensmeier and Henry E. Brady and David Collier},</span>
+<span id="cb37-13"><a href="#cb37-13" aria-hidden="true" tabindex="-1"></a>    publisher   = {Oxford University Press}}</span>
+<span id="cb37-14"><a href="#cb37-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-15"><a href="#cb37-15" aria-hidden="true" tabindex="-1"></a>@misc{worldbank2019,</span>
+<span id="cb37-16"><a href="#cb37-16" aria-hidden="true" tabindex="-1"></a>    author       = {{The World Bank Group}}, </span>
+<span id="cb37-17"><a href="#cb37-17" aria-hidden="true" tabindex="-1"></a>    title        = {{World Development Indicators}},</span>
+<span id="cb37-18"><a href="#cb37-18" aria-hidden="true" tabindex="-1"></a>    url          = {https://datacatalog.worldbank.org/dataset/world-development-indicators},</span>
+<span id="cb37-19"><a href="#cb37-19" aria-hidden="true" tabindex="-1"></a>    month        = {10},</span>
+<span id="cb37-20"><a href="#cb37-20" aria-hidden="true" tabindex="-1"></a>    year         = {2019}}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>In the last example, {{The World Bank Group}} is placed in double curly braces. That is to specify that it is an organization (aka corporate author) rather than an individual that authored the resource, and that the order of the world in the name should be maintained when citing (the in-text citation should take the form of The World Bank Group, 2019 as opposed to Group, 2019 which would happen without the second set curly braces, as LaTeX would treat “World Bank Group” as a name of an individual same as “Larry M Bartels”, and therefore would use only the last word in the name, assuming it’s the surname).</p>
+<p>The title of the dataset is also placed in double curly braces – that is because, by default, LaTeX makes only the first word in the resource title capitalized and the following words begin with a small letter. If you want to preserve the capitalization of any word in your title, put it in an additional set of curly braces. So title = {World Development Indicators} would yield World development indicators in the LoR section, while title = {{World Development Indicators}} would result in World Development Indicators.</p>
+</section>
+</section>
+<section id="citing-.bib-resources" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="citing-.bib-resources">Citing .bib Resources</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="files2/part2_07_output.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>\documentclass{article}</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>\usepackage[autostyle]{csquotes}</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>\usepackage[</span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>    backend=biber,</span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>    style=apa,</span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>    natbib=true]{biblatex}</span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>\addbibresource{bibliography.bib}</span>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>\begin{document}</span>
+<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a>In this sentence, I reference the article \textit{Beyond Running Tally: Partisan Bias in Political Perceptions} included in the bibliography \citep{bartels2002}. </span>
+<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a>This sentence references the book of the Austrian-British philosopher Karl Popper \citep[pp. 14--15]{popper1934}.</span>
+<span id="cb38-11"><a href="#cb38-11" aria-hidden="true" tabindex="-1"></a>This sentence references a chapter in the Oxford Handbook of Political Methodology \citep{bollen2008}.</span>
+<span id="cb38-12"><a href="#cb38-12" aria-hidden="true" tabindex="-1"></a>Finally, the last sentence refers to a World Bank Data Set, including measures such as HDI \citep{worldbank2019}.</span>
+<span id="cb38-13"><a href="#cb38-13" aria-hidden="true" tabindex="-1"></a>\bibliography{my_bibliography}</span>
+<span id="cb38-14"><a href="#cb38-14" aria-hidden="true" tabindex="-1"></a>\end{document}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>In order to start referencing resources in your text, all you need to do is load a dedicated package called <code>biblatex</code> in the preamble of your document. This package has a number of different citations styles of which “apa: is the most frequently used one in the Social Sciences. You also need to notify LaTeX of the the bibliography file you are using with a <code>\addbibresource</code> after loading the biblatex package. The last thing you need to do is to add the line <code>\printbibliography</code> where you wish the LoR to be placed. Then you can cite each entry in your bibliography using the <code>\parencite{resource}</code> markup tag, where resource is the tag you have assigned in the .bib file. For example <code>\parencite{bollen2008}</code> will compile as (Bollen et al., 2008). Alternatively, you can use <code>\textcite{bollen2008}</code> will compile as Bollen et al.&nbsp;(2008). Additionally, you can use square brackets after the <code>\parencite</code> and <code>\textcite</code> tags to add a note to be included in the parentheses with the citation, for example, the exact pages to which you are referring. If you want to reference specific pages, say 14-15 of Popper’s book, you can do that by using <code>\parencite[see][pp. 14--15]{popper1934}</code>, which compiles as (see Popper, 1934, pp.&nbsp;14-15).</p>
+<p>If you want to use footnote references, then the same setup as before applies, but you need to change the style of the biblatex command to “verbose”, such as:</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>\documentclass{article}</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>\usepackage[autostyle]{csquotes}</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>\usepackage[</span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>    backend=biber,</span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>    style=verbose,</span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>    natbib=true]{biblatex}</span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>\addbibresource{bibliography.bib}</span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>\begin{document}</span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>Text</span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>\bibliography{my_bibliography}</span>
+<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a>\end{document}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>To produce footnote citations, you need to use <code>\footcite instead of the aforementioned \</code>textcite and <code>\parencite</code>.</p>
+</section>
+<section id="compiling-the-list-of-references" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="compiling-the-list-of-references">Compiling the List of References</h2>
+<p>In order to produce the LoR, you need to follow these steps in TeXstudio:</p>
+<ol type="1">
+<li>Compile the document to pdf (press F5 as standard)</li>
+<li>Run “biber” which is th enegine to produce the LoR: Tools <span class="math inline">\(\rightarrow\)</span> Commands <span class="math inline">\(\rightarrow\)</span> Biber</li>
+<li>Compile the document to pdf again (press F5 as standard).</li>
+<li>Done!</li>
+</ol>
+</section>
+<section id="endnotes" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="endnotes">Endnotes</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="files2/part2_08_endnotes_pages-combined.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>\documentclass{article}</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>\usepackage{endnotes}</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>\begin{document}</span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>\section{Introduction}</span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>This is a sentence that refers to a document endnote. \endnote{Some text}</span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>\clearpage</span>
+<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a>\theendnotes</span>
+<span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a>\end{document}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If you prefer your footnotes to appear at the end of your document, use the package ‘endnotes’. To create an endnote use the <code>\endnote</code> markup tag, and enter <code>\theendnotes</code> in the part of your document in which you would like them to appear (usually at the end), similarly to the <code>\tableofcontents</code> tag for the table of contents or the <code>\bibliography</code> tag for references.</p>
+</section>
+</section>
+<section id="an-essay-template" class="level1 unnumbered">
+<h1 class="unnumbered">An Essay Template</h1>
+<p>You can download a full template for PAIS Essays in this section. To allow for both referencing styles permissible in PAIS, I have created two templates, one with in-text citations, and a second one with footnote references. You need to put all of the documents listed for each style in the same folder in order for it to work.</p>
+<p>The templates fulfill my personal formatting preferences:</p>
+<ul>
+<li>A title page without page numbering</li>
+<li>A table of contents, list of figures, and list of tables, with Roman page numbering</li>
+<li>Text body with Arabic numbering</li>
+<li>A properly formatted “List of References”</li>
+</ul>
+<p>To make your life even easier, you can also download the .bib files for each module I teach on the <a href="https://drfloreiche.github.io/downloads.html">downloads page</a>. These files contain all sources cited on lecture slides and worksheets.</p>
+<section id="in-text-references" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="in-text-references">In-Text References</h2>
+<ul>
+<li><a href="./uploads/PAIS_LaTeX Template (in-text).tex">.tex file</a></li>
+<li><a href="./uploads/bibliography.bib">.bib file</a></li>
+<li><a href="./uploads/Crest.png">Warwick Crest</a></li>
+<li><a href="./uploads/Warwick.png">Warwick Text</a></li>
+<li><a href="./uploads/PAIS_LaTeX Template (in-text).pdf">Example</a></li>
+</ul>
+</section>
+<section id="footnote-references" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="footnote-references">Footnote References</h2>
+<ul>
+<li><a href="./uploads/PAIS_LaTeX Template (Footnote).tex">.tex file</a></li>
+<li><a href="./uploads/bibliography.bib">.bib file</a></li>
+<li><a href="./uploads/Crest.png">Warwick Crest</a></li>
+<li><a href="./uploads/Warwick.png">Warwick Text</a></li>
+<li><a href="./uploads/PAIS_LaTeX Template (Footnote).pdf">Example</a></li>
+</ul>
+
+
+</section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Yes, I put this in bold, this is how much I care about this.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Ditto.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const buttons = document.querySelectorAll(".delayed-download");
+
+    buttons.forEach(function (btn) {
+      const releaseDate = new Date(btn.dataset.date);
+      const now = new Date();
+
+      if (now >= releaseDate) {
+        btn.classList.remove("disabled");
+        btn.setAttribute("aria-disabled", "false");
+        btn.setAttribute("href", btn.dataset.path);
+        btn.setAttribute("download", btn.dataset.path.split('/').pop());
+        btn.innerHTML = btn.dataset.label || "📄 Download Document";
+      }
+    });
+  });
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./01-LaTeX_1.html" class="pagination-link" aria-label="The First LaTeX Document">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">The First LaTeX Document</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./03-LaTeX_3.html" class="pagination-link" aria-label="Advanced Documents">
+        <span class="nav-page-text"><span class="chapter-title">Advanced Documents</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

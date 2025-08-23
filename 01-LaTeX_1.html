@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.39">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>The First LaTeX Document – Academic Writing with LaTeX</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./02-LaTeX_2.html" rel="next">
+<link href="./index.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-7c884608bb88d9d23eddf9360d6659a5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<meta name="theme-color" content="#1d1f2b" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#1d1f2b" media="(prefers-color-scheme: light)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<script>
+// This MUST come before the script src above
+window.MathJax = {
+  tex: {
+    // (Quarto already sets these, but harmless to repeat)
+    inlineMath: [['\\(', '\\)'], ['$', '$']],
+    displayMath: [['\\[', '\\]'], ['$$', '$$']]
+  },
+  // Tell the CHTML output to use Fira
+  chtml: { font: 'mathjax-fira' }
+};
+</script>
+
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./images/Crest_white.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title"><span class="title-long">Academic Writing with LaTeX</span> <span class="title-short">AWWL</span></span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://drfloreiche.github.io/"> 
+<span class="menu-text">Flo’s Home</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-LaTeX_1.html"><span class="chapter-title">The First LaTeX Document</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-LaTeX_1.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">The First LaTeX Document</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-LaTeX_2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tables, Figures, and References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-LaTeX_3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Advanced Documents</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#what-is-latex" id="toc-what-is-latex" class="nav-link" data-scroll-target="#what-is-latex">What is LaTeX?</a>
+  <ul class="collapse">
+  <li><a href="#why-should-i-choose-latex-over-my-current-document-system" id="toc-why-should-i-choose-latex-over-my-current-document-system" class="nav-link" data-scroll-target="#why-should-i-choose-latex-over-my-current-document-system">Why should I choose LaTeX over my current document system?</a></li>
+  </ul></li>
+  <li><a href="#download-and-installation" id="toc-download-and-installation" class="nav-link" data-scroll-target="#download-and-installation">Download and Installation</a></li>
+  <li><a href="#intro-to-texstudio" id="toc-intro-to-texstudio" class="nav-link" data-scroll-target="#intro-to-texstudio">Intro to “TeXstudio”</a>
+  <ul class="collapse">
+  <li><a href="#the-toolbar" id="toc-the-toolbar" class="nav-link" data-scroll-target="#the-toolbar">The Toolbar</a></li>
+  </ul></li>
+  <li><a href="#minimum-structure-for-an-article-your-first-document-in-latex" id="toc-minimum-structure-for-an-article-your-first-document-in-latex" class="nav-link" data-scroll-target="#minimum-structure-for-an-article-your-first-document-in-latex">Minimum Structure for an article – your first document in LaTeX</a></li>
+  <li><a href="#formatting-your-document" id="toc-formatting-your-document" class="nav-link" data-scroll-target="#formatting-your-document">Formatting Your Document</a>
+  <ul class="collapse">
+  <li><a href="#sections-and-subsections" id="toc-sections-and-subsections" class="nav-link" data-scroll-target="#sections-and-subsections">Sections and Subsections</a></li>
+  <li><a href="#paragraphs-line-breaks-and-spaces" id="toc-paragraphs-line-breaks-and-spaces" class="nav-link" data-scroll-target="#paragraphs-line-breaks-and-spaces">Paragraphs, line breaks and spaces</a></li>
+  <li><a href="#line-breaks-and-page-breaks" id="toc-line-breaks-and-page-breaks" class="nav-link" data-scroll-target="#line-breaks-and-page-breaks">Line breaks and page breaks</a>
+  <ul class="collapse">
+  <li><a href="#line-breaks" id="toc-line-breaks" class="nav-link" data-scroll-target="#line-breaks">Line breaks</a></li>
+  <li><a href="#page-breaks" id="toc-page-breaks" class="nav-link" data-scroll-target="#page-breaks">Page breaks</a></li>
+  </ul></li>
+  <li><a href="#paragraphs" id="toc-paragraphs" class="nav-link" data-scroll-target="#paragraphs">Paragraphs</a></li>
+  <li><a href="#spaces" id="toc-spaces" class="nav-link" data-scroll-target="#spaces">Spaces</a></li>
+  <li><a href="#skips" id="toc-skips" class="nav-link" data-scroll-target="#skips">Skips</a></li>
+  <li><a href="#text-alignment" id="toc-text-alignment" class="nav-link" data-scroll-target="#text-alignment">Text Alignment</a></li>
+  </ul></li>
+  <li><a href="#lists" id="toc-lists" class="nav-link" data-scroll-target="#lists">Lists</a></li>
+  <li><a href="#font-styles" id="toc-font-styles" class="nav-link" data-scroll-target="#font-styles">Font Styles</a></li>
+  <li><a href="#table-of-contents" id="toc-table-of-contents" class="nav-link" data-scroll-target="#table-of-contents">Table of Contents</a></li>
+  <li><a href="#title-page" id="toc-title-page" class="nav-link" data-scroll-target="#title-page">Title Page</a></li>
+  <li><a href="#commenting-your-code" id="toc-commenting-your-code" class="nav-link" data-scroll-target="#commenting-your-code">Commenting your code</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">The First LaTeX Document</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level1 unnumbered">
+<h1 class="unnumbered">Introduction</h1>
+<p>In this&nbsp;section, we will cover the basics you need to know to create your first LaTeX document. This section will cover:</p>
+<ul>
+<li>Download and installation</li>
+<li>Sections and subsections</li>
+<li>Paragraphs, line breaks, spaces, and skips</li>
+<li>Text alignment</li>
+<li>Lists</li>
+<li>Font styles</li>
+<li>Table of contents</li>
+<li>Title pages</li>
+</ul>
+</section>
+<section id="what-is-latex" class="level1 unnumbered">
+<h1 class="unnumbered">What is LaTeX?</h1>
+<p>LaTeX (pronounced lah-teck, or lay-teck) is a document preparation system, commonly used to prepare scientific publications, reports, presentations and many other types of documents. It can be seen as an alternative for other systems such as Microsoft’s Word and PowerPoint or Apple’s Pages and Keynote. As opposed to them, however, when preparing a document in LaTeX the user can only see the plain text they are&nbsp;writing, surrounded by markup tags – a fancy term for ‘commands’ telling LaTeX how it should format the document, similar to how HTML tags structure websites. Don’t be scared by those terms! It doesn’t have to do much with ‘real’ computer programming, all it takes to write in LaTeX is remembering few terms and the occasional use of Google search – after preparing the first few documents you can usually just use them as templates for new ones, limiting your memory load and effort to minimum.</p>
+<section id="why-should-i-choose-latex-over-my-current-document-system" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="why-should-i-choose-latex-over-my-current-document-system">Why should I choose LaTeX over my current document system?</h2>
+<p>There are several reasons to choose LaTeX over the document preparation system you are using right now. Firstly, LaTeX allows you to structure your document neatly, polish every detail to perfection, and re-use these settings for every document you prepare. Especially when it comes to creating tables, LaTeX performs much better in comparison with the ‘traditional’ document preparation systems. It is also great for referencing – when you include several tables and figures in your document and refer to them multiple times in different parts of the text, LaTeX will ensure that the order of their numbering is always correct and that you are always referring to the correct number. Moreover, it allows you to print a list of figures and tables in your document with just one line. LaTeX also comes with built-in bibliography capabilities, making citation and listing the resources you have used easier and more consistent than in the traditional document preparation systems.&nbsp;</p>
+<p>While content is obviously much more important than appearance when it comes to academic writing, the clean look of a document written in LaTeX simply gives it a more professional feel. If you are a student, you can literally make your essay look like a top journal article, which can impress the person marking it, possibly improving his or her appreciation of your work. Speaking of articles, writing, LaTeX is gradually becoming a standard in the majority of scientific journals, so if you are planning to publish anything, it will come in very handy.</p>
+<p>While there is a considerable learning curve when you start using LaTeX, investing some of your time into learning the basics will most certainly pay-off in your academic future. Hopefully, this module will help to make your first dive into the world of LaTeX as gentle as possible.&nbsp;</p>
+</section>
+</section>
+<section id="download-and-installation" class="level1 unnumbered">
+<h1 class="unnumbered">Download and Installation</h1>
+<p><strong>Via Texstudio</strong></p>
+<p>The LaTeX system can be used through many applications, but we recommend using the freely available application called Texstudio – it makes writing LaTeX documents simpler, as it suggests relevant markup tags when you start to type them (similarly to Google suggesting you search phrases), has many shortcuts for often used tags, taking the additional load off your memory and underlines many common errors you might make while writing in LaTeX.</p>
+<p><strong>If you are using your own computer:</strong></p>
+<p>You first need to install the LaTeX engine which is responsible for creating your document. You can download this, according to your operating system from&nbsp;https://www.latex-project.org/get/&nbsp;</p>
+<p>You will be using LaTeX through a GUI (Graphical User Interface) called TexStudio. To get Texstudio just go to https://www.texstudio.org/, click download and in the download section select the suitable version, depending on your Operating System.&nbsp;</p>
+<p><strong>If you are using a University of Warwick managed computer:</strong></p>
+<p>You can download Texstudio straight from the Software Centre, via the start menu.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="files/TeXstudio_Logo.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:15.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="intro-to-texstudio" class="level1 unnumbered">
+<h1 class="unnumbered">Intro to “TeXstudio”</h1>
+<p>Via Texstudio…</p>
+<p>The interface of the app is fairly simple and you don’t need to know much to get started. As opposed to traditional text editors, in LaTeX you first create and save a .tex file containing all your content with some so-called markup tags – you can think about the .tex file&nbsp;as a ‘cooking recipe’ for your final file. Your text, figures and bibliography are the ingredients and the markup tags act&nbsp;as cooking instructions (more on these in due course). The resulting document&nbsp;- which is always a pdf - can be viewed in the separate window by compiling the .tex file (click the double green arrow on the toolbar). “Compiling” is a fancy term to describe LaTeX simply following your commands and preparing the document as you requested in the tex file. By default, TeXstudio compiles the .pdf file in the same folder in which you have saved your .tex file. The entire procedure is reflected in TeXstudio’s interface – the screen consists of 3 main parts:</p>
+<p>the .tex file editor on the left – here you create your document. the file viewer on the right – here you can view how your document looks after compilation – you can update the viewer by clicking the double green arrow (‘build &amp; view’) the log and messages window at the bottom left – here you can see if any errors come up during the compilation of your file and if they do – in which line did they occur Both the viewer and the log window can be closed if you need more space for the tex editor.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="files/intro-to-texstudio.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="the-toolbar" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="the-toolbar">The Toolbar</h2>
+<p>The toolbar allows you to:</p>
+<ul>
+<li>create a new file</li>
+<li>build it and view it – see any changes you have made in your document without compiling a new pdf</li>
+<li>compile the tex file into a pdf file, so you can read, print, or send the formatted version of your document</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="files/texstudio-toolbar.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="minimum-structure-for-an-article-your-first-document-in-latex" class="level1 unnumbered">
+<h1 class="unnumbered">Minimum Structure for an article – your first document in LaTeX</h1>
+<p>To create a new document you need to open the .tex editor and type three simple markup tags, as shown below.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="files/minimum-structure-screenshot.PNG" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>\documentclass{article}</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>\begin{document}</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>Hello world! This is my first document written in LaTeX!</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>\end{document}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The first one, <code>\documentclass{article}</code> tells the LaTeX compiler that the document you are about to start is of the class ‘article’ – one of the many built-in document classes LaTeX has. For the purpose of introduction, we will focus on the article class. Other classes that can be used will be discussed towards the end of the course. Defining the class is necessary to create a LaTeX document, so always remember to do so in the first line of your .tex file! Typing anything before that will result in LaTeX producing an error when compiling and your document won’t be created. The class entails some default document parameters such as font, margins, paragraph spacings or page size. However, these can be changed for each document if desired – you’ll learn about that later.</p>
+<p>The second one <code>\begin{document}</code> tells LaTeX that everything from this point is the content of the document. Everything entered before that tag – including the <code>\documentclass{article}</code> tag – is known as the preamble of the document – it is there where all the properties of the document are declared – these include parameters such as margins or page size, or special packages used for different purposes. You will learn about some of them very soon. The preamble can contain only LaTeX markup tags and commands. Typing plain text in the preamble will result in LaTeX compiler error and your document will not be created.</p>
+<p>Finally, <code>\end{document}</code> indicates the ending of the content of the document – anything typed after that tag won’t be included in the document. Anything after that tag won’t appear in the document. Remember to always put <code>\begin{document}</code> before you start typing anything and <code>\end{document}</code> at the end. Otherwise your content won’t be compiled and won’t appear in the final .pdf file. Later you will see, that such <code>\begin</code> … <code>\end</code> structure is common for LaTeX and used to declare the boundaries of other text structures (or environment, as they are called in the LaTeX jargon), such as tables, bullet-point lists or figures.</p>
+</section>
+<section id="formatting-your-document" class="level1 unnumbered">
+<h1 class="unnumbered">Formatting Your Document</h1>
+<section id="sections-and-subsections" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sections-and-subsections">Sections and Subsections</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="files/sections-and-subsections-screenshot.PNG" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:75.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>\documentclass{article} </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>\begin{document}  </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>\section{Introduction} Today we'll learn a bit about sections in LaTeX </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>\subsection{Smaller section} Dividing your LaTeX document into sections is very easy</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>and intuitive. It helps you structure your document. </span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>\subsubsection{An even smaller section} Content of the subsubsection </span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>\end{document}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>To structure your document, particularly when it’s a longer piece of work, it is often very useful to divide it into sections and subsections. LaTeX makes it quite easy and intuitive and automatically numbers your sections, so you can list them in the table of contents with one simple tag later. To create a new section simply add the <code>\section{}</code> tag and insert the title of your section between the curly braces. You can further structure your document into subsections or even subsubsections, as shown in the example above. LaTeX enumerates your sections by default in the order you entered them. This enumeration is useful when you create a table of contents. However, if you don’t want your section to have a number in front of it, simply add an asterisk between the tag and the curly braces, for example <code>\section*{}</code>. This also applies to subsections and subsubsections, as well as any LaTeX environments with default enumeration.</p>
+</section>
+<section id="paragraphs-line-breaks-and-spaces" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="paragraphs-line-breaks-and-spaces">Paragraphs, line breaks and spaces</h2>
+<p>As opposed to Word or Pages, LaTeX is not a What You See Is What You Get (WYSIWYG) editing tool. It means that, as you already might have noticed, the document you see in your editor doesn’t exactly resemble the final compiled pdf document you create. This can be a bit confusing for a new user, especially when it comes to dealing with basic text structures, such as line breaks, page breaks or paragraphs. In this section, you’ll learn that those things are very simple to do in LaTeX as well.</p>
+</section>
+<section id="line-breaks-and-page-breaks" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="line-breaks-and-page-breaks">Line breaks and page breaks</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="files/line-breaks-screenshot.PNG" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>\section{Paragraphs, line breaks and spaces}</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>\subsection{Line breaks}</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>This is a sentence about something.</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>The second sentence is not in a new line, even though it appears to be so in the TeX editor. \\</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>However, this way we can get a new line in LaTeX Using markup tag 'newline' is also equivalent. \newline</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>Moreover, you don't need to even to use an enter on your keyboard \\ to start a new line. Although \\ it definitely makes your document structure easier to understand without compiling.</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>\subsection{Page breaks}</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>\clearpage </span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>\subsection{Paragraphs}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="line-breaks" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="line-breaks">Line breaks</h3>
+<p>When writing a TeX document, pressing ‘enter’ on your keyboard will not simply begin a new line in the complied document, even though it might look like it in your TeX editor window. You always need to press “enter” twice to produce a new line in the output document. Alternatively, you can use <code>\\</code> as the notation for starting a new line – you can enter it wherever you want in your tex file, and everything written after that will be put in a new line (even if you don’t actually use “enter”&nbsp;at all – however, this usually means making your ‘raw’ Tex document less understandable for yourself).</p>
+</section>
+<section id="page-breaks" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="page-breaks">Page breaks</h3>
+<p>The tex file differs fundamentally from the document structure as its content is not divided into pages – instead, the file gets longer the more pages you add. In the compiled (i.e.&nbsp;final pdf) document, as soon as the volume of the content you set is larger than the space available within the current page, LaTeX starts&nbsp;a new page. However, often you might find yourself in a situation in which you want to start a new page before the text exceeds the capacity of the current one – a situation in which you would normally use the ‘page break’ button. In LaTeX that’s simply done by using a markup tag - <code>\newpage</code> or <code>\clearpage</code>. For the purpose of the introduction, you can consider them as equivalent, although they differ subtly in their treatment of objects such as tables or figures, which will be discussed later.</p>
+</section>
+</section>
+<section id="paragraphs" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="paragraphs">Paragraphs</h2>
+<p>In addition to line and page breaks, it’s useful to know how to start a new intended paragraph. In LaTeX that can be done simply by putting <code>\par</code> at the end of the current paragraph. Everything set after that tag will begin from a new line with indentation. If you want to avoid that indentation, simply add <code>\noindent</code> before beginning your new paragraph.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="files/paragraphs-screenshot.PNG" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>\subsection{Paragraphs}</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>It's common to divide longer pieces of text into paragraphs. In such situation, line break by itself won't suffice. \par</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>That's how you divide text into paragraphs in LaTeX. You can also make your new paragraph not indented. \par</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>\noindent That's how you do it. \\</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>This also begins as a new paragraph, as 'enter' was typed twice in the tex document.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="spaces" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="spaces">Spaces</h2>
+<p>If you want to add larger spaces in your text, either horizontally or vertically, LaTeX comes with some special commands. These generally do not seem to work in the online platform, so if you want to play around with these, please use TexStudio on your own computer.</p>
+<p>For horizontal spaces, instead of pressing your space bar repeatedly (hint: it wouldn’t work in LaTeX). You can use the markup tag <code>\hspace{}</code>, specifying the size of the space you want to insert in the curly braces. This can be done in metric units (e.g.&nbsp;<code>\hspace{2cm}</code> or <code>\hspace{20mm}</code>), points (e.g.&nbsp;<code>\hspace{5pt}</code>) or inches (e.g.&nbsp;<code>\hspace{1in}</code>), amongst others.</p>
+<p>If you want a part of your sentence to begin from the right margin (for example when putting a name on the left side and date on the right side in the same line at the end of a letter), you can use the markup tag <code>\hfill</code>. Everything after that will be aligned to the right margin.</p>
+<p>Note that you cannot begin your line with <code>\hfill</code> to align your sentence to the right. That can be done using <code>\flushright</code> environment and is discussed in the next section on the text alignment.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>\subsection{Spaces}</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>\subsubsection{Horizontal}</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>%hspace:</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>This sentence has a \hspace{3cm} large space in it.\\</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>%hfill:</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>From this point \hfill this sentence starts from the other margin.</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>\subsubsection{Vertical}</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>%vspace</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>That's is an example sentence about something.</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>\vspace{3cm} \\</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>There's a considerable distance between this sentence and the previous sentence.</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>%vfill</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>\vfill</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>\noindent This sentence, on the other hand, starts at the bottom margin of the page. When you write, it will gradually "grow" towards the last sentence before the vertical fill.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The analogous markup tags are can be used for vertical spaces: <code>\vspace{}</code> allows you to specify the distance between the current and next line in the curly braces, and <code>\vfill</code> moves everything written after it to the bottom of the page.</p>
+</section>
+<section id="skips" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="skips">Skips</h2>
+<p>Finally, you can add horizontal gaps without specifying the distance, by using “skip” markup tags. There are three variants available: <code>\smallskip</code>, <code>\medskip</code> and <code>\bigskip</code>, each associated with a different size of vertical space between lines. You can see how to use them in the example below.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="files/skips-screenshot.PNG" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>\subsection{Skips}</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>So far we've discussed vertical and horizontal spaces.\\</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>There are other ways to add breaks between lines.\\</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>\smallskip</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>In this case, there's a distance of 3pts added between the lines. \\</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>\medskip</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>In this case, there's a distance of 6pts added between the lines. \\</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>\bigskip</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>Finally, in this case, there's a distance of 12 pt of space between the lines.\\</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="text-alignment" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="text-alignment">Text Alignment</h2>
+<p>By default, LaTeX article class documents are aligned to left and justified (this means aligned along the left margin, and letter- and word-spacing is adjusted so that the text falls flush with both margins).</p>
+<p>However, you can centre the text in your document easily, using the ‘centre’ environment.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="files/text-alignment-screenshot.PNG" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>By default, LaTeX article class documents are aligned to left and justified (i.e.aligned along the left margin, and letter- and word-spacing is adjusted so that the text falls flush with both margins).</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>\begin{center}</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>However, you can centre the text in your document easily, using the 'center' environment. Then, the text has an even gap between each side of it from each margin.\end{center}</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>\begin{flushleft}</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>You can also align your text to the left. In such situation, the text won't be justified as a it would be by default in LaTeX article class document. \end{flushleft}</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>\begin{flushright}</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>By analogy, the text can also be aligned to the right, as you can see in this final example.\end{flushright}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Similarly to text editors you might be used to, LaTeX also allows you to flush the text left, so it is not aligned to both sides, but only to the left (a default setting in Microsoft Word) or flush it right, so it’s only aligned to the right.</p>
+</section>
+</section>
+<section id="lists" class="level1 unnumbered">
+<h1 class="unnumbered">Lists</h1>
+<p>While creating a document, you’ll sometimes find yourself in need of creating a bullet point or numbered list. In LaTeX it is quite simple to enter such a list – all you need to do is tag the beginning and end of the list section with either <code>\begin{enumerate}</code> and <code>\end{enumerate}</code> for numbered lists or <code>\begin{itemize}</code> and <code>\end{itemize}</code> for bullet-point lists. Each element of the list should begin with <code>\item</code> markup tag, as seen in the example.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="files/numbered-list-screenshot.PNG" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>This is a numbered list:</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>\begin{enumerate}</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>\item First element of the numbered list.</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>\item Second element of the numbered list.</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>\item Third element of the numbered list.</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>\end{enumerate}</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>This is a bullet point list:</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>\begin{itemize}</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>\item Those </span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>\item elements</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>\item aren't </span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>\item numbered.</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>\end{itemize}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="files/combined-lists-screenshot.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>You can also combine lists:</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>\begin{enumerate}</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>\item There are several issues related to that, in order:</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>\begin{enumerate}</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>\item This is the first one.</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>\item This is the second one.</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>\end{enumerate}</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>\item Here we also need to mention couple of things, but without order:</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>\begin{itemize}</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>\item For example this...</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>\item ...or this.</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>\end{itemize}</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>\end{enumerate}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="font-styles" class="level1 unnumbered">
+<h1 class="unnumbered">Font Styles</h1>
+<p>Generally, LaTeX uses the Computer Modern font as default. Sometimes, you mind find it useful to modify its style or size. To modify the style of the font you are currently using you use special markup tags. For the bold font, you simply type <code>\textbf{text you want in bold}</code>. Similarly, for italics you write <code>\textit{text you want in italics}</code>. Finally, for underlined text, you use <code>\underline{text you want underlined}</code>.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="files/font-styles-screenshot.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>\noindent This is how you write \textit{italics}, \textbf{bold} and \underline{underlined} text in LaTeX. \\</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>\\</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>You can also {\footnotesize decrease} or {\Large increase} the font for couple of words mid-sentence. \\</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>\\</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>What's even more useful, you can changed the font size of an entire area:\\</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>\begin{footnotesize}</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>This here is small text.</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>\end{footnotesize} \\</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>\begin{large}</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>This here is large text. </span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>\end{large} \\</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>And this is the default size again!</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>To change the font size from the default (which is 10pt for the document class ‘article’), you can use markup tags describing the size you want. This can be done either mid-sentence or for entire area, as seen in the figure above.</p>
+<p><a href="#tbl-fontsizes" class="quarto-xref">Table&nbsp;<span>1</span></a> demonstrates the effect that different LaTeX commands have on the font in relation to the standard font size that has been set for the document. To make things a little bit easier for you, TeXstudio has dedicated buttons for font styles, similar to those you may be familiar with from text editors you have used, such as Microsoft Word – you can find them located left of the TeX file editor.</p>
+<div class="custom-html-table">
+<div class="cell">
+<div id="tbl-fontsizes" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<div aria-describedby="tbl-fontsizes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="do-not-create-environment cell table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">If standard font size is</th>
+<th style="text-align: left;">10pt</th>
+<th style="text-align: left;">11pt</th>
+<th style="text-align: left;">12pt</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">These commands change it to …</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">\tiny</td>
+<td style="text-align: left;">5pt</td>
+<td style="text-align: left;">6pt</td>
+<td style="text-align: left;">6pt</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">\scriptsize</td>
+<td style="text-align: left;">7pt</td>
+<td style="text-align: left;">8pt</td>
+<td style="text-align: left;">8pt</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">\footnotesize</td>
+<td style="text-align: left;">8pt</td>
+<td style="text-align: left;">9pt</td>
+<td style="text-align: left;">10pt</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">\small</td>
+<td style="text-align: left;">9pt</td>
+<td style="text-align: left;">10pt</td>
+<td style="text-align: left;">11pt</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">\normalsize</td>
+<td style="text-align: left;">10pt</td>
+<td style="text-align: left;">11pt</td>
+<td style="text-align: left;">12pt</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">\large</td>
+<td style="text-align: left;">12pt</td>
+<td style="text-align: left;">12pt</td>
+<td style="text-align: left;">14pt</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">\Large</td>
+<td style="text-align: left;">14pt</td>
+<td style="text-align: left;">14pt</td>
+<td style="text-align: left;">17pt</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">\LARGE</td>
+<td style="text-align: left;">17pt</td>
+<td style="text-align: left;">17pt</td>
+<td style="text-align: left;">20pt</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">\huge</td>
+<td style="text-align: left;">20pt</td>
+<td style="text-align: left;">20pt</td>
+<td style="text-align: left;">25pt</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">\Huge</td>
+<td style="text-align: left;">25pt</td>
+<td style="text-align: left;">25pt</td>
+<td style="text-align: left;">25pt</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-tbl" id="tbl-fontsizes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Font Sizes
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="table-of-contents" class="level1 unnumbered">
+<h1 class="unnumbered">Table of Contents</h1>
+<p>To add a table of contents, that summarizes all the sections and subsections of your document in an orderly manner, along with corresponding page numbers, simply use the <code>\tableofcontents</code> markup tag. The table of contents will appear in the place you decide to put the tag, regardless if it’s the beginning, middle or end of your document.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="files/toc-screenshot.PNG" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>\begin{document}</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>\tableofcontents</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>\newpage</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>\section{Introduction}</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>Today we'll learn a bit about sections in LaTeX.</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>\subsection{Smaller section}</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>Dividing your LaTeX document into sections is very easy and intuitive. It helps you structure your document.</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>\subsubsection{An even smaller section}</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>Content of the subsubsection.</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>\newpage</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="title-page" class="level1 unnumbered">
+<h1 class="unnumbered">Title Page</h1>
+<p>Apart from the document class, the preamble allows you to specify other document details, such as the author, date and title among others. These can later appear in the title page if you decide to put it in the document. Similarly to table of contents, the title will appear wherever you decide to place its markup tag, regardless of the location in the document.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>\documentclass{article}</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>\title{Sample LaTeX document}</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>\date{20 April 2019}</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>\author{John Doe \\  </span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>Department of Politics and International Studies \\ </span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>University of Warwick}</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>\begin{document}</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>\maketitle</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>\end{document}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="commenting-your-code" class="level1 unnumbered">
+<h1 class="unnumbered">Commenting your code</h1>
+<p>When designing a complicated document, it’s often helpful to make notes about future ideas for design improvements, places to enter figures or tables that haven’t been prepared yet and others. While such notes are useful, you may not necessarily want them to appear in your complied document. For example, imagine you are sending someone a draft of an article to review. While it is still work in progress with many notes and comments, you often don’t want the reader to see them, as it may make reading the document harder. For that sort of situations, LaTeX comes equipped with a special symbol ‘%’. Whenever it is entered. anything after it until the beginning of a new line in the tex file (not in the compiled document) will not be compiled – TeXStudio notifies you of that by displaying the text after % in grey colour. Try it out yourself!</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const buttons = document.querySelectorAll(".delayed-download");
+
+    buttons.forEach(function (btn) {
+      const releaseDate = new Date(btn.dataset.date);
+      const now = new Date();
+
+      if (now >= releaseDate) {
+        btn.classList.remove("disabled");
+        btn.setAttribute("aria-disabled", "false");
+        btn.setAttribute("href", btn.dataset.path);
+        btn.setAttribute("download", btn.dataset.path.split('/').pop());
+        btn.innerHTML = btn.dataset.label || "📄 Download Document";
+      }
+    });
+  });
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link" aria-label="Preface">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Preface</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./02-LaTeX_2.html" class="pagination-link" aria-label="Tables, Figures, and References">
+        <span class="nav-page-text"><span class="chapter-title">Tables, Figures, and References</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

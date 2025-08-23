@@ -1,0 +1,1551 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.39">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Advanced Documents – Academic Writing with LaTeX</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./02-LaTeX_2.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-7c884608bb88d9d23eddf9360d6659a5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<meta name="theme-color" content="#1d1f2b" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#1d1f2b" media="(prefers-color-scheme: light)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<script>
+// This MUST come before the script src above
+window.MathJax = {
+  tex: {
+    // (Quarto already sets these, but harmless to repeat)
+    inlineMath: [['\\(', '\\)'], ['$', '$']],
+    displayMath: [['\\[', '\\]'], ['$$', '$$']]
+  },
+  // Tell the CHTML output to use Fira
+  chtml: { font: 'mathjax-fira' }
+};
+</script>
+
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./images/Crest_white.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title"><span class="title-long">Academic Writing with LaTeX</span> <span class="title-short">AWWL</span></span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://drfloreiche.github.io/"> 
+<span class="menu-text">Flo’s Home</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./03-LaTeX_3.html"><span class="chapter-title">Advanced Documents</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-LaTeX_1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">The First LaTeX Document</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-LaTeX_2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tables, Figures, and References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-LaTeX_3.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Advanced Documents</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#beamer-presentation" id="toc-beamer-presentation" class="nav-link" data-scroll-target="#beamer-presentation">Beamer Presentation</a>
+  <ul class="collapse">
+  <li><a href="#first-beamer-presentation" id="toc-first-beamer-presentation" class="nav-link" data-scroll-target="#first-beamer-presentation">First Beamer Presentation</a></li>
+  <li><a href="#title-frame" id="toc-title-frame" class="nav-link" data-scroll-target="#title-frame">Title Frame</a></li>
+  <li><a href="#themes" id="toc-themes" class="nav-link" data-scroll-target="#themes">Themes</a></li>
+  <li><a href="#frame-title" id="toc-frame-title" class="nav-link" data-scroll-target="#frame-title">Frame Title</a></li>
+  <li><a href="#sections" id="toc-sections" class="nav-link" data-scroll-target="#sections">Sections</a></li>
+  <li><a href="#atbeginsection" id="toc-atbeginsection" class="nav-link" data-scroll-target="#atbeginsection">AtBeginSection</a></li>
+  <li><a href="#colour-boxes" id="toc-colour-boxes" class="nav-link" data-scroll-target="#colour-boxes">Colour Boxes</a></li>
+  <li><a href="#table-of-contents" id="toc-table-of-contents" class="nav-link" data-scroll-target="#table-of-contents">Table of Contents</a></li>
+  <li><a href="#overlays-and-pauses" id="toc-overlays-and-pauses" class="nav-link" data-scroll-target="#overlays-and-pauses">Overlays and Pauses</a></li>
+  <li><a href="#columns" id="toc-columns" class="nav-link" data-scroll-target="#columns">Columns</a></li>
+  <li><a href="#blocks" id="toc-blocks" class="nav-link" data-scroll-target="#blocks">Blocks</a></li>
+  <li><a href="#figures-and-tables" id="toc-figures-and-tables" class="nav-link" data-scroll-target="#figures-and-tables">Figures and Tables</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  </ul></li>
+  <li><a href="#books" id="toc-books" class="nav-link" data-scroll-target="#books">Books</a>
+  <ul class="collapse">
+  <li><a href="#main-file" id="toc-main-file" class="nav-link" data-scroll-target="#main-file">Main File</a></li>
+  <li><a href="#the-preamble-file" id="toc-the-preamble-file" class="nav-link" data-scroll-target="#the-preamble-file">The Preamble File</a></li>
+  <li><a href="#chapter-file" id="toc-chapter-file" class="nav-link" data-scroll-target="#chapter-file">Chapter File</a></li>
+  <li><a href="#listings" id="toc-listings" class="nav-link" data-scroll-target="#listings">Listings</a></li>
+  <li><a href="#a-basic-example" id="toc-a-basic-example" class="nav-link" data-scroll-target="#a-basic-example">A Basic Example</a></li>
+  <li><a href="#formatting-listings" id="toc-formatting-listings" class="nav-link" data-scroll-target="#formatting-listings">Formatting Listings</a></li>
+  <li><a href="#using-source-files" id="toc-using-source-files" class="nav-link" data-scroll-target="#using-source-files">Using Source Files</a></li>
+  <li><a href="#inline-code" id="toc-inline-code" class="nav-link" data-scroll-target="#inline-code">Inline code</a></li>
+  </ul></li>
+  <li><a href="#natbib-advanced-citations" id="toc-natbib-advanced-citations" class="nav-link" data-scroll-target="#natbib-advanced-citations">Natbib – Advanced Citations</a></li>
+  <li><a href="#tips-tricks" id="toc-tips-tricks" class="nav-link" data-scroll-target="#tips-tricks">Tips &amp; Tricks</a>
+  <ul class="collapse">
+  <li><a href="#page-dimensions" id="toc-page-dimensions" class="nav-link" data-scroll-target="#page-dimensions">Page Dimensions</a></li>
+  <li><a href="#styling" id="toc-styling" class="nav-link" data-scroll-target="#styling">Styling</a>
+  <ul class="collapse">
+  <li><a href="#page-number" id="toc-page-number" class="nav-link" data-scroll-target="#page-number">Page number</a></li>
+  <li><a href="#header-and-footer-style" id="toc-header-and-footer-style" class="nav-link" data-scroll-target="#header-and-footer-style">Header and footer style</a></li>
+  </ul></li>
+  <li><a href="#shortcuts-and-special-escapes" id="toc-shortcuts-and-special-escapes" class="nav-link" data-scroll-target="#shortcuts-and-special-escapes">Shortcuts and Special Escapes</a>
+  <ul class="collapse">
+  <li><a href="#shortcuts" id="toc-shortcuts" class="nav-link" data-scroll-target="#shortcuts">Shortcuts</a></li>
+  <li><a href="#special-escapes" id="toc-special-escapes" class="nav-link" data-scroll-target="#special-escapes">Special Escapes</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">Advanced Documents</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level1 unnumbered">
+<h1 class="unnumbered">Introduction</h1>
+<p>This Section will cover:</p>
+<ul>
+<li>Beamer Presentations</li>
+<li>Writing long documents, such as dissertations or books</li>
+<li>Tips and Tricks</li>
+</ul>
+</section>
+<section id="beamer-presentation" class="level1 unnumbered">
+<h1 class="unnumbered">Beamer Presentation</h1>
+<p>In the previous parts of the course, you have learned how to create LaTeX documents. Note that until now you have used the article document format as specified by the <code>\documentclass{article}</code> tag. LaTeX includes many other document classes that you can use. As already mentioned at the beginning of the course, the class is essentially several pre-set document parameters, such as the size of pages, default font sizes and families for different environments, as well as specific commands. In this section, you will learn about another very popular class of LaTeX documents called beamer, which allows you to create presentations, like those you could prepare using Microsoft PowerPoint or similar software.</p>
+<section id="first-beamer-presentation" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="first-beamer-presentation">First Beamer Presentation</h2>
+<p>The first example shows how to create a simple Beamer presentation consisting of two slides. Every beamer presentation begins with <code>\documentclass{beamer}</code>. Beamer slides are called frames and every slide is simply a separate frame environment, opened by <code>\begin{frame}</code> and closed by <code>\end{frame}</code>. As you will see, many familiar structures used in the article class, such as itemize, enumerate or vspace also work in the beamer format.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>\documentclass{beamer}</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>\begin{document}</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>\begin{frame}</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    Sample text on the first slide. \\</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    A bullet point list:</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    \begin{itemize}</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        \item A bullet point.</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>        \item Another bullet point.</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>        \item Third bullet point.</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>     \end{itemize}</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>     </span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>\end{frame}</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>\begin{frame}</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    Sample text on the second slide. \\</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    \vspace{1cm}</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    A numbered list:</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    \begin{enumerate}</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>        \item One</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>        \item Two</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>        \item Three</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    \end{enumerate}</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>\end{frame}</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>\end{document}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="title-frame" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="title-frame">Title Frame</h2>
+<p>Most presentations begin with a slide containing its title and author’s credentials. Setting up a title frame in Beamer presentations is like preparing a title page in LaTeX articles. First, you need to specify the title and other details, such as the author’s name, date or institution you work for in the preamble of your document. Then, you simply use the <code>\titlepage</code> tag within the frame environment. Note that in the example it is not necessary to explicitly open and close the frame environment using <code>\begin</code> and <code>\end</code>, as we are using only one tag inside it, and thus we can use a more concise formulation <code>\frame{\titlepage}</code>.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>\documentclass{beamer}</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>\begin{document}</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    \begin{frame}</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        Sample text on the first slide. \\</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>        A bullet point list:</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>        \begin{itemize}</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>            \item A bullet point.</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>            \item Another bullet point.</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>            \item Third bullet point.</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>        \end{itemize}</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>\end{frame}</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>\begin{frame}</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>        Sample text on the second slide. \\</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>        \vspace{1cm}</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>        A numbered list:</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>        \begin{enumerate}</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>            \item One</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>            \item Two</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>            \item Three</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>        \end{enumerate}</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>\end{frame}</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>\end{document}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="themes" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="themes">Themes</h2>
+<p>Like other presentation software, LaTeX comes with several pre-defined themes, as well as allows you to define themes of your own. You can select a pre-defined LaTeX theme using <code>\usetheme{}</code> in the preamble of your presentation. Each of the pre-defined themes can also be customized in terms of its colour scheme, using the <code>\usecolortheme{}</code>. Note that you need to provide it with an existing colour scheme name rather than an arbitrary one. You can find an example list of beamer themes and their colour variants here. One of the important properties of the themes is that they often include a footer or a header which appears on every slide, summarising the information about the presentation, such as author, title, date or current slide number. The presentation information you provide in the preamble can often be too long to fit into the footer/header, so you can provide an optional short or abbreviated version of these. To do that, you can use the form <code>\author[short title]{Full title}</code>, where short title will appear in the document footer and full title is only displayed on the title page. This can be seen in the example.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>\documentclass{beamer}</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>\usetheme{madrid}</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>\usecolortheme{spruce}</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>\author[Doe]{Jon Doe}</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>\title[First Beamer]{My First Beamer Presentation}</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>\subtitle{This is a subtitle}</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>\institute[PAIS]{University of Warwick \\ Department of Politics and International Studies}</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>\date[21/02/2020]{21/02/2020 \\ Third LaTeX{} workshop}</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>\begin{document}</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>\frame{\titlepage}</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>\end{document}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="frame-title" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="frame-title">Frame Title</h2>
+<p>Each frame can also have its heading. This is simply added using the <code>\frametitle{title}</code> tag within the frame environment, where title is the heading you want to give to a certain frame.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>\documentclass{beamer}</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>\usetheme{madrid}</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>\usecolortheme{spruce}</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>\author[Doe]{Jon Doe}</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>\title[First Beamer]{My First Beamer Presentation}</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>\subtitle{This is a subtitle}</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>\institute[PAIS]{University of Warwick \\ Department of Politics and International Studies}</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>\date[21/02/2020]{21/02/2020 \\ Third LaTeX{} workshop}</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>\begin{document}</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>\frame{\titlepage}</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>  \begin{frame}</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>        \frametitle{This is a title for the current slide}</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>        Some text.</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>  \end{frame}</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>  \begin{frame}</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>        \frametitle{Another title}</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>        More text.</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>  \end{frame}</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>\end{document}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="sections" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sections">Sections</h2>
+<p>You can divide a beamer presentation into sections and subsections just as you would do in a LaTeX article. Note that these sections should be defined between frame environments, as shown in the example.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>\documentclass{beamer}</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>\usetheme{madrid}</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>\usecolortheme{spruce}</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>\author[Doe]{Jon Doe}</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>\title[First Beamer]{My First Beamer Presentation}</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>\subtitle{This is a subtitle}</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>\institute[PAIS]{University of Warwick \\ Department of Politics and International Studies}</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>\date[21/02/2020]{21/02/2020 \\ Third LaTeX{} workshop}</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>\begin{document}</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  \frame{\titlepage}</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>  \section{Introduction}</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>   \begin{frame}</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>       \frametitle{This is a title for the current slide}</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>       Some text.</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>  \end{frame}</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>\section{Conclusion}</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>   \begin{frame}</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>       \frametitle{Another title}</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>       More text.</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>  \end{frame}</span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>\end{document}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="atbeginsection" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="atbeginsection">AtBeginSection</h2>
+<p>Note that adding the section did not make any changes to our slide content or titles. This is because, by default, beamer uses section titles only to structure your document (for example, they can be seen when you add a table of contents, which will be discussed later). If you want each section to begin with a section title slide, you need to define that explicitly in the preamble of the LaTeX file, using AtBeginSection{}. You fill the curly braces with a frame, which will appear at the beginning of each section and you can use <code>\insertsectionhead</code> parameter to reference the title of a section. Essentially, you are providing LaTeX with a template of a frame that will be used whenever a new section is started. So, adding this code in the preamble will cause LaTeX to add a slide with vertically centred section title in large bold font at the beginning of each new section. Note that this applies also to subsections – in that case, you would simply use AtBeginSubsection and <code>\insertsubsectionhead</code>.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>\AtBeginSection{</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    \begin{frame}</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>        \vfill</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        \Huge</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>        \textbf{\insertsectionhead}</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>        \vfill</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    \end{frame}</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="colour-boxes" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="colour-boxes">Colour Boxes</h2>
+<p>To improve presentation formatting, it is often good to put your text within a box that matches the presentation theme. This can be particularly useful for section title slides discussed before. Such boxes can be added to a beamer slide using the beamercolorbox environment. It is opened by <code>\begin{beamercolorbox}[options]{color}</code>. There are a number of options that can be used in the brackets to customize the box properties. The most useful ones include:</p>
+<ul>
+<li>sep=dimension - specifies the separation between the text in the box and the box boundaries (dimension is a length value, for example, 5cm or 12pt)</li>
+<li>center, right and left – specifies the text alignment within the box</li>
+<li>round = true or false - determines whether the box corners are rounded or not</li>
+<li>shadow = true or false – specifies whether a shadow appears behind the box</li>
+</ul>
+<div class="sourceCode" id="cb7"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>\AtBeginSection{</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>\begin{frame}</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>\vfill</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>\begin{beamercolorbox}[sep=12pt,center,shadow=true,rounded=true]{frametitle}</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>\Large</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>\textbf{\insertsectionhead}</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>\end{beamercolorbox}</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>\vfill</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>\end{frame}</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The curly braces determine to colour of the box. Note that you cannot use colour names or even colour themes as a keyword in the curly braces – instead, you can only refer to colours explicitly defined for the theme you are using or an object within the beamer presentation – it usually makes sense to set it to ‘title’ or ‘frametitle’, which sets the colour of the box to the same one as the background behind the title of the frame.</p>
+</section>
+<section id="table-of-contents" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="table-of-contents">Table of Contents</h2>
+<p>Adding a table of contents is as easy as it was in the article class – it is done by simply entering the <code>\tableofcontents</code> tag in a separate frame. So the basic table of contents is set by:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>\frame{\tableofcontents}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The <code>\tableofcontents</code> tag also comes with some options. A particularly useful one allows to only highlight the number of the current section in the table of contents. This can be done by using:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>\frame{\tableofcontents[currentsection]}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If you start your presentation with a table of contents acting as a presentation outline and want to gradually reveal the titles of subsequent sections while discussing the structure, then the pausesections option might be useful. When it’s used, each new element of the table of contents will be introduced on a new slide.&nbsp;</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>\frame{\tableofcontents[pausesections]}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="overlays-and-pauses" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="overlays-and-pauses">Overlays and Pauses</h2>
+<p>When delivering a presentation, revealing the entire content of a frame can often be overwhelming for the audience, who may get distracted trying to read everything, instead of listening to the person presenting. To keep everyone focused, it often helps to reveal the information one step at a time. Beamer makes this very easy (arguably easier than other presentation software such as PowerPoint), with the <code>\pause</code> tag. Everything following the tag will appear on the next slide.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>\begin{document}</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    \begin{frame}</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>        \frametitle{Title of the slide}</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>        \pause</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>        Elements in this slide will appear step-by-step:</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>        \pause</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>        \begin{enumerate}</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>            \item Element One</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>            \pause</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>            \item Element Two</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>            \pause</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>            \item Element Three</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>        \end{enumerate}</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>    \end{frame}</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>\end{document}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Order of appearance of frame elements can be further customized using overlay specification. The angle brackets (“&lt;” and “&gt;”) used after a markup tag determine on which slides will a certain element or formatting appear. For example, &lt;1&gt; stands for slide number one (of the current frame), &lt;2-4&gt; for the slide range between 2 and 4, and &lt;3,5&gt; for slide 3 and slide 5. The first example shows how it can be applied to a bullet-point list elements appearance:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>\frametitle{Title of the slide}</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>\begin{itemize}</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>\item&lt;1-4&gt; This appears on all slides. </span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>\item&lt;2,4&gt; This appears on the second one and the fourth one. </span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>\item&lt;3&gt; This only appears on the third slide.</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>\end{itemize}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>In the second example, you can see that the overlay specification also works with formattings, such as bold font, italics or font colour.&nbsp;</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>\begin{itemize}</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>\item \textbf&lt;2&gt;{This point will appear in bold on the second slide.}</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>\item \textit&lt;2&gt;{\color&lt;3&gt;{red}{This point will appear in italics on the second slide and in red on the third.}}</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>\item \alert&lt;3&gt;{This will be highlighted in in the third slide.}</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>\end{itemize}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Note that the <code>\alert</code> tag is often used to highlight the text in a colour, which is determined by the presentation theme and colour theme.</p>
+</section>
+<section id="columns" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="columns">Columns</h2>
+<p>The beamer class also allows you to control the placement of objects within a frame. The columns environment is used to specify a multi-column frame layout, which offers similar functionality to the ‘two content’ and ‘comparison’ layouts in Microsoft PowerPoint. The environment is opened by <code>\begin{columns}[options]</code> and closed by <code>\end{columns}</code>. The options that can be specified are shown in the table below – you can use two of them, by separating them by commas, for example, <code>\begin{columns}[t,onlytextwidth]</code>. To specify a column, simply use <code>\column{width}</code> within the columns environment, where the width parameter controls the width of the column.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>\begin{frame}</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>\begin{columns}[t]</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>\column{.3\textwidth}</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>\textbf{Column 1}: \\</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>\lipsum[1][1-2]</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>\column{.3\textwidth}</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>\textbf{Column 2}: \\</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>\begin{itemize}</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>\item One</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>\item Two</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>\item Three</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>\end{itemize}</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>\end{columns}</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>\end{frame}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Table @ref(tab:columnoptions) lists some useful options for the column environment:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<caption>Column Formatting</caption>
+<colgroup>
+<col style="width: 11%">
+<col style="width: 88%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Option</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">c</td>
+<td style="text-align: left;">Central align columns</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">b</td>
+<td style="text-align: left;">Align column bottoms</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">t</td>
+<td style="text-align: left;">Align column tops</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">totalWidth =</td>
+<td style="text-align: left;">Determines total joint width of the two columns</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">onlytextwidth</td>
+<td style="text-align: left;">Equivalent to totalwidth =&nbsp;∖∖textwidth</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">T</td>
+<td style="text-align: left;">Also top alignment, however using a different method (if formatting problems occur with t, try using T instead)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="blocks" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="blocks">Blocks</h2>
+<p>Blocks are useful when you want to highlight the importance of some text, for example, a quote. They are used to create a separated part of a Beamer frame with its own heading and distinct background color.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>\begin{document}</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    \begin{frame}</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>        \begin{block}{\textbf{Important Message}}</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>            \lipsum[1][1-4]</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>        \end{block}</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>        \begin{itemize}</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>            \item Some</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>            \item Bullet</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>            \item Points</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>        \end{itemize}</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>    \end{frame}</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>\end{document}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="figures-and-tables" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="figures-and-tables">Figures and Tables</h2>
+<p>You can use figures and tables in Beamer presentations just as you would in LaTeX articles. For example, you can present the relationship between two variables in two columns, one showing a regression table and the other the scatter plot of the data.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>\begin{Verbatim}</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>\begin{document}</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    \begin{frame}</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>        \begin{columns}[t]</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>            \column{.3\textwidth}</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>            \textbf{Column 1}: \\</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>            \begin{table}[!htbp] \centering </span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>                \begin{tabular}{lc} </span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>                    \\[-1.8ex]\hline </span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>                    &amp; Regressand \\</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>                    \hline \\[-1.8ex]</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>                    Regressor &amp; 0.167$^{***}$ \\ </span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>                    &amp; (0.002) \\ </span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>                    &amp; \\ </span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>                    Constant &amp; 0.843$^{***}$ \\ </span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>                    &amp; (0.073) \\ </span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>                    &amp; \\ </span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>                    \hline \\[-1.8ex] </span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>                    N &amp; 1,000 \\ </span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>                    R$^{2}$ &amp; 0.823 \\ </span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>                    \hline \\[-1.8ex]  </span>
+<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a>                \end{tabular} </span>
+<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a>                \caption{Regression results} </span>
+<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a>            \end{table} </span>
+<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a>            \column{.3\textwidth}</span>
+<span id="cb16-26"><a href="#cb16-26" aria-hidden="true" tabindex="-1"></a>            \textbf{Column 2}: \\</span>
+<span id="cb16-27"><a href="#cb16-27" aria-hidden="true" tabindex="-1"></a>            \begin{figure}[!htbp]</span>
+<span id="cb16-28"><a href="#cb16-28" aria-hidden="true" tabindex="-1"></a>                \includegraphics[width = \columnwidth]{reg_plot.png}</span>
+<span id="cb16-29"><a href="#cb16-29" aria-hidden="true" tabindex="-1"></a>                \caption{Scatter plot}</span>
+<span id="cb16-30"><a href="#cb16-30" aria-hidden="true" tabindex="-1"></a>            \end{figure}</span>
+<span id="cb16-31"><a href="#cb16-31" aria-hidden="true" tabindex="-1"></a>        \end{columns}</span>
+<span id="cb16-32"><a href="#cb16-32" aria-hidden="true" tabindex="-1"></a>    \end{frame}</span>
+<span id="cb16-33"><a href="#cb16-33" aria-hidden="true" tabindex="-1"></a>\end{document}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="summary" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="summary">Summary</h2>
+<p>The functionalities listed in the previous slides&nbsp;are only a very basic list – Beamer offers many more options and graphic structures than you can use – a comprehensive overview is offered by this rather length <a href="https://mirrors.nic.cz/tex-archive/macros/latex/contrib/beamer/doc/beameruserguide.pdf">Beamer documentation</a>.</p>
+<p>Important hint: when working with Beamer in practice, sometimes errors may persist when you re-compile the PDF file (by pressing the “play “ button in TeXStudio) even though your code is correct. In that case, this might be due to the auxiliary files created by TeX when you compile the document –a solution that is always worth trying is deleting these files – either by hand or using the “Clean auxiliary files” option in the “Tools” tab of TeXStudio.</p>
+<p>To delete all of them, enter the following list into the “file extensions” field: log,aux,dvi,lof,lot,bit,idx,glo,bbl,bcf,ilg,toc,ind,out,blg,fdb_latexmk,fls,snm,nav,synctex.gz</p>
+</section>
+</section>
+<section id="books" class="level1 unnumbered">
+<h1 class="unnumbered">Books</h1>
+<p>The last LaTeX document class covered in the course is book. Books can be thought of as a more complex version of the article class – they are likely to consist of multiple chapter files with one “master” file binding them all together. This class is particularly useful when preparing a longer piece of academic work, such as a PhD thesis. This section will briefly go through an example book structure which you can download here. The book folder should always follow a tree-like structure, summarized below. Each chapter is a separate tex file and all the chapters are stored in the same folder. Similarly, all the image files used in the book are stored in a separate folder, with sub-folders corresponding to each chapter number.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a> ----\book_template</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    |   header.tex</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    |   mybook.tex</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    |----\bibliography</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    |       references.bib</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    |----\chapters</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>    |       01_introduction.tex</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>    |       02_body.tex</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>    |       03_conclusion.tex</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>    |       titlepage.tex</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>    |----\images</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>        |---\01</span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>        |       koala.jpg</span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>        |---\02</span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>        |       lemur.jpg</span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>        |---\03</span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>                sloth.jpg</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="main-file" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="main-file">Main File</h2>
+<p>The main file, mybook.tex binds everything together using the main document environment. The <code>\include</code> command inserts the book chapters in a specified order. The <code>\input</code> command is used to “copy and paste” the content of a tex file. In this case, it inserts the content of the header.tex file, which contains the book’s preamble. Finally, the <code>\addcontentsline</code> command is used to add the “Bibliography” entry to the table of contents.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>\input{header}</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>\begin{document}</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    \include{chapters/titlepage}</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    \clearpage</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    \tableofcontents</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>    \include{chapters/01_introduction}</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>    \include{chapters/02_body}</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>    \include{chapters/03_conclusion}</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>    %bibliography</span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>    \cleardoublepage</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>    \addcontentsline{toc}{chapter}{Bibliography}</span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>    \bibliographystyle{apa}</span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>    \bibliography{bibliography/references}</span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a>\end{document}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="the-preamble-file" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="the-preamble-file">The Preamble File</h2>
+<p>The header.tex file contains everything that would normally be put in the document’s preamble, i.e.&nbsp;before the <code>\begin{document}</code> statement. Note that this is done for clarity and is not necessary when using a simple book structure like the one in the example – the preamble could simply be placed at the beginning of the mybook.tex file, like in other document classes. However, with the growing complexity of the book, your preamble is likely to get filled with multiple package references and other code customizing the final output. Because of that, storing the preamble in a separate file is likely to make your life easier and keep the length of the main file to a minimum, so that it gives you a good overview of your book’s structure.</p>
+<p>When working with large documents, compiling the entire document while working on a specific chapter only may waste a lot of time. To avoid it, you can use the <code>\includeonly</code> tag in the preamble of the book. It explicitly tells the LaTeX compiler which chapter files to use when you hit the “play” button in TeXStudio. For example, using <code>\includeonly{chapters/01_introduction}</code> will mean that the <code>\include</code> tags in the main file referencing other chapters than 01_introduction.tex will be ignored and their content will not be compiled in the final output.</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>\documentclass[a4paper,12pt]{book}</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>\usepackage{graphicx}</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>\usepackage{natbib}</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>\usepackage{tabularx}</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>\usepackage{lipsum}</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>\author{James Doe}</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>\title{My PhD Thesis}</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>%this allows you to compile the document with specified chapters only</span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>%\includeonly{chapters/01_introduction}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="chapter-file" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="chapter-file">Chapter File</h2>
+<p>The chapter file resembles a normal LaTeX document, except for the fact that it has neither a preamble nor a <code>\begin{document}</code> statement. Instead, it just begins with <code>\chapter{chaptertitle}</code>. All the packages used in the chapters are defined globally in the book’s preamble.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>\chapter{Introduction}</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>\section{First section}</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>Let's begin with citation of \citet{schadkeetal2007}.\\</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>\lipsum[1-5]</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>\begin{figure}[!h]</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>    \centering</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>    \includegraphics[width = 0.8\textwidth]{images/01/koala.jpg}</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>    \caption{Picture of a coala}</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>\end{figure}</span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>\section{Second section}</span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>\lipsum[1-5]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="listings" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="listings">Listings</h2>
+<p>Reproducibility of results a key prerequisite of methodological transparency and one of the most important facets of quantitative research in social sciences. Every respectable scholar or analyst should allow his audience to go through his research cycle step-by-step, which involves providing them with the original data and the source-code used for the statistical analysis. Reading someone else’s code might often be a difficult task and providing some comments is likely to make it easier. The listings package allows you to include chunks of code in your documents, which makes it possible to prepare technical reports and appendices explaining your quantitative research.</p>
+</section>
+<section id="a-basic-example" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="a-basic-example">A Basic Example</h2>
+<p>Like every other package, listings needs to be loaded in the preamble of the document. The first example shows the minimal structure of a document using listings. <code>\lstset{language=R}</code> is used to determine which language will you use as the input (in this case we use R). Then, the lstlisting environment is used to include code in the text. Note, that in the output, a different text style is used for function names, such as function, sqrt, sum, comments and variables to make the code more readable.&nbsp;</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>\documentclass{article}</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>\usepackage{listings}</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>\lstset{language=R}</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>\begin{document}</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>The following function is used to return L2 vector norm:</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>\begin{lstlisting}</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>norm &lt;- function(x){</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>#calculate norm:</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>sqrt(sum(x^2)) </span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>\end{lstlisting}</span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>\end{document}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="formatting-listings" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="formatting-listings">Formatting Listings</h2>
+<p>To make the code you include in your document more readable, you can add additional formatting to the lstlisting environment by setting different parameters through lstset. The example below shows some most important things that can be changed – you can check out the <a href="https://users.ece.utexas.edu/~garg/dist/listings.pdf">Listings package documentation</a> for an exhaustive list.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>\lstset{language=R,</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>basicstyle=\ttfamily, %style used for listings</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>numbers=left, %code line numbers</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>keywordstyle=\color{red}, %set color of keywords to red</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>commentstyle=\color{blue}\itshape,</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>stringstyle=\color{magenta}, %set comment color to green</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>tabsize = 2, %set tabulation style</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>emph={function}, %emphasize the words you want</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>emphstyle=\color{red}\underbar, %choose emphasis style</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>showstringspaces = false, %without this, symbol will replace spaces in strings</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>deletekeywords = {se,set,data,model},</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>morekeywords={ggplot,FALSE,TRUE}</span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>The following function is used to return L2 vector norm:</span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>\begin{lstlisting}</span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>norm &lt;- function(x){</span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a>#calculate norm:</span>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a>sqrt(sum(x^2)) </span>
+<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a>print("Task completed")</span>
+<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a>\end{lstlisting}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>See Table @ref(tab:listings) for a list of common parameters:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<caption>Formatting of Listings</caption>
+<colgroup>
+<col style="width: 7%">
+<col style="width: 92%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">language</td>
+<td style="text-align: left;">Which language you are using. This determines the default keywords to be highlighted.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">basicstyle</td>
+<td style="text-align: left;">The basic style used for listing. The teletype (\ttfamily) font is a good choice. You can also alter the font size used for the listing.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">numbers</td>
+<td style="text-align: left;">Location of line numbers</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">keywordstyle</td>
+<td style="text-align: left;">Formatting of language keywords. You can use&nbsp;\color{color} (this requires using color or xcolor packages). Other examples include&nbsp;\itshape for italics,&nbsp;\underbar for underscore and&nbsp;\bfseries for the bold font.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">commentstyle</td>
+<td style="text-align: left;">Style of the comments.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">strinstyle</td>
+<td style="text-align: left;">Style of the strings</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">tabsize</td>
+<td style="text-align: left;">Tabulation size</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">emph, emphstyle</td>
+<td style="text-align: left;">This allows you to select a separate style for some words that you want to emphasize in the code</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">showstringspaces</td>
+<td style="text-align: left;">Determines how spaces are shown in strings in the code</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">morekeywords</td>
+<td style="text-align: left;">Allows you to specify additional keywords you want to highlight using the keywordstyle</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">deletekeywords</td>
+<td style="text-align: left;">Allows you to specify keywords you don’t want to be highlighted</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="using-source-files" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="using-source-files">Using Source Files</h2>
+<p>Copying and pasting your code might be effortful, especially if you make any changes to it after you put it in your document. Instead, you can use <code>\lstinputlisting[lines]{filename}</code> tag, which allows you to input code directly from the source file you used in the analysis (for example an R script). Additionally, you can use the option brackets [] to specify the lines you want to insert. For example <code>\lstinputlisting[firstline = 2, lastline = 10]{script.R}</code> will input lines 2 to 10 from file script.R (provided that the file is in the same location as the .tex file).</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>This code was used to produce the table and plot for one of the Beamer slides in the previous part of the course:</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>\lstinputlisting{graph_table.R}</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>\bigskip</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>\textbf{This code generates some toy data:}</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>\lstinputlisting[firstline = 5, lastline = 7]{graph_table.R}</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>\bigskip</span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>\textbf{This code runs the regression model and gets the LaTeX output:}</span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>\lstinputlisting[firstline = 10, lastline = 12]{graph_table.R}</span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>\bigskip</span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a>\textbf{This code is used for plotting:}</span>
+<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a>\lstinputlisting[firstline = 14, lastline = 18]{graph_table.R}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="inline-code" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="inline-code">Inline code</h2>
+<p>Finally, you can use your code in the middle of your regular text, by using <code>\lstinline|yourcode|</code>, for example:</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>I used \lstinline|apply(mydf, 1, function(x) sum(x))| to get a row-wise sum of the \texttt{mydf}.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This makes it easy to reference specific parts of your syntax. It can also be used with a source file, like <code>\lstinputlisting</code>.</p>
+</section>
+</section>
+<section id="natbib-advanced-citations" class="level1 unnumbered">
+<h1 class="unnumbered">Natbib – Advanced Citations</h1>
+<p>While citations and references were already covered in part 2 of the course, the natbib package extends BiBTeX’s capabilities and offers more flexibility in customizing LaTeX bibliographies by including new bibliography styles and extending the <code>\cite</code> command. The structure of the bibliography file (.bib) used by natbib remains the same as in BibTeX.</p>
+<p>Same as in BiBTeX, the bibliography style is set using the <code>\bibliographystyle</code> command. Useful styles include agsm which sets Harvard-like references (the citation style officially used by the PAIS department), as well as plainnat and abbrvnat (which are similar, but the latter uses first name initials instead of full names). By default, some styles (such as apalike or agsm) use round parentheses, while others (like plainnant) use round brackets. This can be changed by loading the natbib with the round option (<code>\usepackage[round]{natbib}</code>) which overrides the default style parentheses to be round or the square option, which does the opposite. Note that when changing the bibliography style in a file once rendered, you need to delete the .bbl auxiliary file which appears in the same folder as your rendered document.</p>
+<p>Natbib also implements multiple versions of the citation command. Rather than using <code>\cite</code> as in BiBTeX, the simplest form of bibliography citation is <code>\citep</code>. <code>\citet</code> is a second alternative, which inserts the author’s surname without parentheses, followed by the publication year enclosed in parentheses. This allows you to cite a resource when using the author’s surname in the sentence, as demonstrated in the example.</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>\documentclass{article}</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>\usepackage{natbib}</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>\bibliographystyle{agsm}    </span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>\begin{document}</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>\citet{schadkeetal2007} conducted an experiment demonstrating that prolonged deliberation about politics amongst like-minded voters results in amplified ideological polarization.</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>Experiments have shown that prolonged deliberation about politics amongst like-minded voters results in amplified ideological polarization \citep{schadkeetal2007}. </span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>\bibliography{my_bibliography}</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>\end{document}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Both <code>\citep</code> and <code>\citet</code> have their alternative versions - <code>\citealp</code> and <code>\citealt</code>, which remove the parentheses entirely. The difference between <code>\citealp</code> and <code>\citealt</code> is that the latter separates the author’s name and publication year with a comma. This does not apply to the agsm bibliography style, which uses no comma between author’s surname and year – in this case, <code>\citealp</code> and <code>\citealt</code> are equivalent.</p>
+<p>Adding an asterisk * at the end of each natbib’s citation command overrides the default et al.&nbsp;abbreviation commonly used in citations of resources with multiple authors and uses the names of all authors instead (this is not supported in some styles, such as apalike). Using the square brackets allows you to add prefixes and suffixes in the citation. So, when using <code>\citep[option1][option2]{resource}</code>, the option1 will be inserted before and option2 after the citation content (see example). Finally, using the <code>\citetext</code> command you can join multiple natbib citations and add your comments in between them, as shown in the example.</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>\documentclass{article}</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>\usepackage{natbib}</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>\bibliographystyle{agsm}    </span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>\begin{document}</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>Experiments have shown that prolonged deliberation about politics amongst like-minded voters results in amplified ideological polarization \citep*[see][pp.~920]{schadkeetal2007}. This undermines the applicability of theoretical models proposed by proponents of deliberative democracy \citetext{see \citealp{ackermanfishkin2004},  see also \citealp{cohen1989}}.</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>\bibliography{my_bibliography}</span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>\end{document}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><a href="#tbl-natbib" class="quarto-xref">Table&nbsp;<span>1</span></a> summarizes the functionality of different citation commands in Natbib. Check out the .tex file used to produce the table – it uses the listings package to cite LaTeX code inside of a LaTeX document.</p>
+<div class="custom-html-table">
+<div class="cell">
+<div id="tbl-natbib" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<div aria-describedby="tbl-natbib-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="do-not-create-environment cell table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Command</th>
+<th style="text-align: left;">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">\citep{cohen1989}</td>
+<td style="text-align: left;">(Cohen, 1989)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">\citet{cohen1989}</td>
+<td style="text-align: left;">Cohen (1989)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">\citep[see][p.&nbsp;920]{cohen1989}</td>
+<td style="text-align: left;">(see Cohen 1989, p.&nbsp;920)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">\citealp{cohen1989}</td>
+<td style="text-align: left;">Cohen, 1989</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">\citealt{cohen1989}</td>
+<td style="text-align: left;">Cohen 1989</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">\citet*{schadkeetal2007}</td>
+<td style="text-align: left;">Schadke, Sunstein &amp; Hastie (2007)[1]</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-tbl" id="tbl-natbib-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: NatBib Commands
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="tips-tricks" class="level1 unnumbered">
+<h1 class="unnumbered">Tips &amp; Tricks</h1>
+<p>This section covers some useful tips, tricks, and extensions of the previously discussed functionalities of LaTeX.</p>
+<section id="page-dimensions" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="page-dimensions">Page Dimensions</h2>
+<p>The package geometry provides an interface to change global parameters of the document and adjust various page dimensions. This can be done by either loading the package using <code>\usepackage{geometry}</code> and then by using the command <code>\geometry{options}</code> in the preamble of the document, or more concisely by specifying the options when loading the package, by <code>\usepackage[options]{geometry}</code> – these are equivalent and can be used interchangeably, although the majority of LaTeX users seem to prefer the latter since it’s shorter. The options are comma-separated parameters that you may want to adjust, such as the paper size (a4paper, a3paper, legalpaper, etc.), textwidth and textheight (which are self-explanatory) or margin (which sets all the margins to a certain length).</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>\documentclass{article}</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>\usepackage{lipsum}</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>\usepackage[a4paper, margin = 2in]{geometry}</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>\begin{document}</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>\lipsum[10-15]</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>\end{document}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>\documentclass{article}</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>\usepackage{lipsum}</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>\usepackage{geometry}</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>\geometry{a4paper, margin = 2in}</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>\begin{document}</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>\lipsum[10-15]</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>\end{document}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>These two are equivalent.</p>
+<p>The list of some basic parameters is shown in Table @ref(tab:geometry). Each of them can be set using <a href="https://en.wikibooks.org/wiki/LaTeX/Lengths">different LaTeX length units</a> such as cm or in. The total size of the page is divided into the text body and margins, which have separate parameters – this is shown in Figure adopted from the <a href="https://mirror.apps.cam.ac.uk/pub/tex-archive/macros/latex/contrib/geometry/geometry.pdf">geometry package documentation</a>, which discusses the intricacies of different parameters at length.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<caption>Geometry Options</caption>
+<colgroup>
+<col style="width: 12%">
+<col style="width: 87%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">textwidth and textheight</td>
+<td style="text-align: left;">Width/height of the body</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">width and height</td>
+<td style="text-align: left;">By default, the same as textwidth and textheight. If includehead = true, includefoot = true or includemp = true, they include header, footer and margin sizes respectively.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">top, bottom, left, right</td>
+<td style="text-align: left;">Size of specific margins</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">margin</td>
+<td style="text-align: left;">Size of all margins</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">headheight</td>
+<td style="text-align: left;">Height of the header</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">footsep</td>
+<td style="text-align: left;">Spacing between the top of the footnote and the bottom of the text</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">footskip</td>
+<td style="text-align: left;">Distance between the bottom of the text and the bottom of the footnote \</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="files3/page-dimensions.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>You can also change page dimensions mid-document, using the <code>\newgeometry{options}</code> command in your document with the options listed above. Then, using <code>\restoregeometry</code> will restore the parameters of all pages set after <code>\newpage</code> or <code>\clearpage</code> to those set in the preamble. This is demonstrated in the example.</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>\documentclass{article}</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>\usepackage{lipsum}</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>\usepackage[a4paper, textheight = 28cm, </span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>textwidth = 20cm]{geometry}</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>\begin{document}</span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>    \lipsum[10-15]</span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>    \newpage</span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>    \newgeometry{textheight = 20cm, textwidth = 10cm}</span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>    \lipsum[10-15]</span>
+<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a>    \newpage</span>
+<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a>    \restoregeometry</span>
+<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a>    \lipsum[10-15]</span>
+<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a>\end{document}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="styling" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="styling">Styling</h2>
+<section id="page-number" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="page-number">Page number</h3>
+<p><code>\pagenumbering{style}</code> – determines the numbering style from the page it’s used on. Note that whenever you use this command, the page numbering starts from the beginning. Styles that can be used include arabic, alph (lowercase letters), Alph (uppercase), roman (lowercase roman numerals), Roman (uppercase roman numerals).</p>
+</section>
+<section id="header-and-footer-style" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="header-and-footer-style">Header and footer style</h3>
+<p><code>\pagestyle{style}</code> sets the automatic styling of the header and the footer from the page it’s used on. The footer and header’s behaviour is also determined by the documentclass of the document. The default value of style is plain, which puts a plain page number in the footer of each page. Other possibilities include:</p>
+<ul>
+<li>empty – nothing in either the header or the footer</li>
+<li>headings – running headings of the current section and page number</li>
+</ul>
+<p>A more useful alternative is offered by the fancyhdr package. It implements new pagestyle, fancy and allows you to control the left, right and central elements of the footer and header with simple commands in the document preamble. For example, <code>\rhead{text}</code> sets the right footer and <code>\cfoot{text}</code> sets the central footer. Their usage, along with some other useful styling tools, is shown in the example.</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>\documentclass{article}</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>\usepackage{lipsum}</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>\usepackage{fancyhdr}</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>\title{\vspace{-10ex} Essay title}</span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>\author{John Doe, John Smith and Stan Kowalski}</span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>\date{}</span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>\pagenumbering{roman} %lowercase roman numerals for page numbers</span>
+<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a>\renewcommand{\thesection}{\Roman{section}} %change section numerals to roman</span>
+<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a>\pagestyle{fancy}</span>
+<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a>\fancyhf{} %reset defefault header and footer</span>
+<span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a>\lhead{\nouppercase{\leftmark}} %section name in the upper header</span>
+<span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a>\rhead{Doe et al.} %author name on the right side of the header</span>
+<span id="cb30-16"><a href="#cb30-16" aria-hidden="true" tabindex="-1"></a>\rfoot{\thepage} %page number on the right side of the footer</span>
+<span id="cb30-17"><a href="#cb30-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-18"><a href="#cb30-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-19"><a href="#cb30-19" aria-hidden="true" tabindex="-1"></a>\begin{document}</span>
+<span id="cb30-20"><a href="#cb30-20" aria-hidden="true" tabindex="-1"></a>    \maketitle</span>
+<span id="cb30-21"><a href="#cb30-21" aria-hidden="true" tabindex="-1"></a>    \section{Introduction}  </span>
+<span id="cb30-22"><a href="#cb30-22" aria-hidden="true" tabindex="-1"></a>    \lipsum[1-3]</span>
+<span id="cb30-23"><a href="#cb30-23" aria-hidden="true" tabindex="-1"></a>    \newpage</span>
+<span id="cb30-24"><a href="#cb30-24" aria-hidden="true" tabindex="-1"></a>    \section{Body}  </span>
+<span id="cb30-25"><a href="#cb30-25" aria-hidden="true" tabindex="-1"></a>    \lipsum[1-10]</span>
+<span id="cb30-26"><a href="#cb30-26" aria-hidden="true" tabindex="-1"></a>    \newpage</span>
+<span id="cb30-27"><a href="#cb30-27" aria-hidden="true" tabindex="-1"></a>    \section{Conclusion}</span>
+<span id="cb30-28"><a href="#cb30-28" aria-hidden="true" tabindex="-1"></a>    \lipsum[1-5]</span>
+<span id="cb30-29"><a href="#cb30-29" aria-hidden="true" tabindex="-1"></a>\end{document}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="shortcuts-and-special-escapes" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="shortcuts-and-special-escapes">Shortcuts and Special Escapes</h2>
+<section id="shortcuts" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="shortcuts">Shortcuts</h3>
+<p>Texstudio also comes with multiple keyboard shortcuts which make preparing documents in LaTeX slightly faster. Some of the most useful shortcuts are listed in Table @ref(tab:shortcuts).&nbsp;</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<caption>Shortcuts in TeX Studio</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Shortcut</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Ctrl/cmd + I</td>
+<td style="text-align: left;">Italics, i.e.&nbsp;\textit</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ctrl/cmd + B</td>
+<td style="text-align: left;">Bold, i.e.&nbsp;\textbf</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Ctrl/cmd + Return</td>
+<td style="text-align: left;">Newline&nbsp;\\</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ctrl/cmd + Shift + I</td>
+<td style="text-align: left;">New&nbsp;\item in itemize environment</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Ctrl/cmd + E</td>
+<td style="text-align: left;">New empty environmnent</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="special-escapes" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="special-escapes">Special Escapes</h3>
+<p>Some of the characters such as “$”, “%”, “#” or “_” have a special meaning in LaTeX and by default are interpreted as elements of the syntax, rather than the text. You can override it by using the “escape” signs, which is the backslash “<code>\</code>”. So, for example, if you want to compile “15%”, you need to typeset “15<code>\</code>%” to escape the percentage character. To escape the backslash itself, use the tag <code>\textbackslash</code>.&nbsp;</p>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const buttons = document.querySelectorAll(".delayed-download");
+
+    buttons.forEach(function (btn) {
+      const releaseDate = new Date(btn.dataset.date);
+      const now = new Date();
+
+      if (now >= releaseDate) {
+        btn.classList.remove("disabled");
+        btn.setAttribute("aria-disabled", "false");
+        btn.setAttribute("href", btn.dataset.path);
+        btn.setAttribute("download", btn.dataset.path.split('/').pop());
+        btn.innerHTML = btn.dataset.label || "📄 Download Document";
+      }
+    });
+  });
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./02-LaTeX_2.html" class="pagination-link" aria-label="Tables, Figures, and References">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Tables, Figures, and References</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
