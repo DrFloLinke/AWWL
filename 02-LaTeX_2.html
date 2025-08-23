@@ -263,14 +263,18 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#bib-files" id="toc-bib-files" class="nav-link" data-scroll-target="#bib-files">.bib files</a></li>
   </ul></li>
-  <li><a href="#citing-.bib-resources" id="toc-citing-.bib-resources" class="nav-link" data-scroll-target="#citing-.bib-resources">Citing .bib Resources</a></li>
+  <li><a href="#citing-.bib-resources" id="toc-citing-.bib-resources" class="nav-link" data-scroll-target="#citing-.bib-resources">Citing .bib Resources</a>
+  <ul class="collapse">
+  <li><a href="#natbib-citation" id="toc-natbib-citation" class="nav-link" data-scroll-target="#natbib-citation">Natbib citation</a></li>
+  <li><a href="#footnote-references" id="toc-footnote-references" class="nav-link" data-scroll-target="#footnote-references">Footnote References</a></li>
+  </ul></li>
   <li><a href="#compiling-the-list-of-references" id="toc-compiling-the-list-of-references" class="nav-link" data-scroll-target="#compiling-the-list-of-references">Compiling the List of References</a></li>
   <li><a href="#endnotes" id="toc-endnotes" class="nav-link" data-scroll-target="#endnotes">Endnotes</a></li>
   </ul></li>
   <li><a href="#an-essay-template" id="toc-an-essay-template" class="nav-link" data-scroll-target="#an-essay-template">An Essay Template</a>
   <ul class="collapse">
   <li><a href="#in-text-references" id="toc-in-text-references" class="nav-link" data-scroll-target="#in-text-references">In-Text References</a></li>
-  <li><a href="#footnote-references" id="toc-footnote-references" class="nav-link" data-scroll-target="#footnote-references">Footnote References</a></li>
+  <li><a href="#footnote-references-1" id="toc-footnote-references-1" class="nav-link" data-scroll-target="#footnote-references-1">Footnote References</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -1237,19 +1241,81 @@ window.Quarto = {
 <span id="cb38-13"><a href="#cb38-13" aria-hidden="true" tabindex="-1"></a>\bibliography{my_bibliography}</span>
 <span id="cb38-14"><a href="#cb38-14" aria-hidden="true" tabindex="-1"></a>\end{document}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>In order to start referencing resources in your text, all you need to do is load a dedicated package called <code>biblatex</code> in the preamble of your document. This package has a number of different citations styles of which “apa: is the most frequently used one in the Social Sciences. You also need to notify LaTeX of the the bibliography file you are using with a <code>\addbibresource</code> after loading the biblatex package. The last thing you need to do is to add the line <code>\printbibliography</code> where you wish the LoR to be placed. Then you can cite each entry in your bibliography using the <code>\parencite{resource}</code> markup tag, where resource is the tag you have assigned in the .bib file. For example <code>\parencite{bollen2008}</code> will compile as (Bollen et al., 2008). Alternatively, you can use <code>\textcite{bollen2008}</code> will compile as Bollen et al.&nbsp;(2008). Additionally, you can use square brackets after the <code>\parencite</code> and <code>\textcite</code> tags to add a note to be included in the parentheses with the citation, for example, the exact pages to which you are referring. If you want to reference specific pages, say 14-15 of Popper’s book, you can do that by using <code>\parencite[see][pp. 14--15]{popper1934}</code>, which compiles as (see Popper, 1934, pp.&nbsp;14-15).</p>
+<section id="natbib-citation" class="level3">
+<h3 class="anchored" data-anchor-id="natbib-citation">Natbib citation</h3>
+<p>I have grown up using Natbib, and that is perhaps why I find it easier to use. What is certainly true is that it gives you more control over the layout of your references than <code>\textcite</code> and <code>\parencite</code>. These are implemented in natbib with <code>\citet</code> and <code>\citep</code>, respectively. These commands are not only shorter, but they also have their alternative versions - <code>\citealp</code> and <code>\citealt</code>, which remove the parentheses entirely. The difference between <code>\citealp</code> and <code>\citealt</code> is that the latter separates the author’s name and publication year with a comma.</p>
+<p>Using square brackets before the citation key allows you to add prefixes and suffixes in the citation. So, when using <code>\citep[option1][option2]{resource}</code>, the option1 will be inserted before and option2 after the citation content. For example <code>\citep[see][p. 23]{bollen:2008}</code> will render as (see Bollen et al., 2008, p.&nbsp;23). We have enabled these ctation commans with <code>natbib=TRUE</code> in this function:</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>\usepackage[</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>    backend=biber,</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>    style=apa,</span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>    natbib=true]{biblatex}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><a href="#tbl-natbib" class="quarto-xref">Table&nbsp;<span>1</span></a> summarizes the functionality of different citation commands in Natbib.</p>
+<div class="custom-html-table">
+<div class="cell">
+<div id="tbl-natbib" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<div aria-describedby="tbl-natbib-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="do-not-create-environment cell table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Command</th>
+<th style="text-align: left;">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">\citep{cohen1989}</td>
+<td style="text-align: left;">(Cohen, 1989)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">\citet{cohen1989}</td>
+<td style="text-align: left;">Cohen (1989)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">\citep[see][p.&nbsp;920]{cohen1989}</td>
+<td style="text-align: left;">(see Cohen 1989, p.&nbsp;920)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">\citealp{cohen1989}</td>
+<td style="text-align: left;">Cohen, 1989</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">\citealt{cohen1989}</td>
+<td style="text-align: left;">Cohen 1989</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">\citet*{schadkeetal2007}</td>
+<td style="text-align: left;">Schadke, Sunstein &amp; Hastie (2007)[1]</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-tbl" id="tbl-natbib-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: NatBib Commands
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="footnote-references" class="level3">
+<h3 class="anchored" data-anchor-id="footnote-references">Footnote References</h3>
 <p>If you want to use footnote references, then the same setup as before applies, but you need to change the style of the biblatex command to “verbose”, such as:</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>\documentclass{article}</span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>\usepackage[autostyle]{csquotes}</span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>\usepackage[</span>
-<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>    backend=biber,</span>
-<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>    style=verbose,</span>
-<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>    natbib=true]{biblatex}</span>
-<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>\addbibresource{bibliography.bib}</span>
-<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>\begin{document}</span>
-<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>Text</span>
-<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>\bibliography{my_bibliography}</span>
-<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a>\end{document}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>To produce footnote citations, you need to use <code>\footcite instead of the aforementioned \</code>textcite and <code>\parencite</code>.</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>\documentclass{article}</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>\usepackage[autostyle]{csquotes}</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>\usepackage[</span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>    backend=biber,</span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>    style=verbose,</span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>    natbib=true]{biblatex}</span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>\addbibresource{bibliography.bib}</span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>\begin{document}</span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>Text</span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>\bibliography{my_bibliography}</span>
+<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a>\end{document}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>To produce footnote citations, you need to use <code>\footcite</code> instead of the aforementioned <code>\textcite</code>, <code>\parencite</code>, <code>\citet</code>, or <code>\citep</code>.</p>
+</section>
 </section>
 <section id="compiling-the-list-of-references" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="compiling-the-list-of-references">Compiling the List of References</h2>
@@ -1272,20 +1338,20 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<div class="sourceCode" id="cb40"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>\documentclass{article}</span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>\usepackage{endnotes}</span>
-<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>\begin{document}</span>
-<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>\section{Introduction}</span>
-<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>This is a sentence that refers to a document endnote. \endnote{Some text}</span>
-<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>\clearpage</span>
-<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a>\theendnotes</span>
-<span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a>\end{document}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>\documentclass{article}</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>\usepackage{endnotes}</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>\begin{document}</span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>\section{Introduction}</span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>This is a sentence that refers to a document endnote. \endnote{Some text}</span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>\clearpage</span>
+<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-12"><a href="#cb41-12" aria-hidden="true" tabindex="-1"></a>\theendnotes</span>
+<span id="cb41-13"><a href="#cb41-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-14"><a href="#cb41-14" aria-hidden="true" tabindex="-1"></a>\end{document}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>If you prefer your footnotes to appear at the end of your document, use the package ‘endnotes’. To create an endnote use the <code>\endnote</code> markup tag, and enter <code>\theendnotes</code> in the part of your document in which you would like them to appear (usually at the end), similarly to the <code>\tableofcontents</code> tag for the table of contents or the <code>\bibliography</code> tag for references.</p>
 </section>
 </section>
@@ -1310,8 +1376,8 @@ window.Quarto = {
 <li><a href="./uploads/PAIS_LaTeX Template (in-text).pdf">Example</a></li>
 </ul>
 </section>
-<section id="footnote-references" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="footnote-references">Footnote References</h2>
+<section id="footnote-references-1" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="footnote-references-1">Footnote References</h2>
 <ul>
 <li><a href="./uploads/PAIS_LaTeX Template (Footnote).tex">.tex file</a></li>
 <li><a href="./uploads/bibliography.bib">.bib file</a></li>

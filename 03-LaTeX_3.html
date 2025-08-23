@@ -225,7 +225,6 @@ window.MathJax = {
   <li><a href="#using-source-files" id="toc-using-source-files" class="nav-link" data-scroll-target="#using-source-files">Using Source Files</a></li>
   <li><a href="#inline-code" id="toc-inline-code" class="nav-link" data-scroll-target="#inline-code">Inline code</a></li>
   </ul></li>
-  <li><a href="#natbib-advanced-citations" id="toc-natbib-advanced-citations" class="nav-link" data-scroll-target="#natbib-advanced-citations">Natbib – Advanced Citations</a></li>
   <li><a href="#tips-tricks" id="toc-tips-tricks" class="nav-link" data-scroll-target="#tips-tricks">Tips &amp; Tricks</a>
   <ul class="collapse">
   <li><a href="#page-dimensions" id="toc-page-dimensions" class="nav-link" data-scroll-target="#page-dimensions">Page Dimensions</a></li>
@@ -665,15 +664,14 @@ window.MathJax = {
 <p>When working with large documents, compiling the entire document while working on a specific chapter only may waste a lot of time. To avoid it, you can use the <code>\includeonly</code> tag in the preamble of the book. It explicitly tells the LaTeX compiler which chapter files to use when you hit the “play” button in TeXStudio. For example, using <code>\includeonly{chapters/01_introduction}</code> will mean that the <code>\include</code> tags in the main file referencing other chapters than 01_introduction.tex will be ignored and their content will not be compiled in the final output.</p>
 <div class="sourceCode" id="cb19"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>\documentclass[a4paper,12pt]{book}</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>\usepackage{graphicx}</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>\usepackage{natbib}</span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>\usepackage{tabularx}</span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>\usepackage{lipsum}</span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>\author{James Doe}</span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>\title{My PhD Thesis}</span>
-<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>%this allows you to compile the document with specified chapters only</span>
-<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>%\includeonly{chapters/01_introduction}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>\usepackage{tabularx}</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>\usepackage{lipsum}</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>\author{James Doe}</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>\title{My PhD Thesis}</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>%this allows you to compile the document with specified chapters only</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>%\includeonly{chapters/01_introduction}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="chapter-file" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="chapter-file">Chapter File</h2>
@@ -829,98 +827,25 @@ window.MathJax = {
 <p>This makes it easy to reference specific parts of your syntax. It can also be used with a source file, like <code>\lstinputlisting</code>.</p>
 </section>
 </section>
-<section id="natbib-advanced-citations" class="level1 unnumbered">
-<h1 class="unnumbered">Natbib – Advanced Citations</h1>
-<p>While citations and references were already covered in part 2 of the course, the natbib package extends BiBTeX’s capabilities and offers more flexibility in customizing LaTeX bibliographies by including new bibliography styles and extending the <code>\cite</code> command. The structure of the bibliography file (.bib) used by natbib remains the same as in BibTeX.</p>
-<p>Same as in BiBTeX, the bibliography style is set using the <code>\bibliographystyle</code> command. Useful styles include agsm which sets Harvard-like references (the citation style officially used by the PAIS department), as well as plainnat and abbrvnat (which are similar, but the latter uses first name initials instead of full names). By default, some styles (such as apalike or agsm) use round parentheses, while others (like plainnant) use round brackets. This can be changed by loading the natbib with the round option (<code>\usepackage[round]{natbib}</code>) which overrides the default style parentheses to be round or the square option, which does the opposite. Note that when changing the bibliography style in a file once rendered, you need to delete the .bbl auxiliary file which appears in the same folder as your rendered document.</p>
-<p>Natbib also implements multiple versions of the citation command. Rather than using <code>\cite</code> as in BiBTeX, the simplest form of bibliography citation is <code>\citep</code>. <code>\citet</code> is a second alternative, which inserts the author’s surname without parentheses, followed by the publication year enclosed in parentheses. This allows you to cite a resource when using the author’s surname in the sentence, as demonstrated in the example.</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>\documentclass{article}</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>\usepackage{natbib}</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>\bibliographystyle{agsm}    </span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>\begin{document}</span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>\citet{schadkeetal2007} conducted an experiment demonstrating that prolonged deliberation about politics amongst like-minded voters results in amplified ideological polarization.</span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>Experiments have shown that prolonged deliberation about politics amongst like-minded voters results in amplified ideological polarization \citep{schadkeetal2007}. </span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>\bibliography{my_bibliography}</span>
-<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>\end{document}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Both <code>\citep</code> and <code>\citet</code> have their alternative versions - <code>\citealp</code> and <code>\citealt</code>, which remove the parentheses entirely. The difference between <code>\citealp</code> and <code>\citealt</code> is that the latter separates the author’s name and publication year with a comma. This does not apply to the agsm bibliography style, which uses no comma between author’s surname and year – in this case, <code>\citealp</code> and <code>\citealt</code> are equivalent.</p>
-<p>Adding an asterisk * at the end of each natbib’s citation command overrides the default et al.&nbsp;abbreviation commonly used in citations of resources with multiple authors and uses the names of all authors instead (this is not supported in some styles, such as apalike). Using the square brackets allows you to add prefixes and suffixes in the citation. So, when using <code>\citep[option1][option2]{resource}</code>, the option1 will be inserted before and option2 after the citation content (see example). Finally, using the <code>\citetext</code> command you can join multiple natbib citations and add your comments in between them, as shown in the example.</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>\documentclass{article}</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>\usepackage{natbib}</span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>\bibliographystyle{agsm}    </span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>\begin{document}</span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>Experiments have shown that prolonged deliberation about politics amongst like-minded voters results in amplified ideological polarization \citep*[see][pp.~920]{schadkeetal2007}. This undermines the applicability of theoretical models proposed by proponents of deliberative democracy \citetext{see \citealp{ackermanfishkin2004},  see also \citealp{cohen1989}}.</span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>\bibliography{my_bibliography}</span>
-<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>\end{document}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><a href="#tbl-natbib" class="quarto-xref">Table&nbsp;<span>1</span></a> summarizes the functionality of different citation commands in Natbib. Check out the .tex file used to produce the table – it uses the listings package to cite LaTeX code inside of a LaTeX document.</p>
-<div class="custom-html-table">
-<div class="cell">
-<div id="tbl-natbib" class="cell quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<div aria-describedby="tbl-natbib-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output-display">
-<table class="do-not-create-environment cell table table-sm table-striped small">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Command</th>
-<th style="text-align: left;">Result</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">\citep{cohen1989}</td>
-<td style="text-align: left;">(Cohen, 1989)</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">\citet{cohen1989}</td>
-<td style="text-align: left;">Cohen (1989)</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">\citep[see][p.&nbsp;920]{cohen1989}</td>
-<td style="text-align: left;">(see Cohen 1989, p.&nbsp;920)</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">\citealp{cohen1989}</td>
-<td style="text-align: left;">Cohen, 1989</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">\citealt{cohen1989}</td>
-<td style="text-align: left;">Cohen 1989</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">\citet*{schadkeetal2007}</td>
-<td style="text-align: left;">Schadke, Sunstein &amp; Hastie (2007)[1]</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-tbl" id="tbl-natbib-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1: NatBib Commands
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
 <section id="tips-tricks" class="level1 unnumbered">
 <h1 class="unnumbered">Tips &amp; Tricks</h1>
 <p>This section covers some useful tips, tricks, and extensions of the previously discussed functionalities of LaTeX.</p>
 <section id="page-dimensions" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="page-dimensions">Page Dimensions</h2>
 <p>The package geometry provides an interface to change global parameters of the document and adjust various page dimensions. This can be done by either loading the package using <code>\usepackage{geometry}</code> and then by using the command <code>\geometry{options}</code> in the preamble of the document, or more concisely by specifying the options when loading the package, by <code>\usepackage[options]{geometry}</code> – these are equivalent and can be used interchangeably, although the majority of LaTeX users seem to prefer the latter since it’s shorter. The options are comma-separated parameters that you may want to adjust, such as the paper size (a4paper, a3paper, legalpaper, etc.), textwidth and textheight (which are self-explanatory) or margin (which sets all the margins to a certain length).</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>\documentclass{article}</span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>\usepackage{lipsum}</span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>\usepackage[a4paper, margin = 2in]{geometry}</span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>\begin{document}</span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>\lipsum[10-15]</span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>\end{document}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb28"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>\documentclass{article}</span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>\usepackage{lipsum}</span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>\usepackage{geometry}</span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>\geometry{a4paper, margin = 2in}</span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>\begin{document}</span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>\lipsum[10-15]</span>
-<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>\end{document}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>\documentclass{article}</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>\usepackage{lipsum}</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>\usepackage[a4paper, margin = 2in]{geometry}</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>\begin{document}</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>\lipsum[10-15]</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>\end{document}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>\documentclass{article}</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>\usepackage{lipsum}</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>\usepackage{geometry}</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>\geometry{a4paper, margin = 2in}</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>\begin{document}</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>\lipsum[10-15]</span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>\end{document}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>These two are equivalent.</p>
 <p>The list of some basic parameters is shown in Table @ref(tab:geometry). Each of them can be set using <a href="https://en.wikibooks.org/wiki/LaTeX/Lengths">different LaTeX length units</a> such as cm or in. The total size of the page is divided into the text body and margins, which have separate parameters – this is shown in Figure adopted from the <a href="https://mirror.apps.cam.ac.uk/pub/tex-archive/macros/latex/contrib/geometry/geometry.pdf">geometry package documentation</a>, which discusses the intricacies of different parameters at length.</p>
 <div class="cell" data-layout-align="center">
@@ -980,23 +905,23 @@ Table&nbsp;1: NatBib Commands
 </div>
 </div>
 <p>You can also change page dimensions mid-document, using the <code>\newgeometry{options}</code> command in your document with the options listed above. Then, using <code>\restoregeometry</code> will restore the parameters of all pages set after <code>\newpage</code> or <code>\clearpage</code> to those set in the preamble. This is demonstrated in the example.</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>\documentclass{article}</span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>\usepackage{lipsum}</span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>\usepackage[a4paper, textheight = 28cm, </span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>textwidth = 20cm]{geometry}</span>
-<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>\begin{document}</span>
-<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>    \lipsum[10-15]</span>
-<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>    \newpage</span>
-<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>    \newgeometry{textheight = 20cm, textwidth = 10cm}</span>
-<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>    \lipsum[10-15]</span>
-<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a>    \newpage</span>
-<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a>    \restoregeometry</span>
-<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a>    \lipsum[10-15]</span>
-<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a>\end{document}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>\documentclass{article}</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>\usepackage{lipsum}</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>\usepackage[a4paper, textheight = 28cm, </span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>textwidth = 20cm]{geometry}</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>\begin{document}</span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>    \lipsum[10-15]</span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>    \newpage</span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>    \newgeometry{textheight = 20cm, textwidth = 10cm}</span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>    \lipsum[10-15]</span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>    \newpage</span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>    \restoregeometry</span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a>    \lipsum[10-15]</span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a>\end{document}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="styling" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="styling">Styling</h2>
@@ -1012,35 +937,35 @@ Table&nbsp;1: NatBib Commands
 <li>headings – running headings of the current section and page number</li>
 </ul>
 <p>A more useful alternative is offered by the fancyhdr package. It implements new pagestyle, fancy and allows you to control the left, right and central elements of the footer and header with simple commands in the document preamble. For example, <code>\rhead{text}</code> sets the right footer and <code>\cfoot{text}</code> sets the central footer. Their usage, along with some other useful styling tools, is shown in the example.</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>\documentclass{article}</span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>\usepackage{lipsum}</span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>\usepackage{fancyhdr}</span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>\title{\vspace{-10ex} Essay title}</span>
-<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>\author{John Doe, John Smith and Stan Kowalski}</span>
-<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>\date{}</span>
-<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>\pagenumbering{roman} %lowercase roman numerals for page numbers</span>
-<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a>\renewcommand{\thesection}{\Roman{section}} %change section numerals to roman</span>
-<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a>\pagestyle{fancy}</span>
-<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a>\fancyhf{} %reset defefault header and footer</span>
-<span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a>\lhead{\nouppercase{\leftmark}} %section name in the upper header</span>
-<span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a>\rhead{Doe et al.} %author name on the right side of the header</span>
-<span id="cb30-16"><a href="#cb30-16" aria-hidden="true" tabindex="-1"></a>\rfoot{\thepage} %page number on the right side of the footer</span>
-<span id="cb30-17"><a href="#cb30-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-18"><a href="#cb30-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-19"><a href="#cb30-19" aria-hidden="true" tabindex="-1"></a>\begin{document}</span>
-<span id="cb30-20"><a href="#cb30-20" aria-hidden="true" tabindex="-1"></a>    \maketitle</span>
-<span id="cb30-21"><a href="#cb30-21" aria-hidden="true" tabindex="-1"></a>    \section{Introduction}  </span>
-<span id="cb30-22"><a href="#cb30-22" aria-hidden="true" tabindex="-1"></a>    \lipsum[1-3]</span>
-<span id="cb30-23"><a href="#cb30-23" aria-hidden="true" tabindex="-1"></a>    \newpage</span>
-<span id="cb30-24"><a href="#cb30-24" aria-hidden="true" tabindex="-1"></a>    \section{Body}  </span>
-<span id="cb30-25"><a href="#cb30-25" aria-hidden="true" tabindex="-1"></a>    \lipsum[1-10]</span>
-<span id="cb30-26"><a href="#cb30-26" aria-hidden="true" tabindex="-1"></a>    \newpage</span>
-<span id="cb30-27"><a href="#cb30-27" aria-hidden="true" tabindex="-1"></a>    \section{Conclusion}</span>
-<span id="cb30-28"><a href="#cb30-28" aria-hidden="true" tabindex="-1"></a>    \lipsum[1-5]</span>
-<span id="cb30-29"><a href="#cb30-29" aria-hidden="true" tabindex="-1"></a>\end{document}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>\documentclass{article}</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>\usepackage{lipsum}</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>\usepackage{fancyhdr}</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>\title{\vspace{-10ex} Essay title}</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>\author{John Doe, John Smith and Stan Kowalski}</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>\date{}</span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>\pagenumbering{roman} %lowercase roman numerals for page numbers</span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>\renewcommand{\thesection}{\Roman{section}} %change section numerals to roman</span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a>\pagestyle{fancy}</span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a>\fancyhf{} %reset defefault header and footer</span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a>\lhead{\nouppercase{\leftmark}} %section name in the upper header</span>
+<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a>\rhead{Doe et al.} %author name on the right side of the header</span>
+<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a>\rfoot{\thepage} %page number on the right side of the footer</span>
+<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a>\begin{document}</span>
+<span id="cb28-20"><a href="#cb28-20" aria-hidden="true" tabindex="-1"></a>    \maketitle</span>
+<span id="cb28-21"><a href="#cb28-21" aria-hidden="true" tabindex="-1"></a>    \section{Introduction}  </span>
+<span id="cb28-22"><a href="#cb28-22" aria-hidden="true" tabindex="-1"></a>    \lipsum[1-3]</span>
+<span id="cb28-23"><a href="#cb28-23" aria-hidden="true" tabindex="-1"></a>    \newpage</span>
+<span id="cb28-24"><a href="#cb28-24" aria-hidden="true" tabindex="-1"></a>    \section{Body}  </span>
+<span id="cb28-25"><a href="#cb28-25" aria-hidden="true" tabindex="-1"></a>    \lipsum[1-10]</span>
+<span id="cb28-26"><a href="#cb28-26" aria-hidden="true" tabindex="-1"></a>    \newpage</span>
+<span id="cb28-27"><a href="#cb28-27" aria-hidden="true" tabindex="-1"></a>    \section{Conclusion}</span>
+<span id="cb28-28"><a href="#cb28-28" aria-hidden="true" tabindex="-1"></a>    \lipsum[1-5]</span>
+<span id="cb28-29"><a href="#cb28-29" aria-hidden="true" tabindex="-1"></a>\end{document}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
 <section id="shortcuts-and-special-escapes" class="level2 unnumbered">
