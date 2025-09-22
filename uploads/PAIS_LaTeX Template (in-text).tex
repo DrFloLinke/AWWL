@@ -1,4 +1,4 @@
-\documentclass{report}
+\documentclass[12pt]{report}
 \usepackage{amsmath} % AMS Math Package
 \usepackage{graphicx} % Allows for eps images
 \usepackage{multicol} % Allows for multiple columns
@@ -14,6 +14,9 @@
 \usepackage{lipsum}
 \usepackage{placeins} %to define float barriers
 \usepackage[autostyle]{csquotes}
+
+% Line spacing
+\usepackage{setspace}
 
 \addto\captionsenglish{% Changes the title of the table of contents
   \renewcommand{\contentsname}%
@@ -37,6 +40,8 @@
 
 \addbibresource{bibliography.bib}
 
+% Make bibliography entries use Computer Modern Sans
+\renewcommand*{\bibfont}{\fontfamily{cmss}\selectfont}
 
 \usepackage{url} %for line breaks in URLS in bibliography
 \def\UrlBreaks{\do\/\do-}
@@ -73,6 +78,7 @@
 % ***********************************************************
 \begin{document}
 {\fontfamily{cmss}\selectfont
+\onehalfspacing
 \titleGM
 \clearpage
 
